@@ -2,9 +2,16 @@
 PlantUML macros and other includes for creating Archimate Diagrams easily.
 
 ## Background
-> __Todo__
-> * PlantUML
-> * Archimate
+### PlantUML
+[PlantUML](http://en.plantuml.com/) is an open source project that allows you to create UML diagrams.
+Diagrams are defined using a simple and intuitive plain text language. It uses [Graphviz](https://en.wikipedia.org/wiki/Graphviz) software to lay out its diagrams. Images can be generated in PNG, in SVG or in LaTeX format.
+
+### ArchiMate
+[ArchiMate](http://pubs.opengroup.org/architecture/archimate3-doc/) is an open and independent enterprise architecture modeling language to support the description, analysis and visualization of architecture within and across business domains in an unambiguous way. 
+
+ArchiMate offers a common language for describing the construction and operation of business processes, organizational structures, information flows, IT systems, and technical infrastructure. This is just like an architectural drawing in classical building where the architecture describes the various aspects of the construction and use of a building. This insight helps the different stakeholders to design, assess, and communicate the consequences of decisions and changes within and between these business domains. 
+
+[Archimate-PlanUML](https://github.com/ebbypeter/Archimate-PlantUML) combines the benefits of PlantUML and ArchiMate for providing a simple way of creating and managing ArchiMate diagrams. The Archimate-PlantUML is a set of macros and other includes written on top of [PlantUML Archimate specification](http://plantuml.com/archimate-diagram), with an aim to simplify the syntax for creating elements and defining relationships.
 
 ## Getting Started
 > __Todo__
