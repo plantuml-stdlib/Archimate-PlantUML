@@ -1,5 +1,5 @@
 # Archimate-PlantUML
-PlantUML macros and other includes for Archimate Diagrams
+PlantUML macros and other includes for creating Archimate Diagrams easily.
 
 ## Background
 > __Todo__
@@ -17,7 +17,7 @@ PlantUML macros and other includes for Archimate Diagrams
 >
 
 ## Contributing
-If you have any ideas, just open an issue [Link to add] and tell me what you think.
+If you have any ideas, just [open an issue](https://github.com/ebbypeter/Archimate-PlantUML/issues/new) and tell me what you think.
 
 If you'd like to contribute, please fork the repository and use a feature branch.  
 Pull requests are warmly welcome.
