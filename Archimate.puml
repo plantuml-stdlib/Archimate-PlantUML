@@ -8,7 +8,7 @@
 !define ELEMENT_FONT_COLOR #FFFFFF
 
 skinparam defaultTextAlignment center
-skinparam wrapWidth 200
+skinparam wrapWidth 400
 skinparam maxMessageSize 150
 
 skinparam Arrow {
@@ -28,6 +28,13 @@ skinparam Folder<<group>> {
     FontColor #444444
     BackgroundColor lightgrey
 }
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    FontColor #444444
+    BorderColor #444444
+    BorderStyle dashed
+}
 
 ' Layout
 ' ##################################
@@ -46,6 +53,11 @@ skinparam Folder<<group>> {
 !define Lay_U(e_from, e_to) e_from -[hidden]U- e_to
 !define Lay_R(e_from, e_to) e_from -[hidden]R- e_to
 !define Lay_L(e_from, e_to) e_from -[hidden]L- e_to
+
+' Boundaries
+' ##################################
+!define Boundary(e_alias, e_label) rectangle "==e_label" <<boundary>> as e_alias
+!define Boundary(e_alias, e_label, e_type) rectangle "==e_label\n<size:TECHN_FONT_SIZE>[e_type]</size>" <<boundary>> as e_alias
 
 ' Elements
 ' ##################################
