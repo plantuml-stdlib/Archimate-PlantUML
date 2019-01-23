@@ -1,0 +1,99 @@
+@startuml
+!include Archimate.puml
+
+title Archimate Overview
+
+'LAYOUT_AS_SKETCH
+'LAYOUT_LEFT_RIGHT
+'LAYOUT_TOP_DOWN
+
+Grouping(M_Group,"Motivation"){
+    Motivation_Stakeholder(MStakeholder, "Stakeholder")
+    Motivation_Assessment(MAssessment, "Assessment")
+    Motivation_Driver(MDriver, "Driver")
+    Motivation_Goal(MGoal, "Goal")
+    Motivation_Outcome(MOutcome,"Outcome")
+    Motivation_Principle(MPrinciple,"Principle")
+    Motivation_Constraint(MConstraint,"Constraint")
+    Motivation_Requirement(MRequirement,"Requirement")
+    Motivation_Meaning(MMeaning,"Meaning")
+    Motivation_Value(MValue,"Value")
+}
+
+Grouping(B_Group,"Business"){
+        Business_Object(BObject, "Business Object")
+        Business_Representation(BRepresentation, "Representation")
+        Business_Contract(BContract, "Contract")
+        Business_Product(BProduct, "Product")
+
+        Business_Service(BService, "Business Service")
+        Business_Function(BFunction, "Business Function")
+        Business_Process(BProcess, "Business Process")
+        Business_Event(BEvent, "Business Event")
+        Business_Interaction(BInteraction, "Business Interaction")
+
+        Business_Role(BRole,"Business Role")
+        Business_Actor(BActor,"Business Actor")
+        Business_Collaboration(BCollaboration, "Business Collaboration")
+        Business_Interface(BInterface, "Business Interface")
+}
+
+Grouping(A_Group, "Application"){
+    Application_DataObject(ADataObject, "Data Object")
+
+    Application_Service(AService,"Application Service")
+    Application_Function(AFunction, "Application Function")
+    Application_Process(AProcess, "Application Process")
+    Application_Event(AEvent, "Application Event")
+    Application_Interaction(AInteraction, "Application Interaction")
+
+    Application_Component(AComponent, "Application Component")
+    Application_Collaboration(ACollaboration, "Application Collaboration")
+    Application_Interface(AInterface, "Application Interface")
+}
+
+Grouping(T_Group, "Technology"){
+    Technology_Artifact(TArtifact, "Artifact")
+
+    Technology_Service(TService, "Technology Service")
+    Technology_Function(TFunction, "Technology Function")
+    Technology_Process(TProcess, "Technology Process")
+    Technology_Event(TEvent, "Technology Event")
+    Technology_Interaction(TInteraction, "Technology Interaction")
+
+    Technology_Node(TNode, "Technology Node")
+    Technology_SystemSoftware(TSystemSoftware, "System Software")
+    Technology_Device(TDevice,"Technology Device")
+    Technology_Interface(TInterface, "Technology Interface")
+    Technology_Collaboration(TCollaboration, "Technology Collaboration")
+    Technology_CommunicationNetwork(TCommunicationNetwork, "Communication Network")
+    Technology_Path(TPath, "Technology Path")
+}
+
+Grouping(I_Group, "Implementation"){
+    Implementation_Deliverable(IDeliverable, "Deliverable")
+    Implementation_Gap(IGap, "Gap")
+
+    Implementation_WorkPackage(IWorkPackage, "Work Package")
+    Implementation_Event(IEvent, "Implementation Event")
+    Implementation_Plateau(IPlateau,"Plateau")
+}
+
+Grouping(S_Group,"Strategy"){
+    Strategy_Resource(SResource,"Resource")
+
+    Strategy_Capability(SCapability,"Capability")
+}
+
+Grouping(C_Group, "Composite"){
+    Other_Location(CLocation,"Location")
+}
+
+Grouping(P_Group, "Physical"){
+    Physical_Material(PMaterial, "Material")
+
+    Physical_Facility(PFacility, "Facility")
+    Physical_Equipment(PEquipment, "Equipment")
+    Physical_DistributionNetwork(PDistributionNetwork, "Distribution Network")
+}
+@enduml

@@ -1,0 +1,28 @@
+@startuml
+!include Archimate.puml
+
+title Archimate Sample - Requirement & Application Services
+
+'LAYOUT_AS_SKETCH
+'LAYOUT_LEFT_RIGHT
+'LAYOUT_TOP_DOWN
+
+Motivation_Requirement(ReqPayrollStandard, "Do Payroll with a standard system")
+Motivation_Requirement(ReqBudgetPlanning, "Do budget planning within the ERP system")
+
+Application_Service(ASPayroll,"Payroll Service")
+Application_Service(ASBudgetPlanning,"Budget Planning Service")
+Application_Component(ACSAPFinanceAccRec, "SAP Finance - Accounts Recievables")
+Application_Component(ACSAPHR, "SAP Human Resources")
+Application_Component(ACSAPFin, "SAP Finance")
+Application_Component(ACSAP,"SAP") 
+
+Rel_Realization_Up(ASPayroll, ReqPayrollStandard)
+Rel_Realization_Up(ASBudgetPlanning, ReqBudgetPlanning)
+Rel_Realization_Up(ACSAPFinanceAccRec, ASBudgetPlanning)
+Rel_Realization_Up(ACSAPHR, ASPayroll)
+
+Rel_Composition_Up(ACSAPFin, ACSAPFinanceAccRec)
+Rel_Composition_Up(ACSAP, ACSAPHR)
+Rel_Composition_Up(ACSAP, ACSAPFin)
+@enduml
