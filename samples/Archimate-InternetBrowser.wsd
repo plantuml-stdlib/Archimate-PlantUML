@@ -1,5 +1,6 @@
 @startuml
-!include Archimate.puml
+'!include Archimate.puml
+!includeurl https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/Archimate.puml
 
 title Archimate Sample - Internet Browser
 
