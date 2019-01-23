@@ -1,5 +1,6 @@
 # Archimate-PlantUML
 PlantUML macros and other includes for creating Archimate Diagrams easily.
+> Sample image comes here... 
 
 ## Background
 ### PlantUML
