@@ -64,10 +64,10 @@ The `RelationTypes` supported are:
  - Association
  - Composition
  - Flow
- - Influnce
+ - Influence
  - Realization
  - Serving
- - Specilization
+ - Specialization
  - Triggering
 
 The `Directions` supported are:
