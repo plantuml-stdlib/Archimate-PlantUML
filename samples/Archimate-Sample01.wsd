@@ -1,5 +1,5 @@
 @startuml
-!includeurl https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/Archimate.puml
+!include ../Archimate.puml
 
 title Archimate Sample - Requirement & Application Services
 
