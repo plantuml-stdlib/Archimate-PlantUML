@@ -178,8 +178,8 @@ skinparam usecase {
 
 'Other Elements
 !define Other_Location(e_alias, e_label) archimate #OrangeRed "e_label" <<location>> as e_alias
-!define Junction_Or(e_alias, e_label) circle #black "e_label" as e_alias
-!define Junction_And(e_alias, e_label) circle #whitesmoke "e_label" as e_alias
+!define Junction_Or(e_alias, e_label) circle #whitesmoke "e_label" as e_alias
+!define Junction_And(e_alias, e_label) circle #black "e_label" as e_alias
 !define Grouping(e_alias, e_label) Folder "e_label" <<grouping>> as e_alias
 !define Group(e_alias, e_label) Folder "e_label" <<group>> as e_alias
 
@@ -187,67 +187,67 @@ skinparam usecase {
 ' ##################################
 !define Rel_(e_sourceAlias, e_targetAlias, e_label, e_direction="") e_sourceAlias e_direction e_targetAlias : "e_label"
 
-!define Rel_Composition(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-*")
-!define Rel_Composition_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP-*")
-!define Rel_Composition_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN-*")
-!define Rel_Composition_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT-*")
-!define Rel_Composition_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT-*")
+!define Rel_Composition(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "*--")
+!define Rel_Composition_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "*-UP-")
+!define Rel_Composition_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "*-DOWN-")
+!define Rel_Composition_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "*-LEFT-")
+!define Rel_Composition_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "*-RIGHT-")
 
-!define Rel_Aggregation(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-o") 
-!define Rel_Aggregation_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP-o")
-!define Rel_Aggregation_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN-o")
-!define Rel_Aggregation_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT-o")
-!define Rel_Aggregation_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT-o")
+!define Rel_Aggregation(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o--")
+!define Rel_Aggregation_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o-UP-")
+!define Rel_Aggregation_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o-DOWN-")
+!define Rel_Aggregation_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o-LEFT-")
+!define Rel_Aggregation_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o-RIGHT-")
 
-!define Rel_Assignment(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "0->")
+!define Rel_Assignment(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "0-->")
 !define Rel_Assignment_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "0-UP->")
 !define Rel_Assignment_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "0-DOWN->")
 !define Rel_Assignment_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "0-LEFT->")
 !define Rel_Assignment_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "0-RIGHT->")
 
-!define Rel_Specialization(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-|>")
+!define Rel_Specialization(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "--|>")
 !define Rel_Specialization_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP-|>")
 !define Rel_Specialization_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN-|>")
 !define Rel_Specialization_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT-|>")
 !define Rel_Specialization_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT-|>")
 
-!define Rel_Serving(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "->") 
+!define Rel_Serving(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-->")
 !define Rel_Serving_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP->")
 !define Rel_Serving_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN->")
 !define Rel_Serving_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT->")
 !define Rel_Serving_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT->")
 
-!define Rel_Association(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-") 
+!define Rel_Association(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "--")
 !define Rel_Association_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP-")
 !define Rel_Association_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN-")
 !define Rel_Association_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT-")
 !define Rel_Association_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT-")
 
-!define Rel_Flow(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".>>") 
+!define Rel_Flow(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "..>>")
 !define Rel_Flow_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".UP.>>")
 !define Rel_Flow_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".DOWN.>>")
 !define Rel_Flow_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".LEFT.>>")
 !define Rel_Flow_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".RIGHT.>>")
 
-!define Rel_Realization(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".|>") 
+!define Rel_Realization(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "..|>")
 !define Rel_Realization_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".UP.|>")
 !define Rel_Realization_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".DOWN.|>")
 !define Rel_Realization_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".LEFT.|>")
 !define Rel_Realization_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".RIGHT.|>")
 
-!define Rel_Triggering(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "->>") 
+!define Rel_Triggering(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-->>")
 !define Rel_Triggering_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP->>")
 !define Rel_Triggering_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN->>")
 !define Rel_Triggering_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT->>")
 !define Rel_Triggering_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT->>")
 
-!define Rel_Access(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".>") 
+!define Rel_Access(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "..>")
 !define Rel_Access_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".UP.>")
 !define Rel_Access_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".DOWN.>")
 !define Rel_Access_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".LEFT.>")
 !define Rel_Access_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".RIGHT.>")
 
-!define Rel_Influence(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "->")
+!define Rel_Influence(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-->")
 !define Rel_Influence_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP->")
 !define Rel_Influence_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN->")
 !define Rel_Influence_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT->")
