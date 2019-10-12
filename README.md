@@ -40,13 +40,13 @@ For example:
     Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
     ```
     Output:  
-    ![Stakeholder](https://www.plantuml.com/plantuml/png/LOtB2i8m44NtXVv3x4f16zswgc1t5WHnBTDqCA5vCPdu-7lRNTrTxkMUqoG6ukoiQ3_WeiNzeInMnYkR1ynaXMQEwIWbmRj-6jQvpmb91S_ekLR1IUpxRqH6aYTIsZXWt5qjUBvt5-aW_Irrd5nbKHPTOFC2Di4_RWmZwc07fFKYjnRTvDYAQb6ACoP59ix7QZE36lJ3nFm1 "Stakeholder")
+    ![Stakeholder](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Stakeholder.png)
 * To define a `Business Service` element,
     ```javascript
     Business_Service(BService, "Business Service")
     ```
     Output:  
-    ![Business Service](https://www.plantuml.com/plantuml/png/LOsz2i8m54RtGjuXTbBGH1oTseARWY3EagGN6qZISE-DFszlXJguVPp3uMk83NA9GHvU9kO0svse5ZwvK7ee6EJ0d6clDPgdkdiUYYq4wCR4a5YvCMgmzfs10NMBRl3HC6pEmII-deuw6lepAazVeX9LLyWd8BfT01_UmRARnrhMFoTdLA--HGEfd-8F "Business Service") 
+    ![Business Service](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-BusinessService.png) 
 
 ### ArchiMate Relationships
 The ArchiMate relationships are defined with the following pattern:
@@ -64,10 +64,10 @@ The `RelationTypes` supported are:
  - Association
  - Composition
  - Flow
- - Influnce
+ - Influence
  - Realization
  - Serving
- - Specilization
+ - Specialization
  - Triggering
 
 The `Directions` supported are:
@@ -82,13 +82,13 @@ For example:
     Rel_Composition(StakeholderElement, BService, "Description for the relationship")
     ```
     Output:  
-    ![Composition Relationship](https://www.plantuml.com/plantuml/png/ROzFImD13CNl2_iTnfugw8xWpLEjzcP1B9wNsTdK2MR-a6IgVdjtfS8Ati9xUU-NR4GTQuraTfyk5eARsxQvmEIfZb2PJ50jScSjku_k3JNKeGgmpqaXQUTpj30CNmKKsDwp3nYTmlKpkQIl-oSRdVnnkZAnscQV5KzECQV-eEuTGgOHUBsOTmHn8boPrK8qZo2UiSp1rMNRRAjW0f7-07n23-ljUPXYlvuvI_D-sxm0zGyvbYmub_nBN9GiUEQOsMW0mq0_bql0CfTk88tJKzy0 "Composition Relationship")
+    ![Composition Relationship](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Composition.png)
 * To orient the two elements in top - down position, the syntax will be
     ```javascript
     Rel_Composition_Down(StakeholderElement, BService, "Description for the relationship")
     ```
     Output:  
-    ![Composition Relationship Down](https://www.plantuml.com/plantuml/png/ROzBQyD038Jl1l-7RKuffDuUUkefpUFMG4desQpNQbPaNqZQ9FttjKCABlGcPZJpIKiMGrA2Lzkh2Td3yqjTFM2qllHGo2idalbLQpANveZYIbSOoAOe4AMnAMZekkyC0gJVo3eCHk3fmviedxjt7Gp_SPeyiEfgbmJFHZ35zY3c12xv7cW-cRSUma1OgDb4L1jWIvZ7uEonhbQ5CG9pUm0weuNvwZuCiLzFtQLnlwxsuDjr2ZantkYRT8d_OYTD4wZwIgJ4WIBmj_FPOHwRbn3xuRCV "Composition Relationship Down")
+    ![Composition Relationship Down](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-CompositionDown.png)
 
 ### ArchiMate Groups
 Groups in ArchiMate are denoted using the following syntax:
@@ -112,7 +112,7 @@ For example
     }
     ```
     Output:  
-    ![Group Type 1](https://www.plantuml.com/plantuml/png/LKvDQm8n5Bm7yX_IFQtGRlJGYoShbLug56pFaiq-t4VpnSkBRH7_UsEhe7CQPfYFHMP3NBnJgs_ZauFfenHt6Amh0nHoQcHEUQurcQzkXpoMlcGW6mD3uCv6hw7lVn8ma7uYEw8t30zlpWJ-MBzgR_ADqwMw9SKBnP8mxDhBwknUDN-YUgzbQZfh9WSfLCKwCkuDOmpR3PjF6ACRWDehldBWwvdQS2MgPyYMC9s2pUI_Qbao1iXvkm7QeuLsUIOrUl7KMJfbZb98iO0mrC-_ "Group Type 1")
+    ![Group Type 1](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Grouping.png)
 
 * Group Type 2:
     ```javascript
@@ -122,7 +122,7 @@ For example
     }
     ```
     Output:  
-    ![Group Type 2](https://www.plantuml.com/plantuml/png/LKxBQW8n5Dq7yW_fh4Qm4t7HHLUZLBgf8AXhoMGkJcXUtDpueFJVZLR1djNX7CwZJQIGihDYSL8kMfYySVPYlBQvXunM34GnlKk9wjZi3GsvombG1q_WgT71IUYwSmG2b3FKWt6Au7LbbQVjyaiwbVuvJInRd77sYI77-Z4w7OlgfeXDwHAJQJNwuKmKB0EPWo8J_6vDwXk6O7l0-ealBBZofJGyYU83aaOJhy5gz5SrpybuI6ct1ZmO3VNyJahquOcxTCtySjQ2xylX2m00 "Group Type 2")
+    ![Group Type 2](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Group.png")
 
 ## Example
 ```javascript

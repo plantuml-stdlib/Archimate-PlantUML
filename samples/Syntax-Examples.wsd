@@ -1,0 +1,47 @@
+@startuml Example-Stakeholder
+!includeurl https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/Archimate.puml
+
+Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
+
+@enduml
+
+@startuml Example-BusinessService
+!includeurl https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/Archimate.puml
+
+Business_Service(BService, "Business Service")
+
+@enduml
+
+@startuml Example-Composition
+!includeurl https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/Archimate.puml
+Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
+Business_Service(BService, "Business Service")
+
+Rel_Composition(StakeholderElement, BService, "Description for the relationship")
+@enduml
+
+@startuml Example-CompositionDown
+!includeurl https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/Archimate.puml
+Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
+Business_Service(BService, "Business Service")
+
+Rel_Composition_Down(StakeholderElement, BService, "Description for the relationship")
+@enduml
+
+@startuml Example-Grouping
+!includeurl https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/Archimate.puml
+Grouping(Example01, "Group Type 01"){
+    Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
+    Business_Service(BService, "Business Service")
+}
+
+@enduml
+
+@startuml Example-Group
+!includeurl https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/Archimate.puml
+
+Group(Example02, "Group Type 02"){
+    Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
+    Business_Service(BService, "Business Service")
+}
+@enduml
