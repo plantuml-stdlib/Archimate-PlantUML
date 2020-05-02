@@ -50,6 +50,7 @@ skinparam archimate {
   StereotypeAlignment right
   RoundCorner<<strategy-capability>> 25
   RoundCorner<<strategy-course-of-action>> 25
+  RoundCorner<<strategy-value-stream>> 25
   RoundCorner<<business-process>> 25
   RoundCorner<<business-function>> 25
   RoundCorner<<business-interaction>> 25
@@ -109,6 +110,7 @@ skinparam usecase {
 !define Strategy_Resource(e_alias, e_label) archimate #STRATEGY "e_label" <<strategy-resource>> as e_alias
 !define Strategy_Capability(e_alias, e_label) archimate #STRATEGY "e_label" <<strategy-capability>> as e_alias
 !define Strategy_CourseOfAction(e_alias, e_label) archimate #STRATEGY "e_label" <<strategy-course-of-action>> as e_alias
+!define Strategy_ValueStream(e_alias, e_label) archimate #STRATEGY "e_label" <<strategy-value-stream>> as e_alias
 
 'Business Elements
 !define Business_Actor(e_alias, e_label) archimate #BUSINESS "e_label" <<business-actor>> as e_alias
