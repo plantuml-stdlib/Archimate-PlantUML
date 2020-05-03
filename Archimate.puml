@@ -219,11 +219,17 @@ skinparam usecase {
 !define Rel_Serving_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT->")
 !define Rel_Serving_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT->")
 
-!define Rel_Association(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "--")
-!define Rel_Association_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP-")
-!define Rel_Association_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN-")
-!define Rel_Association_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT-")
-!define Rel_Association_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT-")
+!define Rel_Association(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "==")
+!define Rel_Association_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=UP=")
+!define Rel_Association_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=DOWN=")
+!define Rel_Association_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=LEFT=")
+!define Rel_Association_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=RIGHT=")
+
+!define Rel_Association_dir(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "==>")
+!define Rel_Association_dir_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=UP=>")
+!define Rel_Association_dir_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=DOWN=>")
+!define Rel_Association_dir_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=LEFT=>")
+!define Rel_Association_dir_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=RIGHT=>")
 
 !define Rel_Flow(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "..>>")
 !define Rel_Flow_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".UP.>>")
