@@ -50,6 +50,7 @@ skinparam archimate {
   StereotypeAlignment right
   RoundCorner<<strategy-capability>> 25
   RoundCorner<<strategy-course-of-action>> 25
+  RoundCorner<<strategy-value-stream>> 25
   RoundCorner<<business-process>> 25
   RoundCorner<<business-function>> 25
   RoundCorner<<business-interaction>> 25
@@ -109,6 +110,7 @@ skinparam usecase {
 !define Strategy_Resource(e_alias, e_label) archimate #STRATEGY "e_label" <<strategy-resource>> as e_alias
 !define Strategy_Capability(e_alias, e_label) archimate #STRATEGY "e_label" <<strategy-capability>> as e_alias
 !define Strategy_CourseOfAction(e_alias, e_label) archimate #STRATEGY "e_label" <<strategy-course-of-action>> as e_alias
+!define Strategy_ValueStream(e_alias, e_label) archimate #STRATEGY "e_label" <<strategy-value-stream>> as e_alias
 
 'Business Elements
 !define Business_Actor(e_alias, e_label) archimate #BUSINESS "e_label" <<business-actor>> as e_alias
@@ -152,8 +154,8 @@ skinparam usecase {
 !define Technology_Artifact(e_alias, e_label) archimate #TECHNOLOGY "---\n e_label" <<technology-artifact>> as e_alias
 
 'Physical Elements
-!define Physical_Equipment(e_alias, e_label) archimate #PHYSICAL "e_label" <<physical-equipment>> as e_alias
-!define Physical_Facility(e_alias, e_label) archimate #PHYSICAL "e_label" <<physical-facility>> as e_alias
+!define Physical_Equipment(e_alias, e_label) node #PHYSICAL "e_label" <<physical-equipment>> as e_alias
+!define Physical_Facility(e_alias, e_label) node #PHYSICAL "e_label" <<physical-facility>> as e_alias
 !define Physical_DistributionNetwork(e_alias, e_label) archimate #PHYSICAL "e_label" <<physical-distribution-network>> as e_alias
 !define Physical_Material(e_alias, e_label) archimate #PHYSICAL "---\n e_label" <<physical-material>> as e_alias
 
@@ -217,11 +219,17 @@ skinparam usecase {
 !define Rel_Serving_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT->")
 !define Rel_Serving_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT->")
 
-!define Rel_Association(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "--")
-!define Rel_Association_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP-")
-!define Rel_Association_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN-")
-!define Rel_Association_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT-")
-!define Rel_Association_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT-")
+!define Rel_Association(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "==")
+!define Rel_Association_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=UP=")
+!define Rel_Association_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=DOWN=")
+!define Rel_Association_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=LEFT=")
+!define Rel_Association_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=RIGHT=")
+
+!define Rel_Association_dir(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "==>")
+!define Rel_Association_dir_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=UP=>")
+!define Rel_Association_dir_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=DOWN=>")
+!define Rel_Association_dir_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=LEFT=>")
+!define Rel_Association_dir_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=RIGHT=>")
 
 !define Rel_Flow(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "..>>")
 !define Rel_Flow_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".UP.>>")
