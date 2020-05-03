@@ -10,6 +10,7 @@
 skinparam defaultTextAlignment center
 skinparam wrapWidth 400
 skinparam maxMessageSize 150
+skinparam StereotypeAlignment right
 
 skinparam Arrow {
     Color #000000
@@ -25,6 +26,7 @@ skinparam Folder<<grouping>> {
 }
 skinparam Folder<<group>> {
     Shadowing true
+    StereotypeFontSize 0
     FontColor #444444
     BackgroundColor lightgrey
 }
@@ -34,6 +36,49 @@ skinparam rectangle<<boundary>> {
     FontColor #444444
     BorderColor #444444
     BorderStyle dashed
+}
+skinparam node {
+  StereotypeAlignment right
+}
+skinparam cloud {
+  StereotypeAlignment right
+}
+skinparam frame {
+  StereotypeAlignment right
+}
+skinparam archimate {
+  StereotypeAlignment right
+  RoundCorner<<strategy-capability>> 25
+  RoundCorner<<strategy-course-of-action>> 25
+  RoundCorner<<strategy-value-stream>> 25
+  RoundCorner<<business-process>> 25
+  RoundCorner<<business-function>> 25
+  RoundCorner<<business-interaction>> 25
+  RoundCorner<<business-event>> 25
+  RoundCorner<<business-service>> 25
+  RoundCorner<<application-function>> 25
+  RoundCorner<<application-interaction>> 25
+  RoundCorner<<application-process>> 25
+  RoundCorner<<application-event>> 25
+  RoundCorner<<application-service>> 25
+  RoundCorner<<technology-function>> 25
+  RoundCorner<<technology-process>> 25
+  RoundCorner<<technology-interaction>> 25
+  RoundCorner<<technology-event>> 25
+  RoundCorner<<technology-infra-service>> 25
+  RoundCorner<<implementation-workpackage>> 25
+  RoundCorner<<implementation-event>> 25
+  DiagonalCorner<<motivation-stakeholder>> 12
+  DiagonalCorner<<motivation-driver>> 12
+  DiagonalCorner<<motivation-assessment>> 12
+  DiagonalCorner<<motivation-goal>> 12
+  DiagonalCorner<<motivation-outcome>> 12
+  DiagonalCorner<<motivation-principle>> 12
+  DiagonalCorner<<motivation-requirement>> 12
+  DiagonalCorner<<motivation-constraint>> 12
+}
+skinparam usecase {
+  BorderColor #000000
 }
 
 ' Layout
@@ -65,6 +110,7 @@ skinparam rectangle<<boundary>> {
 !define Strategy_Resource(e_alias, e_label) archimate #STRATEGY "e_label" <<strategy-resource>> as e_alias
 !define Strategy_Capability(e_alias, e_label) archimate #STRATEGY "e_label" <<strategy-capability>> as e_alias
 !define Strategy_CourseOfAction(e_alias, e_label) archimate #STRATEGY "e_label" <<strategy-course-of-action>> as e_alias
+!define Strategy_ValueStream(e_alias, e_label) archimate #STRATEGY "e_label" <<strategy-value-stream>> as e_alias
 
 'Business Elements
 !define Business_Actor(e_alias, e_label) archimate #BUSINESS "e_label" <<business-actor>> as e_alias
@@ -76,10 +122,10 @@ skinparam rectangle<<boundary>> {
 !define Business_Interaction(e_alias, e_label) archimate #BUSINESS "e_label" <<business-interaction>> as e_alias
 !define Business_Event(e_alias, e_label) archimate #BUSINESS "e_label" <<business-event>> as e_alias
 !define Business_Service(e_alias, e_label) archimate #BUSINESS "e_label" <<business-service>> as e_alias
-!define Business_Object(e_alias, e_label) archimate #BUSINESS "e_label" <<business-object>> as e_alias
-!define Business_Contract(e_alias, e_label) archimate #BUSINESS "e_label" <<business-contract>> as e_alias
-!define Business_Representation(e_alias, e_label) archimate #BUSINESS "e_label" <<business-representation>> as e_alias
-!define Business_Product(e_alias, e_label) archimate #BUSINESS "e_label" <<business-product>> as e_alias
+!define Business_Object(e_alias, e_label) archimate #BUSINESS "---\n e_label" <<business-object>> as e_alias
+!define Business_Contract(e_alias, e_label) archimate #BUSINESS "---\n e_label \n---" <<business-contract>> as e_alias
+!define Business_Representation(e_alias, e_label) archimate #BUSINESS "---\n e_label" <<business-representation>> as e_alias
+!define Business_Product(e_alias, e_label) frame #BUSINESS "e_label" <<$archimate/business-product>> as e_alias
 
 'Application Elements
 !define Application_Component(e_alias, e_label) archimate #APPLICATION "e_label" <<application-component>> as e_alias
@@ -90,13 +136,13 @@ skinparam rectangle<<boundary>> {
 !define Application_Process(e_alias, e_label) archimate #APPLICATION "e_label" <<application-process>> as e_alias
 !define Application_Event(e_alias, e_label) archimate #APPLICATION "e_label" <<application-event>> as e_alias
 !define Application_Service(e_alias, e_label) archimate #APPLICATION "e_label" <<application-service>> as e_alias
-!define Application_DataObject(e_alias, e_label) archimate #APPLICATION "e_label" <<application-data-object>> as e_alias
+!define Application_DataObject(e_alias, e_label) archimate #APPLICATION "---\n e_label" <<application-data-object>> as e_alias
 
 'Technology Elements
 !define Technology_Node(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-node>> as e_alias
-!define Technology_Device(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-device>> as e_alias
+!define Technology_Device(e_alias, e_label) node #TECHNOLOGY "e_label" <<$archimate/technology-device>> as e_alias
 !define Technology_SystemSoftware(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-system-software>> as e_alias
-!define Technology_Collaboration(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<collaboration>> as e_alias
+!define Technology_Collaboration(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-collaboration>> as e_alias
 !define Technology_Interface(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-infra-interface>> as e_alias
 !define Technology_Path(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-communication-path>> as e_alias
 !define Technology_CommunicationNetwork(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-network>> as e_alias
@@ -105,37 +151,37 @@ skinparam rectangle<<boundary>> {
 !define Technology_Interaction(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<interaction>> as e_alias
 !define Technology_Event(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<event>> as e_alias
 !define Technology_Service(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-infra-service>> as e_alias
-!define Technology_Artifact(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-artifact>> as e_alias
+!define Technology_Artifact(e_alias, e_label) archimate #TECHNOLOGY "---\n e_label" <<technology-artifact>> as e_alias
 
 'Physical Elements
-!define Physical_Equipment(e_alias, e_label) archimate #PHYSICAL "e_label" <<physical-equipment>> as e_alias
-!define Physical_Facility(e_alias, e_label) archimate #PHYSICAL "e_label" <<physical-facility>> as e_alias
+!define Physical_Equipment(e_alias, e_label) node #PHYSICAL "e_label" <<physical-equipment>> as e_alias
+!define Physical_Facility(e_alias, e_label) node #PHYSICAL "e_label" <<physical-facility>> as e_alias
 !define Physical_DistributionNetwork(e_alias, e_label) archimate #PHYSICAL "e_label" <<physical-distribution-network>> as e_alias
-!define Physical_Material(e_alias, e_label) archimate #PHYSICAL "e_label" <<physical-material>> as e_alias
+!define Physical_Material(e_alias, e_label) archimate #PHYSICAL "---\n e_label" <<physical-material>> as e_alias
 
 'Motivation Elements
-!define Motivation_Stakeholder(e_alias, e_label) archimate #MOTIVATION "e_label" <<stakeholder-filled>> as e_alias
-!define Motivation_Driver(e_alias, e_label) archimate #MOTIVATION "e_label" <<driver>> as e_alias
-!define Motivation_Assessment(e_alias, e_label) archimate #MOTIVATION "e_label" <<assessment>> as e_alias
-!define Motivation_Goal(e_alias, e_label) archimate #MOTIVATION "e_label" <<goal>> as e_alias
+!define Motivation_Stakeholder(e_alias, e_label) archimate #MOTIVATION "e_label" <<motivation-stakeholder>> as e_alias
+!define Motivation_Driver(e_alias, e_label) archimate #MOTIVATION "e_label" <<motivation-driver>> as e_alias
+!define Motivation_Assessment(e_alias, e_label) archimate #MOTIVATION "e_label" <<motivation-assessment>> as e_alias
+!define Motivation_Goal(e_alias, e_label) archimate #MOTIVATION "e_label" <<motivation-goal>> as e_alias
 !define Motivation_Outcome(e_alias, e_label) archimate #MOTIVATION "e_label" <<motivation-outcome>> as e_alias
-!define Motivation_Principle(e_alias, e_label) archimate #MOTIVATION "e_label" <<principle>> as e_alias
-!define Motivation_Requirement(e_alias, e_label) archimate #MOTIVATION "e_label" <<requirement>> as e_alias
-!define Motivation_Constraint(e_alias, e_label) archimate #MOTIVATION "e_label" <<constraint>> as e_alias
-!define Motivation_Meaning(e_alias, e_label) archimate #MOTIVATION "e_label" <<meaning>> as e_alias
-!define Motivation_Value(e_alias, e_label) archimate #MOTIVATION "e_label" <<value>> as e_alias
+!define Motivation_Principle(e_alias, e_label) archimate #MOTIVATION "e_label" <<motivation-principle>> as e_alias
+!define Motivation_Requirement(e_alias, e_label) archimate #MOTIVATION "e_label" <<motivation-requirement>> as e_alias
+!define Motivation_Constraint(e_alias, e_label) archimate #MOTIVATION "e_label" <<motivation-constraint>> as e_alias
+!define Motivation_Meaning(e_alias, e_label) cloud #MOTIVATION "e_label" <<$archimate/motivation-meaning>> as e_alias
+!define Motivation_Value(e_alias, e_label) usecase #MOTIVATION "e_label" as e_alias
 
 'Implementation Elements
-!define Implementation_WorkPackage(e_alias, e_label) archimate #IMPLEMENTATION "e_label" <<workpackage-filled>> as e_alias
-!define Implementation_Deliverable(e_alias, e_label) archimate #IMPLEMENTATION "e_label" <<deliverable-filled>> as e_alias
-!define Implementation_Event(e_alias, e_label) archimate #IMPLEMENTATION "e_label" <<event>> as e_alias
-!define Implementation_Plateau(e_alias, e_label) archimate #IMPLEMENTATION "e_label" <<plateau>> as e_alias
-!define Implementation_Gap(e_alias, e_label) archimate #IMPLEMENTATION "e_label" <<gap-filled>> as e_alias
+!define Implementation_WorkPackage(e_alias, e_label) archimate #IMPLEMENTATION "e_label" <<implementation-workpackage>> as e_alias
+!define Implementation_Deliverable(e_alias, e_label) archimate #IMPLEMENTATION "---\n e_label" <<implementation-deliverable>> as e_alias
+!define Implementation_Event(e_alias, e_label) archimate #IMPLEMENTATION "e_label" <<implementation-event>> as e_alias
+!define Implementation_Plateau(e_alias, e_label) node #PHYSICAL "e_label" <<$archimate/implementation-plateau>> as e_alias
+!define Implementation_Gap(e_alias, e_label) archimate #PHYSICAL "---\n e_label" <<implementation-gap>> as e_alias
 
 'Other Elements
 !define Other_Location(e_alias, e_label) archimate #OrangeRed "e_label" <<location>> as e_alias
-!define Junction_Or(e_alias, e_label) circle #black "e_label" as e_alias
-!define Junction_And(e_alias, e_label) circle #whitesmoke "e_label" as e_alias
+!define Junction_Or(e_alias, e_label) circle #whitesmoke "e_label" as e_alias
+!define Junction_And(e_alias, e_label) circle #black "e_label" as e_alias
 !define Grouping(e_alias, e_label) Folder "e_label" <<grouping>> as e_alias
 !define Group(e_alias, e_label) Folder "e_label" <<group>> as e_alias
 
@@ -143,55 +189,61 @@ skinparam rectangle<<boundary>> {
 ' ##################################
 !define Rel_(e_sourceAlias, e_targetAlias, e_label, e_direction="") e_sourceAlias e_direction e_targetAlias : "e_label"
 
-!define Rel_Composition(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-*")  
-!define Rel_Composition_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP-*")
-!define Rel_Composition_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN-*")
-!define Rel_Composition_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT-*")
-!define Rel_Composition_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT-*")
+!define Rel_Composition(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "*--")
+!define Rel_Composition_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "*-UP-")
+!define Rel_Composition_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "*-DOWN-")
+!define Rel_Composition_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "*-LEFT-")
+!define Rel_Composition_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "*-RIGHT-")
 
-!define Rel_Aggregation(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-o") 
-!define Rel_Aggregation_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP-o")
-!define Rel_Aggregation_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN-o")
-!define Rel_Aggregation_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT-o")
-!define Rel_Aggregation_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT-o")
+!define Rel_Aggregation(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o--")
+!define Rel_Aggregation_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o-UP-")
+!define Rel_Aggregation_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o-DOWN-")
+!define Rel_Aggregation_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o-LEFT-")
+!define Rel_Aggregation_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o-RIGHT-")
 
-!define Rel_Assignment(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o->") 
-!define Rel_Assignment_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o-UP->")
-!define Rel_Assignment_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o-DOWN->")
-!define Rel_Assignment_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o-LEFT->")
-!define Rel_Assignment_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "o-RIGHT->")
+!define Rel_Assignment(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "0-->")
+!define Rel_Assignment_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "0-UP->")
+!define Rel_Assignment_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "0-DOWN->")
+!define Rel_Assignment_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "0-LEFT->")
+!define Rel_Assignment_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "0-RIGHT->")
 
-!define Rel_Specilization(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-|>") 
-!define Rel_Specilization_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP-|>")
-!define Rel_Specilization_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN-|>")
-!define Rel_Specilization_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT-|>")
-!define Rel_Specilization_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT-|>")
+!define Rel_Specialization(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "--|>")
+!define Rel_Specialization_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP-|>")
+!define Rel_Specialization_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN-|>")
+!define Rel_Specialization_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT-|>")
+!define Rel_Specialization_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT-|>")
 
-!define Rel_Serving(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "->") 
+!define Rel_Serving(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-->")
 !define Rel_Serving_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP->")
 !define Rel_Serving_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN->")
 !define Rel_Serving_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT->")
 !define Rel_Serving_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT->")
 
-!define Rel_Association(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-") 
-!define Rel_Association_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP-")
-!define Rel_Association_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN-")
-!define Rel_Association_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT-")
-!define Rel_Association_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT-")
+!define Rel_Association(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "==")
+!define Rel_Association_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=UP=")
+!define Rel_Association_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=DOWN=")
+!define Rel_Association_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=LEFT=")
+!define Rel_Association_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=RIGHT=")
 
-!define Rel_Flow(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".>>") 
+!define Rel_Association_dir(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "==>")
+!define Rel_Association_dir_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=UP=>")
+!define Rel_Association_dir_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=DOWN=>")
+!define Rel_Association_dir_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=LEFT=>")
+!define Rel_Association_dir_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "=RIGHT=>")
+
+!define Rel_Flow(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "..>>")
 !define Rel_Flow_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".UP.>>")
 !define Rel_Flow_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".DOWN.>>")
 !define Rel_Flow_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".LEFT.>>")
 !define Rel_Flow_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".RIGHT.>>")
 
-!define Rel_Realization(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".|>") 
-!define Rel_Realization_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".UP.|>")
-!define Rel_Realization_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".DOWN.|>")
-!define Rel_Realization_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".LEFT.|>")
-!define Rel_Realization_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, ".RIGHT.|>")
+!define Rel_Realization(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "~~|>")
+!define Rel_Realization_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "~UP~|>")
+!define Rel_Realization_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "~DOWN~|>")
+!define Rel_Realization_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "~LEFT~|>")
+!define Rel_Realization_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "~RIGHT~|>")
 
-!define Rel_Triggering(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "->>") 
+!define Rel_Triggering(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-->>")
 !define Rel_Triggering_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-UP->>")
 !define Rel_Triggering_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN->>")
 !define Rel_Triggering_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT->>")
@@ -208,3 +260,21 @@ skinparam rectangle<<boundary>> {
 !define Rel_Influnce_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-DOWN->")
 !define Rel_Influnce_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-LEFT->")
 !define Rel_Influnce_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "-RIGHT->")
+
+!define Rel_Access_r(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "<~~")
+!define Rel_Access_r_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "<~UP~")
+!define Rel_Access_r_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "<~DOWN~")
+!define Rel_Access_r_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "<~LEFT~")
+!define Rel_Access_r_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "<~RIGHT~")
+
+!define Rel_Access_rw(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "<~~>")
+!define Rel_Access_rw_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "<~UP~>")
+!define Rel_Access_rw_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "<~DOWN.>")
+!define Rel_Access_rw_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "<~LEFT~>")
+!define Rel_Access_rw_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "<~RIGHT~>")
+
+!define Rel_Access_w(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "~~>")
+!define Rel_Access_w_Up(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "~UP~>")
+!define Rel_Access_w_Down(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "~DOWN~>")
+!define Rel_Access_w_Left(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "~LEFT~>")
+!define Rel_Access_w_Right(e_From, e_To, e_label="") Rel_(e_From, e_To, e_label, "~RIGHT~>")

@@ -64,10 +64,10 @@ The `RelationTypes` supported are:
  - Association
  - Composition
  - Flow
- - Influnce
+ - Influence
  - Realization
  - Serving
- - Specilization
+ - Specialization
  - Triggering
 
 The `Directions` supported are:
@@ -122,7 +122,7 @@ For example
     }
     ```
     Output:  
-    ![Group Type 2](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Group.png")
+    ![Group Type 2](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Group.png)
 
 ## Example
 ```javascript
@@ -168,6 +168,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 * [PlantUML Reference Guide](http://plantuml.com/PlantUML_Language_Reference_Guide.pdf) - PlantUML Reference Guide
-* [Archimate 3.0.1 Specification](http://pubs.opengroup.org/architecture/archimate3-doc/) - Archimate Specifications
+* [Archimate 3.1 Specification](http://pubs.opengroup.org/architecture/archimate3-doc/) - Archimate Specifications
 * [Plant UML Archimate Specifications](http://plantuml.com/archimate-diagram) - for archimate spec in PlantUML
 * [C4-PlantUML](https://github.com/RicardoNiepel/C4-PlantUML) - for inspiration, base structure and scripts idea
