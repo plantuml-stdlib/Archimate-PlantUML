@@ -122,10 +122,11 @@ skinparam usecase {
 !define Business_Interaction(e_alias, e_label) archimate #BUSINESS "e_label" <<business-interaction>> as e_alias
 !define Business_Event(e_alias, e_label) archimate #BUSINESS "e_label" <<business-event>> as e_alias
 !define Business_Service(e_alias, e_label) archimate #BUSINESS "e_label" <<business-service>> as e_alias
-!define Business_Object(e_alias, e_label) archimate #BUSINESS "---\n e_label" <<business-object>> as e_alias
-!define Business_Contract(e_alias, e_label) archimate #BUSINESS "---\n e_label \n---" <<business-contract>> as e_alias
-!define Business_Representation(e_alias, e_label) archimate #BUSINESS "---\n e_label" <<business-representation>> as e_alias
-!define Business_Product(e_alias, e_label) frame #BUSINESS "e_label" <<$archimate/business-product>> as e_alias
+!define Business_Object(e_alias, e_label) archimate #BUSINESS "e_label" <<business-object>> as e_alias
+!define Business_Contract(e_alias, e_label) archimate #BUSINESS "e_label" <<business-contract>> as e_alias
+!define Business_Representation(e_alias, e_label) archimate #BUSINESS "e_label" <<business-representation>> as e_alias
+!define Business_Product(e_alias, e_label) archimate #BUSINESS "e_label" <<business-product>> as e_alias
+!define Business_Location(e_alias, e_label) archimate #BUSINESS "e_label" <<business-location>> as e_alias
 
 'Application Elements
 !define Application_Component(e_alias, e_label) archimate #APPLICATION "e_label" <<application-component>> as e_alias
