@@ -1,5 +1,5 @@
 @startuml
-!include Archimate.puml
+!include ../Archimate.puml
 
 title Archimate Example - Relationships
 
