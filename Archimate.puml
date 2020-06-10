@@ -614,23 +614,23 @@ Rel_(e_From, e_To, e_label, ".LEFT.>")
 Rel_(e_From, e_To, e_label, ".RIGHT.>")
 !endprocedure
 
-!unquoted procedure Rel_Influnce(e_From, e_To, e_label="")
+!unquoted procedure Rel_Influence(e_From, e_To, e_label="")
 Rel_(e_From, e_To, e_label, "->") 
 !endprocedure
 
-!unquoted procedure Rel_Influnce_Up(e_From, e_To, e_label="")
+!unquoted procedure Rel_Influence_Up(e_From, e_To, e_label="")
 Rel_(e_From, e_To, e_label, "-UP->")
 !endprocedure
 
-!unquoted procedure Rel_Influnce_Down(e_From, e_To, e_label="")
+!unquoted procedure Rel_Influence_Down(e_From, e_To, e_label="")
 Rel_(e_From, e_To, e_label, "-DOWN->")
 !endprocedure
 
-!unquoted procedure Rel_Influnce_Left(e_From, e_To, e_label="")
+!unquoted procedure Rel_Influence_Left(e_From, e_To, e_label="")
 Rel_(e_From, e_To, e_label, "-LEFT->")
 !endprocedure
 
-!unquoted procedure Rel_Influnce_Right(e_From, e_To, e_label="")
+!unquoted procedure Rel_Influence_Right(e_From, e_To, e_label="")
 Rel_(e_From, e_To, e_label, "-RIGHT->")
 !endprocedure
 
