@@ -1,6 +1,6 @@
 # Archimate-PlantUML
 PlantUML macros and other includes for creating Archimate Diagrams easily.
-![Archimate-PlantUML Sample image - Internet Browser](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Archimate%20Sample%20-%20Internet%20Browser.png) 
+![Archimate-PlantUML Sample image - Internet Browser](https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/images/Archimate%20Sample%20-%20Internet%20Browser.png) 
 
 ## Background
 ### PlantUML
@@ -12,7 +12,7 @@ Diagrams are defined using a simple and intuitive plain text language. It uses [
 
 ArchiMate offers a common language for describing the construction and operation of business processes, organizational structures, information flows, IT systems, and technical infrastructure. This is just like an architectural drawing in classical building where the architecture describes the various aspects of the construction and use of a building. This insight helps the different stakeholders to design, assess, and communicate the consequences of decisions and changes within and between these business domains. 
 
-[Archimate-PlanUML](https://github.com/ebbypeter/Archimate-PlantUML) combines the benefits of PlantUML and ArchiMate for providing a simple way of creating and managing ArchiMate diagrams. The Archimate-PlantUML is a set of macros and other includes written on top of [PlantUML Archimate specification](http://plantuml.com/archimate-diagram), with an aim to simplify the syntax for creating elements and defining relationships.
+[Archimate-PlanUML](https://github.com/plantuml-stdlib/Archimate-PlantUML) combines the benefits of PlantUML and ArchiMate for providing a simple way of creating and managing ArchiMate diagrams. The Archimate-PlantUML is a set of macros and other includes written on top of [PlantUML Archimate specification](http://plantuml.com/archimate-diagram), with an aim to simplify the syntax for creating elements and defining relationships.
 
 ## Getting Started
 Include the `Archimate.puml` file to the top of your ArchiMate PlantUML `.puml` or `.wsd` file. This will allow you to use all the macros that are defined in the `Archimate.puml` file.
@@ -170,4 +170,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * [PlantUML Reference Guide](http://plantuml.com/PlantUML_Language_Reference_Guide.pdf) - PlantUML Reference Guide
 * [Archimate 3.1 Specification](http://pubs.opengroup.org/architecture/archimate3-doc/) - Archimate Specifications
 * [Plant UML Archimate Specifications](http://plantuml.com/archimate-diagram) - for archimate spec in PlantUML
-* [C4-PlantUML](https://github.com/RicardoNiepel/C4-PlantUML) - for inspiration, base structure and scripts idea
+* [C4-PlantUML](https://github.com/plantuml-stdlib/C4-PlantUML) - for inspiration, base structure and scripts idea
