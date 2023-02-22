@@ -4,6 +4,7 @@
 
 ' Sprites
 !define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.0/sprites
+!includeurl SPRITESURL/google-cloud.puml
 !includeurl SPRITESURL/google-cloud-run.puml
 !includeurl SPRITESURL/google-cloud-platform.puml
 
