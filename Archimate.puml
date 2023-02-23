@@ -153,6 +153,7 @@ skinparam usecase {
 !define Technology_Collaboration(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-collaboration>> as e_alias
 !define Technology_Interface(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-infra-interface>> as e_alias
 !define Technology_Path(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-communication-path>> as e_alias
+!define Technology_GCP(e_alias, e_label) cloud #TECHNOLOGY "e_label" <<$google-cloud-platform{scale=0.3,color=blue}>> as e_alias
 !define Technology_CommunicationNetwork(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-network>> as e_alias
 !define Technology_Function(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-function>> as e_alias
 !define Technology_Process(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-process>> as e_alias
