@@ -8,6 +8,8 @@
 !includeurl SPRITESURL/google-icon.puml
 !includeurl SPRITESURL/google-cloud-platform.puml
 
+!define SPRITESGCPURL https://github.com/Crashedmind/PlantUML-icons-GCP/dist
+
 ' Styling
 ' ##################################
 !define TECHN_FONT_SIZE 12
