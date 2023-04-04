@@ -7,6 +7,9 @@
 !includeurl SPRITESURL/google-cloud.puml
 !includeurl SPRITESURL/google-icon.puml
 !includeurl SPRITESURL/google-cloud-platform.puml
+!define ARCHIMATECUSTOMICONURL https://raw.githubusercontent.com/kevintelus/Archimate-PlantUML/master/icons/ArchiMate
+!includeurl ARCHIMATECUSTOMICONURL/Application_Module.puml
+!includeurl ARCHIMATECUSTOMICONURL/Application_System.puml
 
 !define SPRITESGCPURL https://github.com/Crashedmind/PlantUML-icons-GCP/dist
 
