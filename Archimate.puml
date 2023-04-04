@@ -150,6 +150,8 @@ skinparam usecase {
 !define Application_Event(e_alias, e_label) archimate #APPLICATION "e_label" <<application-event>> as e_alias
 !define Application_Service(e_alias, e_label) archimate #APPLICATION "e_label" <<application-service>> as e_alias
 !define Application_DataObject(e_alias, e_label) archimate #APPLICATION "----\n e_label" <<application-data-object>> as e_alias
+!define Application_Module(e_alias, e_label) archimate #APPLICATION "e_label" <<$Application_Module>> as e_alias
+!define Application_System(e_alias, e_label) archimate #APPLICATION "e_label" <<$Application_System>> as e_alias
 
 'Technology Elements
 !define Technology_Node(e_alias, e_label) node #TECHNOLOGY "e_label" <<$archimate/technology-node>> as e_alias
