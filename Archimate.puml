@@ -169,7 +169,7 @@ skinparam usecase {
 !define Technology_Event(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-event>> as e_alias
 !define Technology_Service(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-infra-service>> as e_alias
 !define Technology_Artifact(e_alias, e_label) archimate #TECHNOLOGY "----\n e_label" <<technology-artifact>> as e_alias
-!define Technology_Artifact_Module(e_alias, e_label) archimate #TECHNOLOGY "----\n e_label" <<$Artifact_Module>> as e_alias
+!define Technology_Artifact_Module(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<$Artifact_Module>> as e_alias
 
 'Physical Elements
 !define Physical_Equipment(e_alias, e_label) node #PHYSICAL "e_label" <<$archimate/physical-equipment>> as e_alias
