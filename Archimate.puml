@@ -152,6 +152,7 @@ skinparam usecase {
 
 'Technology Elements
 !define Technology_Node(e_alias, e_label) node #TECHNOLOGY "e_label" <<$archimate/technology-node>> as e_alias
+!define Technology_Node_Weblogic(e_alias, e_label) node #TECHNOLOGY "e_label" <<$archimate/technology-node-weblogic>> as e_alias
 !define Technology_Device(e_alias, e_label) node #TECHNOLOGY "e_label" <<$archimate/technology-device>> as e_alias
 !define Technology_SystemSoftware(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-system-software>> as e_alias
 !define Technology_Collaboration(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-collaboration>> as e_alias
