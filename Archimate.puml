@@ -147,8 +147,8 @@ skinparam usecase {
 !define Application_Event(e_alias, e_label) archimate #APPLICATION "e_label" <<application-event>> as e_alias
 !define Application_Service(e_alias, e_label) archimate #APPLICATION "e_label" <<application-service>> as e_alias
 !define Application_DataObject(e_alias, e_label) archimate #APPLICATION "----\n e_label" <<application-data-object>> as e_alias
-!define Application_Module(e_alias, e_label) #APPLICATION "e_label" <<$Application_Module>> as e_alias
-!define Application_System(e_alias, e_label) #APPLICATION "e_label" <<$Application_System>> as e_alias
+!define Application_Module(e_alias, e_label) archimate #APPLICATION "e_label" <<application-module>> as e_alias
+!define Application_System(e_alias, e_label) archimate #APPLICATION "e_label" <<application-system>> as e_alias
 
 'Technology Elements
 !define Technology_Node(e_alias, e_label) node #TECHNOLOGY "e_label" <<$archimate/technology-node>> as e_alias
@@ -165,7 +165,7 @@ skinparam usecase {
 !define Technology_Event(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-event>> as e_alias
 !define Technology_Service(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-infra-service>> as e_alias
 !define Technology_Artifact(e_alias, e_label) archimate #TECHNOLOGY "----\n e_label" <<technology-artifact>> as e_alias
-!define Technology_Artifact_Module(e_alias, e_label) #TECHNOLOGY "e_label" <<$Artifact_Module>> as e_alias
+!define Technology_Artifact_Module(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-artifact-module>> as e_alias
 
 'Physical Elements
 !define Physical_Equipment(e_alias, e_label) node #PHYSICAL "e_label" <<$archimate/physical-equipment>> as e_alias
