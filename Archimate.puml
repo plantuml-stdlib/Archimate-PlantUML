@@ -85,6 +85,7 @@ skinparam archimate {
   DiagonalCorner<<motivation-principle>> 12
   DiagonalCorner<<motivation-requirement>> 12
   DiagonalCorner<<motivation-constraint>> 12
+  pathHoverColor red
 }
 skinparam usecase {
   BorderColor #000000
