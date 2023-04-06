@@ -3,12 +3,6 @@
 ' Url will come here...
 
 ' Sprites
-!define SPRITESURL https://raw.githubusercontent.com/plantuml-stdlib/gilbarbara-plantuml-sprites/v1.0/sprites
-!includeurl SPRITESURL/google-cloud.puml
-!includeurl SPRITESURL/google-icon.puml
-!includeurl SPRITESURL/google-cloud-platform.puml
-
-!define SPRITESGCPURL https://github.com/Crashedmind/PlantUML-icons-GCP/dist
 
 ' Styling
 ' ##################################
@@ -85,7 +79,6 @@ skinparam archimate {
   DiagonalCorner<<motivation-principle>> 12
   DiagonalCorner<<motivation-requirement>> 12
   DiagonalCorner<<motivation-constraint>> 12
-  pathHoverColor red
 }
 skinparam usecase {
   BorderColor #000000
@@ -147,7 +140,7 @@ skinparam usecase {
 !define Application_Process(e_alias, e_label) archimate #APPLICATION "e_label" <<application-process>> as e_alias
 !define Application_Event(e_alias, e_label) archimate #APPLICATION "e_label" <<application-event>> as e_alias
 !define Application_Service(e_alias, e_label) archimate #APPLICATION "e_label" <<application-service>> as e_alias
-!define Application_DataObject(e_alias, e_label) archimate #APPLICATION "----\n e_label" <<application-data-object>> as e_alias
+!define Application_DataObject(e_alias, e_label) archimate #APPLICATION "e_label" <<application-data-object>> as e_alias
 !define Application_Module(e_alias, e_label) archimate #APPLICATION "e_label" <<application-module>> as e_alias
 !define Application_System(e_alias, e_label) archimate #APPLICATION "e_label" <<application-system>> as e_alias
 
@@ -159,14 +152,13 @@ skinparam usecase {
 !define Technology_Collaboration(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-collaboration>> as e_alias
 !define Technology_Interface(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-infra-interface>> as e_alias
 !define Technology_Path(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-communication-path>> as e_alias
-!define Technology_GCP(e_alias, e_label) cloud #TECHNOLOGY "e_label" <<$google-cloud{scale=0.3,color=blue}>> as e_alias
 !define Technology_CommunicationNetwork(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-network>> as e_alias
 !define Technology_Function(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-function>> as e_alias
 !define Technology_Process(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-process>> as e_alias
 !define Technology_Interaction(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-interaction>> as e_alias
 !define Technology_Event(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-event>> as e_alias
 !define Technology_Service(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-infra-service>> as e_alias
-!define Technology_Artifact(e_alias, e_label) archimate #TECHNOLOGY "----\n e_label" <<technology-artifact>> as e_alias
+!define Technology_Artifact(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-artifact>> as e_alias
 !define Technology_Artifact_Module(e_alias, e_label) archimate #TECHNOLOGY "e_label" <<technology-artifact-module>> as e_alias
 
 'Physical Elements
