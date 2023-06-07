@@ -3,6 +3,10 @@
 ' Url will come here...
 
 ' Sprites
+sprite $aModule [16x16/16z] Oy02-140mcU40Nwe99098I2IC3v2dXz2mVGZ-0ZzG82Y7mZmw0TXJ3w6-p3SJmW
+sprite $aSystem [16x16/16z] XOk53G1048Dw4x3_jE-kD4P8TO1ETgjGOlSKYGlq3YcrV_7U5KR_fz1xz_x7kXTktj4F3m
+sprite $tArtifactModule [16x16/16z] XSU53S104C2mKnR8_jEM-mmMEde-YWDeTSNccEwdFkcmlhQ7rL_fIUoT
+sprite $tNodeWeblogic [16x16/16z] Oy02-940YCi21q0-2fU57qKn2uZF1GV4yH7sWlbW4J29uFFZvKCvG985H2Fx0zqpc
 
 ' Styling
 ' ##################################
@@ -141,7 +145,7 @@ skinparam usecase {
 !define Application_Event(e_alias, e_label) archimate #APPLICATION "e_label" <<application-event>> as e_alias
 !define Application_Service(e_alias, e_label) archimate #APPLICATION "e_label" <<application-service>> as e_alias
 !define Application_DataObject(e_alias, e_label) archimate #APPLICATION "e_label" <<application-data-object>> as e_alias
-!define Application_Module(e_alias, e_label) archimate #APPLICATION "e_label" <<application-module>> as e_alias
+!define Application_Module(e_alias, e_label) archimate #APPLICATION "e_label" <<$aModule>> as e_alias
 !define Application_System(e_alias, e_label) archimate #APPLICATION "e_label" <<application-system>> as e_alias
 
 'Technology Elements
