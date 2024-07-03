@@ -1,4 +1,4 @@
-@startuml
+@startuml Sprite List
 !include ../Archimate.puml
 !theme archimate-saturated from ../themes
 

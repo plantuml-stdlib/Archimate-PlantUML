@@ -1,27 +1,45 @@
 # Archimate-PlantUML
-PlantUML macros and other includes for creating Archimate Diagrams easily.
+
+PlantUML macros and includes for creating Archimate Diagrams easily.
+
 ![Archimate-PlantUML Sample image - Internet Browser](https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/images/Archimate%20Sample%20-%20Internet%20Browser.png) 
 
+## Table of Contents
+1. [Background](#background)
+   - [PlantUML](#plantuml)
+   - [ArchiMate](#archimate)
+2. [Getting Started](#getting-started)
+3. [Usage](#usage)
+   - [ArchiMate Elements](#archimate-elements)
+   - [ArchiMate Relationships](#archimate-relationships)
+   - [ArchiMate Groups](#archimate-groups)
+4. [Theme Support](#theme-support)
+5. [Nesting of Components](#nesting-of-components)
+6. [Example](#example)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Acknowledgments](#acknowledgments)
+
 ## Background
+
 ### PlantUML
-[PlantUML](http://en.plantuml.com/) is an open source project that allows you to create UML diagrams.
-Diagrams are defined using a simple and intuitive plain text language. It uses [Graphviz](https://en.wikipedia.org/wiki/Graphviz) software to lay out its diagrams. Images can be generated in PNG, in SVG or in LaTeX format.
+[PlantUML](http://en.plantuml.com/) is an open-source project that allows you to create UML diagrams using a simple text language. It utilizes [Graphviz](https://en.wikipedia.org/wiki/Graphviz) for diagram layout, generating images in PNG, SVG, or LaTeX formats.
 
 ### ArchiMate
-[ArchiMate](http://pubs.opengroup.org/architecture/archimate3-doc/) is an open and independent enterprise architecture modeling language to support the description, analysis and visualization of architecture within and across business domains in an unambiguous way. 
+[ArchiMate](http://pubs.opengroup.org/architecture/archimate3-doc/) is an enterprise architecture modeling language that supports the description, analysis, and visualization of architecture across business domains.
 
 ArchiMate offers a common language for describing the construction and operation of business processes, organizational structures, information flows, IT systems, and technical infrastructure. This is just like an architectural drawing in classical building where the architecture describes the various aspects of the construction and use of a building. This insight helps the different stakeholders to design, assess, and communicate the consequences of decisions and changes within and between these business domains. 
 
 [Archimate-PlantUML](https://github.com/plantuml-stdlib/Archimate-PlantUML) combines the benefits of PlantUML and ArchiMate for providing a simple way of creating and managing ArchiMate diagrams. The Archimate-PlantUML is a set of macros and other includes written on top of [PlantUML Archimate specification](http://plantuml.com/archimate-diagram), with an aim to simplify the syntax for creating elements and defining relationships.
 
 ## Getting Started
-Include the `Archimate.puml` file to the top of your ArchiMate PlantUML `.puml` or `.wsd` file. This will allow you to use all the macros that are defined in the `Archimate.puml` file.
+Include the `Archimate.puml` file in your `.puml` or `.wsd` file:
 
-To always use the most updated version from this repo, add the following inlcude statement
 ```javascript
-!includeurl https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/Archimate.puml
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/Archimate.puml
 ```
-However, if you want offline capability and be independent of any internet connectivity, you can also download the files found in the `root` of this repository and referece in locally with 
+
+For offline use, download the files and reference them locally:
 ```javascript
 !include path/to/Archimate.puml
 ```
@@ -33,6 +51,8 @@ After you have included `Archimate.puml` you can use the defined macros for Arch
 The ArchiMate elements are defined in the following pattern:
 ```javascript
 Category_ElementName(nameOfTheElement, "description")
+or
+Category_ElementName(nameOfTheElement, "description", true) //To Enable nesting of elements
 ```
 For example:  
 * To define a `Stakeholder` element, which is part of `Motivation` category, the synax will be
@@ -43,7 +63,11 @@ For example:
     ![Stakeholder](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Stakeholder.png)
 * To define a `Business Service` element,
     ```javascript
-    Business_Service(BService, "Business Service")
+    Business_Service(BService, "Business Service", true) {
+        Application_Service("AppService01", "App Service 01")
+        Application_Service("AppService02", "App Service 02")
+        Application_Service("AppService03", "App Service 03")
+    }
     ```
     Output:  
     ![Business Service](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-BusinessService.png) 
@@ -124,10 +148,63 @@ For example
     Output:  
     ![Group Type 2](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Group.png)
 
+### Nesting of Components
+Nesting allows grouping components hierarchically, improving diagram clarity. There are no limitations on the number of levels of nesting.
+The implementation allows nesting of any components inside any other components. When nesting, the element will be displayed as a rectangle with the archimate architype on the top right corner.
+
+
+Nesting can be enabled in the following pattern
+```javascript
+Category_ElementName(nameOfTheElement, "description", true) {
+    Category_ElementName(uniqueName, "description)
+}
+```
+
+For example:
+```javascript
+Business_Product("BusProduct01", "Business Product 01", true) {
+    Business_Service("BusService01", "Business Service 01")
+    Business_Service("BusService02", "Business Service 02")
+    Business_Service("BusService03", "Business Service 03")
+}
+
+Technology_Device("TechDevice01", "Technology Device 01", true) {
+    Technology_Device("TechDevice02", "Technology Device 02")
+    Technology_Device("TechnDevice03", "Technology Device 03", true) {
+        Technology_Device("TechnDevice04", "Technology Device 04", false)
+        Technology_Device("TechnDevice05", "Technology Device 05")
+    }
+}
+```
+Output:
+![Nesting Example](./images/Example-Nesting.png)
+Note that the representation of Technology-Device element changed from a node to rectangle when nesting was enabled.
+
+### Theme Support
+Theme support is enabled and 5 variations are available. All the themes are based on Archimate specifications.
+
+Theme can be enabled by adding the following line.
+```javascript
+!theme <theme-name> from <theme-folder>
+
+// Example
+!theme archimate-saturated from https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/themes
+```
+
+|Theme Name              | Preview                                            |
+|------------------------|----------------------------------------------------|
+|Default (No line added) | ![default](./images/theme-default.png)             |
+|archimate-standard      | ![standard](./images/theme-standard.png)           |
+|archimate-alternate     | ![alternate](./images/theme-alternate.png)         |
+|archimate-saturated     | ![saturated](./images/theme-saturated.png)         |
+|archimate-lowsaturation | ![low saturated](./images/theme-lowsaturation.png) |
+|archimate-handwriting   | ![handwriting](./images/theme-handwriting.png)     |
+
 ## Example
 ```javascript
 @startuml
-!includeurl https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/Archimate.puml
+!includeurl https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/Archimate.puml
+!theme archimate-standard from https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/themes
 
 title Archimate Sample - Requirement & Application Services
 
@@ -158,10 +235,7 @@ Output:
 ![Archimate-PlantUML Sample image - Internet Browser](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Archimate%20Sample%20-%20Requirement%20%26%20Application%20Services.png) 
 
 ## Contributing
-If you have any ideas, just [open an issue](https://github.com/ebbypeter/Archimate-PlantUML/issues/new) and tell me what you think.
-
-If you'd like to contribute, please fork the repository and use a feature branch.  
-Pull requests are warmly welcome.
+If you have any ideas, [open an issue](https://github.com/plantuml-stdlib/Archimate-PlantUML/issues/new) or fork the repository and submit a pull request.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
