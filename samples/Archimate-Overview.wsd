@@ -1,5 +1,6 @@
-@startuml
+@startuml Archimate Overview
 !include ../Archimate.puml
+!theme archimate-saturated from ../themes
 
 title Archimate Overview
 
@@ -95,5 +96,27 @@ Grouping(P_Group, "Physical"){
     Physical_Facility(PFacility, "Facility")
     Physical_Equipment(PEquipment, "Equipment")
     Physical_DistributionNetwork(PDistributionNetwork, "Distribution Network")
+}
+
+Grouping(N_Group, "Nesting Samples"){
+    Application_Component(AppComp01, "Application Component 01", true) {
+        Application_Component("AppComp02", "Application Comp 02", true) {
+            Application_Service("AppService01", "App Service 01")
+            Application_Service("AppService02", "App Service 02")
+            Application_Service("AppService03", "App Service 03")
+        }
+        Application_Component("AppComp03", "Application Comp 03")
+    }
+
+    Technology_Process(HandleClaim, "Handle Claim", true) {
+        Business_Process(BP_Register, "Register")
+        Business_Process(BP_Accept, "Accpet")
+        Business_Process(BP_Valuate, "Valuate")
+        Business_Process(BP_Pay, "Pay")
+
+        Rel_Triggering_Right(BP_Register, BP_Accept)
+        Rel_Triggering_Right(BP_Accept, BP_Valuate)
+        Rel_Triggering_Right(BP_Valuate, BP_Pay)
+    }
 }
 @enduml

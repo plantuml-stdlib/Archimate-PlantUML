@@ -1,5 +1,6 @@
-@startuml
+@startuml Sprite List
 !include ../Archimate.puml
+!theme archimate-saturated from ../themes
 
 title Archimate Example - Elements
 
@@ -35,7 +36,6 @@ Application_Event(AE_01, "Application Event")
 Application_Service(AS_01, "Application Service")
 Application_DataObject(AD_01, "Data Object")
 
-
 Technology_Node(TN_01, "Node")
 Technology_Device(TD_01, "Device")
 Technology_SystemSoftware(TSS_01, "System Software")
@@ -59,13 +59,12 @@ Physical_Material(PM_01, "Material")
 Motivation_Stakeholder(MS_01, "Stakeholder")
 Motivation_Driver(MD_01, "Driver")
 Motivation_Assessment(MA_01, "Assessment")
-Motivation_Goal(MG_01, "Goal")
 Motivation_Outcome(MO_01, "Outcome")
 Motivation_Principle(MP_01, "Principle")
 Motivation_Requirement(MR_01, "Requirement")
 Motivation_Constraint(MC_01, "Constraint")
 Motivation_Meaning(MM_01, "Meaning")
-Motivation_Value(MV_01, "Value with some longer text\nand multiline\nand more")
+Motivation_Value(MV_01, "Value")
 
 'Implementation Elements
 Implementation_WorkPackage(IWP_01, "Work Package")

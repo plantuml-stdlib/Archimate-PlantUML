@@ -1,0 +1,99 @@
+!$PUML_THEME = "archimate-standard"
+!$THEME      = "archimate-standard"
+
+!$STRATEGY_FILLCOLOR = "#f5deaa"
+!$BUSINESS_FILLCOLOR = "#ffffb5"
+!$APPLICATION_FILLCOLOR = "#b5ffff"
+!$TECHNOLOGY_FILLCOLOR = "#c9e7b7"
+!$PHYSICAL_FILLCOLOR = "#PHYSICAL"
+!$MOTIVATION_FILLCOLOR = "#ccccff"
+!$IMPLEMANTATION_FILLCOLOR = "#ffe0e0"
+!$OTHER_FILLCOLOR = "#edcfe2"
+!$JUNCTIONOR_FILLCOLOR = "#WhiteSmoke"
+!$JUNCTIONAND_FILLCOLOR = "#Black"
+!$GROUP_FILLCOLOR = "#ffc73f"
+!$FOLDER_LINECOLOR = "#5c5c5c"
+!$RELATIONSHIP_LINECOLOR = "#Black"
+!$RELATIONSHIP_FONTCOLOR = "#Black"
+!$RELATIONSHIP_FONTSIZE = 10
+
+!$TITLE_FONTSIZE = 14
+!$DEFAULT_FONT = "Verdana"
+!$DEFAULT_FONTSIZE = 12
+
+skinparam defaultFontName       $DEFAULT_FONT
+skinparam defaultFontSize       $DEFAULT_FONTSIZE
+skinparam defaultTextAlignment  center
+skinparam wrapWidth             600
+skinparam maxMessageSize        150
+skinparam StereotypeAlignment   right
+
+skinparam title {
+  FontSize  $TITLE_FONTSIZE
+}
+skinparam Arrow {
+    Color     $RELATIONSHIP_LINECOLOR
+    FontColor $RELATIONSHIP_FONTCOLOR
+    FontSize  $RELATIONSHIP_FONTSIZE
+}
+skinparam Folder<<grouping>> {
+    Shadowing true
+    StereotypeFontSize 0
+    BorderColor $FOLDER_LINECOLOR
+    BorderStyle dashed
+}
+skinparam Folder<<group>> {
+    Shadowing true
+    StereotypeFontSize 0
+    BackgroundColor $GROUP_FILLCOLOR
+}
+skinparam rectangle<<boundary>> {
+    Shadowing false
+    StereotypeFontSize 0
+    BorderColor $FOLDER_LINECOLOR
+    BorderStyle dashed
+}
+skinparam node {
+  StereotypeAlignment right
+}
+skinparam cloud {
+  StereotypeAlignment right
+}
+skinparam frame {
+  StereotypeAlignment right
+}
+skinparam archimate {
+  StereotypeAlignment right
+  RoundCorner<<strategy-capability>> 25
+  RoundCorner<<strategy-course-of-action>> 25
+  RoundCorner<<strategy-value-stream>> 25
+  RoundCorner<<business-process>> 25
+  RoundCorner<<business-event>> 25
+  RoundCorner<<business-function>> 25
+  RoundCorner<<business-interaction>> 25
+  RoundCorner<<business-event>> 25
+  RoundCorner<<business-service>> 25
+  RoundCorner<<application-function>> 25
+  RoundCorner<<application-interaction>> 25
+  RoundCorner<<application-process>> 25
+  RoundCorner<<application-event>> 25
+  RoundCorner<<application-service>> 25
+  RoundCorner<<technology-function>> 25
+  RoundCorner<<technology-process>> 25
+  RoundCorner<<technology-interaction>> 25
+  RoundCorner<<technology-event>> 25
+  RoundCorner<<technology-infra-service>> 25
+  RoundCorner<<implementation-workpackage>> 25
+  RoundCorner<<implementation-event>> 25
+  DiagonalCorner<<motivation-stakeholder>> 12
+  DiagonalCorner<<motivation-driver>> 12
+  DiagonalCorner<<motivation-assessment>> 12
+  DiagonalCorner<<motivation-goal>> 12
+  DiagonalCorner<<motivation-outcome>> 12
+  DiagonalCorner<<motivation-principle>> 12
+  DiagonalCorner<<motivation-requirement>> 12
+  DiagonalCorner<<motivation-constraint>> 12
+}
+skinparam usecase {
+  BorderColor #000000
+}

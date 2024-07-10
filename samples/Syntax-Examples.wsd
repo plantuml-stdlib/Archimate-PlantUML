@@ -8,7 +8,19 @@ Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
 @startuml Example-BusinessService
 !include ../Archimate.puml
 
-Business_Service(BService, "Business Service")
+Business_Product("BusProduct01", "Business Product 01", true) {
+    Business_Service("BusService01", "Business Service 01")
+    Business_Service("BusService02", "Business Service 02")
+    Business_Service("BusService03", "Business Service 03")
+}
+
+Technology_Device("TechDevice01", "Technology Device 01", true) {
+    Technology_Device("TechDevice02", "Technology Device 02")
+    Technology_Device("TechnDevice03", "Technology Device 03", true) {
+        Technology_Device("TechnDevice04", "Technology Device 04", false)
+        Technology_Device("TechnDevice05", "Technology Device 05")
+    }
+}
 
 @enduml
 
