@@ -226,7 +226,7 @@ skinparam usecase {
 !endprocedure
 !unquoted procedure Business_Service($alias, $label, $nest=0)
   !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-service>> as $alias 
+    archimate $BUSINESS_FILLCOLOR "$label" <<business-service>> as $alias
   !else
     rectangle "$label" <<$archimate/business-service>> as $alias $BUSINESS_FILLCOLOR
   !endif
