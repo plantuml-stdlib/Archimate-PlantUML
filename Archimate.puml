@@ -228,7 +228,7 @@ skinparam usecase {
   !if ($nest == %false())
     archimate $BUSINESS_FILLCOLOR "$label" <<business-service>> as $alias
   !else
-    rectangle "$label" <<$archimate/business-service>> as $alias $
+    rectangle "$label" <<$archimate/business-service>> as $alias $BUSINESS_FILLCOLOR
   !endif
 !endprocedure
 !unquoted procedure Business_Object($alias, $label, $nest=0)
