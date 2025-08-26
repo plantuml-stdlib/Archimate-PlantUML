@@ -672,35 +672,35 @@ skinparam usecase {
 !endprocedure
 
 !unquoted procedure Rel_Association($From, $To, $label="")
-  Rel_($From, $To, $label, "==")
+  Rel_($From, $To, $label, "--")
 !endprocedure
 !unquoted procedure Rel_Association_Up($From, $To, $label="")
-  Rel_($From, $To, $label, "=UP=")
+  Rel_($From, $To, $label, "-UP-")
 !endprocedure
 !unquoted procedure Rel_Association_Down($From, $To, $label="")
-  Rel_($From, $To, $label, "=DOWN=")
+  Rel_($From, $To, $label, "-DOWN-")
 !endprocedure
 !unquoted procedure Rel_Association_Left($From, $To, $label="")
-  Rel_($From, $To, $label, "=LEFT=")
+  Rel_($From, $To, $label, "-LEFT-")
 !endprocedure
 !unquoted procedure Rel_Association_Right($From, $To, $label="")
-  Rel_($From, $To, $label, "=RIGHT=")
+  Rel_($From, $To, $label, "-RIGHT-")
 !endprocedure
 
 !unquoted procedure Rel_Association_dir($From, $To, $label="")
-  Rel_($From, $To, $label, "==>")
+  Rel_($From, $To, $label, "--\\")
 !endprocedure
 !unquoted procedure Rel_Association_dir_Up($From, $To, $label="")
-  Rel_($From, $To, $label, "=UP=>")
+  Rel_($From, $To, $label, "-UP-\\")
 !endprocedure
 !unquoted procedure Rel_Association_dir_Down($From, $To, $label="")
-  Rel_($From, $To, $label, "=DOWN=>")
+  Rel_($From, $To, $label, "-DOWN-\\")
 !endprocedure
 !unquoted procedure Rel_Association_dir_Left($From, $To, $label="")
-  Rel_($From, $To, $label, "=LEFT=>")
+  Rel_($From, $To, $label, "-LEFT-\\")
 !endprocedure
 !unquoted procedure Rel_Association_dir_Right($From, $To, $label="")
-  Rel_($From, $To, $label, "=RIGHT=>")
+  Rel_($From, $To, $label, "-RIGHT-\\")
 !endprocedure
 
 !unquoted procedure Rel_Flow($From, $To, $label="")
