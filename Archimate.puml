@@ -106,6 +106,8 @@ skinparam archimate {
   DiagonalCorner<<motivation-principle>> 12
   DiagonalCorner<<motivation-requirement>> 12
   DiagonalCorner<<motivation-constraint>> 12
+  DiagonalCorner<<motivation-meaning>> 12
+  DiagonalCorner<<motivation-value>> 12
 }
 skinparam usecase {
   BorderColor #000000
