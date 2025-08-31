@@ -1,6 +1,6 @@
 @startuml
 !include ../Archimate.puml
-!theme archimate-handwriting from ../themes
+'!theme archimate-handwriting from ../themes
 
 title Archimate Example - Relationships
 
@@ -11,6 +11,7 @@ title Archimate Example - Relationships
 Business_Service(Service01, "Service 01")
 Application_Service(Service02, "Service 02")
 Technology_Service(Service03, "Service03")
+Technology_Device(Dev1, "Device 01")
    
 Rel_Composition_Right(Service01, Service02, "Composition")
 Rel_Aggregation(Service01, Service02, "Aggregation")
@@ -18,11 +19,16 @@ Rel_Assignment(Service01, Service02, "Assignment")
 Rel_Specialization(Service01, Service02, "Specialization")
 Rel_Serving(Service01, Service02, "Serving")
 Rel_Association(Service02, Service03, "Association")
+Rel_Association_dir(Service02, Service03, "Association_dir")
 Rel_Flow(Service02, Service03, "Flow")
 Rel_Realization(Service02, Service03, "Realization")
 Rel_Triggering(Service02, Service03, "Triggering")
-Rel_Access(Service02, Service03, "Access")
+'Rel_Access(Service02, Service03, "Access")
 Rel_Influence(Service02, Service03, " + Influence")
+Rel_Access(Service03, Dev1, "access")
+Rel_Access_r(Service03, Dev1, "access r")
+Rel_Access_w(Service03, Dev1, "access w")
+Rel_Access_rw(Service03, Dev1, "access rw")
 
 Grouping(Example01, "Example 01"){
     Strategy_Capability(TestCapability01, "Test Capability")

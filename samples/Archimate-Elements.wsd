@@ -1,6 +1,6 @@
 @startuml Sprite List
 !include ../Archimate.puml
-!theme archimate-saturated from ../themes
+'!theme archimate-saturated from ../themes
 
 title Archimate Example - Elements
 
@@ -10,7 +10,8 @@ title Archimate Example - Elements
 
 Strategy_Resource(SR_01, "Resource")
 Strategy_Capability(SC_01, "Capability")
-Strategy_CourseOfAction("SA_01", "Course of Action")
+Strategy_ValueStream(SV_01, "Value Stream")
+Strategy_CourseOfAction(SA_01, "Course of Action")
 
 Business_Actor(BA_01, "Business Actor")
 Business_Role(BR_01, "Business Role")
@@ -59,6 +60,7 @@ Physical_Material(PM_01, "Material")
 Motivation_Stakeholder(MS_01, "Stakeholder")
 Motivation_Driver(MD_01, "Driver")
 Motivation_Assessment(MA_01, "Assessment")
+Motivation_Goal(MG_01, "Goal")
 Motivation_Outcome(MO_01, "Outcome")
 Motivation_Principle(MP_01, "Principle")
 Motivation_Requirement(MR_01, "Requirement")
