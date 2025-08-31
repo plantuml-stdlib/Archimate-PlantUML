@@ -15,10 +15,10 @@ PlantUML macros and includes for creating Archimate Diagrams easily.
    - [ArchiMate Groups](#archimate-groups)
    - [Nesting of Components](#nesting-of-components)
    - [Theme Support](#theme-support)
-6. [Example](#example)
-7. [Contributing](#contributing)
-8. [License](#license)
-9. [Acknowledgments](#acknowledgments)
+4. [Example](#example)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Acknowledgments](#acknowledgments)
 
 ## Background
 
@@ -33,14 +33,22 @@ ArchiMate offers a common language for describing the construction and operation
 [Archimate-PlantUML](https://github.com/plantuml-stdlib/Archimate-PlantUML) combines the benefits of PlantUML and ArchiMate for providing a simple way of creating and managing ArchiMate diagrams. The Archimate-PlantUML is a set of macros and other includes written on top of [PlantUML Archimate specification](http://plantuml.com/archimate-diagram), with an aim to simplify the syntax for creating elements and defining relationships.
 
 ## Getting Started
-Include the `Archimate.puml` file in your `.puml` or `.wsd` file:
+Include the built-in Archimate support in your `.puml` or `.wsd` file:
+```plantuml
+!include <archimate/Archimate>
+```
 
-```javascript
-!includeurl https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/Archimate.puml
+### Using custom version of the Archimate support
+If the built-in version does not suit you, it is possible to refer to a more up to date version of the `Archimate.puml` file. In that case, instead of including `<archimate/Archimate>`, point to the file location of the updated version:
+
+```plantuml
+' use the latest version (usually a beta version) from the official PlantUML Stdlib Archimate repo 
+!include https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/Archimate.puml
+
 ```
 
 For offline use, download the files and reference them locally:
-```javascript
+```plantuml
 !include path/to/Archimate.puml
 ```
 
@@ -49,18 +57,18 @@ After you have included `Archimate.puml` you can use the defined macros for Arch
 
 ### ArchiMate Elements
 The ArchiMate elements are defined in the following pattern:
-```javascript
+```plantuml
 Category_ElementName(nameOfTheElement, "description")
 ```
 For example:  
-* To define a `Stakeholder` element, which is part of `Motivation` category, the synax will be
-    ```javascript
+* To define a `Stakeholder` element, which is part of `Motivation` category, the syntax will be
+    ```plantuml
     Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
     ```
     Output:  
-    ![Stakeholder](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Stakeholder.png)
+    ![Stakeholder](./images/Example-Stakeholder.png)
 * To define a `Business Service` element,
-    ```javascript
+    ```plantuml
     Business_Service(BService, "Business Service") {
         Application_Service("AppService01", "App Service 01")
         Application_Service("AppService02", "App Service 02")
@@ -68,15 +76,15 @@ For example:
     }
     ```
     Output:  
-    ![Business Service](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-BusinessService.png) 
+    ![Business Service](./images/Example-BusinessService.png) 
 
 ### ArchiMate Relationships
 The ArchiMate relationships are defined with the following pattern:
-```javascript
+```plantuml
 Rel_RelationType(fromElement, toElement, "description")
 ```
 and to define the direction / orientation of the two elements:
-```javascript
+```plantuml
 Rel_RelationType_Direction(fromElement, toElement, "description")
 ```
 The `RelationTypes` supported are:
@@ -100,77 +108,77 @@ The `Directions` supported are:
 
 For example:
 * To denote a `composition` relationship between the Stakeholder and Business Service defined above, the syntax will be
-    ```javascript
+    ```plantuml
     Rel_Composition(StakeholderElement, BService, "Description for the relationship")
     ```
     Output:  
-    ![Composition Relationship](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Composition.png)
+    ![Composition Relationship](./images/Example-Composition.png)
 * To orient the two elements in top - down position, the syntax will be
-    ```javascript
+    ```plantuml
     Rel_Composition_Down(StakeholderElement, BService, "Description for the relationship")
     ```
     Output:  
-    ![Composition Relationship Down](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-CompositionDown.png)
+    ![Composition Relationship Down](./images/Example-CompositionDown.png)
 
 ### ArchiMate Groups
 Groups in ArchiMate are denoted using the following syntax:
-```javascript
+```plantuml
 Grouping(nameOfTheGroup, "Group Description"){
     //Define the ArchiMate Elements
 }
 ```
 and to define the direction / orientation of the two elements:
-```javascript
+```plantuml
 Group(nameOfTheGroup, "Group Description"){
     //Define the ArchiMate Elements
 }
 ```
 For example
 * Group Type 1:
-    ```javascript
+    ```plantuml
     Grouping(Example01, "Group Type 01"){
         Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
         Business_Service(BService, "Business Service")
     }
     ```
     Output:  
-    ![Group Type 1](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Grouping.png)
+    ![Group Type 1](./images/Example-Grouping.png)
 
 * Group Type 2:
-    ```javascript
+    ```plantuml
     Group(Example01, "Group Type 01"){
         Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
         Business_Service(BService, "Business Service")
     }
     ```
     Output:  
-    ![Group Type 2](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Group.png)
+    ![Group Type 2](./images/Example-Group.png)
 
 ### Nesting of Components
 Nesting allows grouping components hierarchically, improving diagram clarity. There are no limitations on the number of levels of nesting.
-The implementation allows nesting of any components inside any other components. When nesting, the element will be displayed as a rectangle with the archimate architype on the top right corner.
+The implementation allows nesting of any components inside any other components. When nesting, the elements will retain their shape and show nested elements inside their borders.
 
 
-Nesting can be enabled in the following pattern
-```javascript
-Category_ElementName(nameOfTheElement, "description", true) {
+Nesting is done by placing nested elements within curly braces `{ ... }`:
+```plantuml
+Category_ElementName(nameOfTheElement, "description") {
     Category_ElementName(uniqueName, "description)
 }
 ```
 
 For example:
-```javascript
-Business_Product("BusProduct01", "Business Product 01", true) {
+```plantuml
+Business_Product("BusProduct01", "Business Product 01") {
     Business_Service("BusService01", "Business Service 01")
     Business_Service("BusService02", "Business Service 02")
     Business_Service("BusService03", "Business Service 03")
 }
 
-Technology_Device("TechDevice01", "Technology Device 01", true) {
+Technology_Device("TechDevice01", "Technology Device 01") {
     Technology_Device("TechDevice02", "Technology Device 02")
-    Technology_Device("TechnDevice03", "Technology Device 03", true) {
-        Technology_Device("TechnDevice04", "Technology Device 04", false)
-        Technology_Device("TechnDevice05", "Technology Device 05")
+    Technology_Device("TechDevice03", "Technology Device 03") {
+        Technology_Device("TechDevice04", "Technology Device 04")
+        Technology_Device("TechDevice05", "Technology Device 05")
     }
 }
 ```
@@ -182,7 +190,7 @@ Note that the representation of Technology-Device element changed from a node to
 Theme support is enabled and 5 variations are available. All the themes are based on Archimate specifications.
 
 Theme can be enabled by adding the following line.
-```javascript
+```plantuml
 !theme <theme-name> from <theme-folder>
 
 // Example
@@ -199,7 +207,7 @@ Theme can be enabled by adding the following line.
 |archimate-handwriting   | ![handwriting](./images/theme-handwriting.png)     |
 
 ## Example
-```javascript
+```plantuml
 @startuml
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/Archimate.puml
 !theme archimate-standard from https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/themes
@@ -212,7 +220,7 @@ Motivation_Requirement(ReqBudgetPlanning, "Do budget planning within the ERP sys
 
 Application_Service(ASPayroll,"Payroll Service")
 Application_Service(ASBudgetPlanning,"Budget Planning Service")
-Application_Component(ACSAPFinanceAccRec, "SAP Finance - Accounts Recievables")
+Application_Component(ACSAPFinanceAccRec, "SAP Finance - Accounts Receivables")
 Application_Component(ACSAPHR, "SAP Human Resources")
 Application_Component(ACSAPFin, "SAP Finance")
 Application_Component(ACSAP,"SAP") 
@@ -230,13 +238,13 @@ Rel_Composition_Up(ACSAP, ACSAPFin)
 ```
 
 Output:  
-![Archimate-PlantUML Sample image - Internet Browser](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Archimate%20Sample%20-%20Requirement%20%26%20Application%20Services.png) 
+![Archimate Sample - Requirement & Application Services](./images/Archimate%20Sample%20-%20Requirement%20%26%20Application%20Services.png) 
 
 ## Contributing
 If you have any ideas, [open an issue](https://github.com/plantuml-stdlib/Archimate-PlantUML/issues/new) or fork the repository and submit a pull request.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
 
 ## Acknowledgments
 * [PlantUML Reference Guide](http://plantuml.com/PlantUML_Language_Reference_Guide.pdf) - PlantUML Reference Guide
