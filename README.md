@@ -51,8 +51,6 @@ After you have included `Archimate.puml` you can use the defined macros for Arch
 The ArchiMate elements are defined in the following pattern:
 ```javascript
 Category_ElementName(nameOfTheElement, "description")
-or
-Category_ElementName(nameOfTheElement, "description", true) //To Enable nesting of elements
 ```
 For example:  
 * To define a `Stakeholder` element, which is part of `Motivation` category, the synax will be
@@ -63,7 +61,7 @@ For example:
     ![Stakeholder](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Stakeholder.png)
 * To define a `Business Service` element,
     ```javascript
-    Business_Service(BService, "Business Service", true) {
+    Business_Service(BService, "Business Service") {
         Application_Service("AppService01", "App Service 01")
         Application_Service("AppService02", "App Service 02")
         Application_Service("AppService03", "App Service 03")

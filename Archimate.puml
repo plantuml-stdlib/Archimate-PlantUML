@@ -140,439 +140,199 @@ skinparam usecase {
 ' ##################################
 
 'Strategy Elements
-!unquoted procedure Strategy_Resource($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $STRATEGY_FILLCOLOR "$label" <<strategy-resource>> as $alias
-  !else
-    rectangle "$label" <<$archimate/strategy-resource>> as $alias $STRATEGY_FILLCOLOR
-  !endif
+!unquoted procedure Strategy_Resource($alias, $label)
+  archimate $STRATEGY_FILLCOLOR "$label" <<strategy-resource>> as $alias
 !endprocedure
-!unquoted procedure Strategy_Capability($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $STRATEGY_FILLCOLOR "$label" <<strategy-capability>> as $alias 
-  !else
-    rectangle "$label" <<$archimate/strategy-capability>> as $alias $STRATEGY_FILLCOLOR
-  !endif
+!unquoted procedure Strategy_Capability($alias, $label)
+  archimate $STRATEGY_FILLCOLOR "$label" <<strategy-capability>> as $alias
 !endprocedure
-!unquoted procedure Strategy_CourseOfAction($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $STRATEGY_FILLCOLOR "$label" <<strategy-course-of-action>> as $alias
-  !else
-    rectangle "$label" <<$archimate/strategy-course-of-action>> as $alias $STRATEGY_FILLCOLOR
-  !endif
+!unquoted procedure Strategy_CourseOfAction($alias, $label)
+  archimate $STRATEGY_FILLCOLOR "$label" <<strategy-course-of-action>> as $alias
 !endprocedure
-!unquoted procedure Strategy_ValueStream($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $STRATEGY_FILLCOLOR "$label" <<strategy-value-stream>> as $alias
-  !else
-    rectangle "$label" <<$archimate/strategy-value-stream>> as $alias $STRATEGY_FILLCOLOR
-  !endif
+!unquoted procedure Strategy_ValueStream($alias, $label)
+  archimate $STRATEGY_FILLCOLOR "$label" <<strategy-value-stream>> as $alias
 !endprocedure
 
 'Business Elements
-!unquoted procedure Business_Actor($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-actor>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-actor>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Actor($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-actor>> as $alias
 !endprocedure
-!unquoted procedure Business_Role($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-role>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-role>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Role($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-role>> as $alias
 !endprocedure
-!unquoted procedure Business_Collaboration($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-collaboration>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-collaboration>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Collaboration($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-collaboration>> as $alias
 !endprocedure
-!unquoted procedure Business_Interface($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-interface>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-interface>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Interface($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-interface>> as $alias
 !endprocedure
-!unquoted procedure Business_Process($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-process>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-process>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Process($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-process>> as $alias
 !endprocedure
-!unquoted procedure Business_Function($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-function>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-function>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Function($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-function>> as $alias
 !endprocedure
-!unquoted procedure Business_Interaction($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-interaction>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-interaction>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Interaction($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-interaction>> as $alias
 !endprocedure
-!unquoted procedure Business_Event($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-event>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-event>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Event($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-event>> as $alias
 !endprocedure
-!unquoted procedure Business_Service($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-service>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-service>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Service($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-service>> as $alias
 !endprocedure
-!unquoted procedure Business_Object($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-object>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-object>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Object($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-object>> as $alias
 !endprocedure
-!unquoted procedure Business_Contract($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-contract>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-contract>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Contract($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-contract>> as $alias
 !endprocedure
-!unquoted procedure Business_Representation($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-representation>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-representation>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Representation($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-representation>> as $alias
 !endprocedure
-!unquoted procedure Business_Product($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-product>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-product>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Product($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-product>> as $alias
 !endprocedure
-!unquoted procedure Business_Location($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $BUSINESS_FILLCOLOR "$label" <<business-location>> as $alias
-  !else
-    rectangle "$label" <<$archimate/business-location>> as $alias $BUSINESS_FILLCOLOR
-  !endif
+!unquoted procedure Business_Location($alias, $label)
+  archimate $BUSINESS_FILLCOLOR "$label" <<business-location>> as $alias
 !endprocedure
 
 'Application Elements
-!unquoted procedure Application_Component($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $APPLICATION_FILLCOLOR "$label" <<application-component>> as $alias
-  !else
-    rectangle "$label" <<$archimate/application-component>> as $alias $APPLICATION_FILLCOLOR
-  !endif
+!unquoted procedure Application_Component($alias, $label)
+  archimate $APPLICATION_FILLCOLOR "$label" <<application-component>> as $alias
 !endprocedure
-!unquoted procedure Application_Collaboration($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $APPLICATION_FILLCOLOR "$label" <<application-collaboration>> as $alias
-  !else
-    rectangle "$label" <<$archimate/application-collaboration>> as $alias $APPLICATION_FILLCOLOR
-  !endif
+!unquoted procedure Application_Collaboration($alias, $label)
+  archimate $APPLICATION_FILLCOLOR "$label" <<application-collaboration>> as $alias
 !endprocedure
-!unquoted procedure Application_Interface($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $APPLICATION_FILLCOLOR "$label" <<application-interface>> as $alias
-  !else
-    rectangle "$label" <<$archimate/application-interface>> as $alias $APPLICATION_FILLCOLOR
-  !endif
+!unquoted procedure Application_Interface($alias, $label)
+  archimate $APPLICATION_FILLCOLOR "$label" <<application-interface>> as $alias
 !endprocedure
-!unquoted procedure Application_Function($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $APPLICATION_FILLCOLOR "$label" <<application-function>> as $alias
-  !else
-    rectangle "$label" <<$archimate/application-function>> as $alias $APPLICATION_FILLCOLOR
-  !endif
+!unquoted procedure Application_Function($alias, $label)
+  archimate $APPLICATION_FILLCOLOR "$label" <<application-function>> as $alias
 !endprocedure
-!unquoted procedure Application_Interaction($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $APPLICATION_FILLCOLOR "$label" <<application-interaction>> as $alias
-  !else
-    rectangle "$label" <<$archimate/application-interaction>> as $alias $APPLICATION_FILLCOLOR
-  !endif
+!unquoted procedure Application_Interaction($alias, $label)
+  archimate $APPLICATION_FILLCOLOR "$label" <<application-interaction>> as $alias
 !endprocedure
-!unquoted procedure Application_Process($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $APPLICATION_FILLCOLOR "$label" <<application-process>> as $alias
-  !else
-    rectangle "$label" <<$archimate/application-process>> as $alias $APPLICATION_FILLCOLOR
-  !endif
+!unquoted procedure Application_Process($alias, $label)
+  archimate $APPLICATION_FILLCOLOR "$label" <<application-process>> as $alias
 !endprocedure
-!unquoted procedure Application_Event($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $APPLICATION_FILLCOLOR "$label" <<application-event>> as $alias
-  !else
-    rectangle "$label" <<$archimate/application-event>> as $alias $APPLICATION_FILLCOLOR
-  !endif
+!unquoted procedure Application_Event($alias, $label)
+  archimate $APPLICATION_FILLCOLOR "$label" <<application-event>> as $alias
 !endprocedure
-!unquoted procedure Application_Service($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $APPLICATION_FILLCOLOR "$label" <<application-service>> as $alias
-  !else
-    rectangle "$label" <<$archimate/application-service>> as $alias $APPLICATION_FILLCOLOR
-  !endif
+!unquoted procedure Application_Service($alias, $label)
+  archimate $APPLICATION_FILLCOLOR "$label" <<application-service>> as $alias
 !endprocedure
-!unquoted procedure Application_DataObject($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $APPLICATION_FILLCOLOR "$label" <<application-data-object>> as $alias
-  !else
-    rectangle "$label" <<$archimate/application-data-object>> as $alias $APPLICATION_FILLCOLOR
-  !endif
+!procedure Application_DataObject($alias, $label)
+  archimate $APPLICATION_FILLCOLOR "$label" <<application-data-object>> as $alias
 !endprocedure
 
 'Technology Elements
-!unquoted procedure Technology_Node($alias, $label, $nest=0)
-  !if ($nest == %false())
-    node $TECHNOLOGY_FILLCOLOR "$label" <<$archimate/technology-node>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-node>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_Node($alias, $label)
+  node  "$label" <<$archimate/technology-node>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
-!unquoted procedure Technology_Device($alias, $label, $nest=0)
-  !if ($nest == %false())
-    node $TECHNOLOGY_FILLCOLOR "$label" <<$archimate/technology-device>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-device>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_Device($alias, $label)
+  archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-device>> as $alias
 !endprocedure
-!unquoted procedure Technology_SystemSoftware($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-system-software>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-system-software>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_SystemSoftware($alias, $label)
+  archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-system-software>> as $alias
 !endprocedure
-!unquoted procedure Technology_Collaboration($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-collaboration>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-collaboration>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_Collaboration($alias, $label)
+  archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-collaboration>> as $alias
 !endprocedure
-!unquoted procedure Technology_Interface($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-infra-interface>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-infra-interface>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_Interface($alias, $label)
+  archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-infra-interface>> as $alias
 !endprocedure
-!unquoted procedure Technology_Path($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-communication-path>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-communication-path>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_Path($alias, $label)
+  archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-communication-path>> as $alias
 !endprocedure
-!unquoted procedure Technology_CommunicationNetwork($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-network>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-network>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_CommunicationNetwork($alias, $label)
+  archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-network>> as $alias
 !endprocedure
-!unquoted procedure Technology_Function($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-function>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-function>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_Function($alias, $label)
+  archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-function>> as $alias
 !endprocedure
-!unquoted procedure Technology_Process($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-process>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-process>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_Process($alias, $label)
+  archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-process>> as $alias
 !endprocedure
-!unquoted procedure Technology_Interaction($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-interaction>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-interaction>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_Interaction($alias, $label)
+  archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-interaction>> as $alias
 !endprocedure
-!unquoted procedure Technology_Event($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-event>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-event>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_Event($alias, $label)
+  archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-event>> as $alias
 !endprocedure
-!unquoted procedure Technology_Service($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-infra-service>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-infra-service>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_Service($alias, $label)
+  archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-infra-service>> as $alias
 !endprocedure
-!unquoted procedure Technology_Artifact($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-artifact>> as $alias
-  !else
-    rectangle "$label" <<$archimate/technology-artifact>> as $alias $TECHNOLOGY_FILLCOLOR
-  !endif
+!unquoted procedure Technology_Artifact($alias, $label)
+  archimate $TECHNOLOGY_FILLCOLOR "$label" <<technology-artifact>> as $alias
 !endprocedure
 
 'Physical Elements
-!unquoted procedure Physical_Equipment($alias, $label, $nest=0)
-  !if ($nest == %false())
-    node $PHYSICAL_FILLCOLOR "$label" <<$archimate/physical-equipment>> as $alias
-  !else
-    rectangle "$label" <<$archimate/physical-equipment>> as $alias $PHYSICAL_FILLCOLOR
-  !endif
+!unquoted procedure Physical_Equipment($alias, $label)
+  node $PHYSICAL_FILLCOLOR "$label" <<$archimate/physical-equipment>> as $alias
 !endprocedure
-!unquoted procedure Physical_Facility($alias, $label, $nest=0)
-  !if ($nest == %false())
-    node $PHYSICAL_FILLCOLOR "$label" <<$archimate/physical-facility>> as $alias
-  !else
-    rectangle "$label" <<$archimate/physical-facility>> as $alias $PHYSICAL_FILLCOLOR
-  !endif
+!unquoted procedure Physical_Facility($alias, $label)
+  node $PHYSICAL_FILLCOLOR "$label" <<$archimate/physical-facility>> as $alias
 !endprocedure
-!unquoted procedure Physical_DistributionNetwork($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $PHYSICAL_FILLCOLOR "$label" <<physical-distribution-network>> as $alias
-  !else
-    rectangle "$label" <<$archimate/physical-distribution-network>> as $alias $PHYSICAL_FILLCOLOR
-  !endif
+!unquoted procedure Physical_DistributionNetwork($alias, $label)
+  archimate $PHYSICAL_FILLCOLOR "$label" <<physical-distribution-network>> as $alias
 !endprocedure
-!unquoted procedure Physical_Material($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $PHYSICAL_FILLCOLOR "$label" <<physical-material>> as $alias
-  !else
-    rectangle "$label" <<$archimate/physical-material>> as $alias $PHYSICAL_FILLCOLOR
-  !endif
+!unquoted procedure Physical_Material($alias, $label)
+  archimate $PHYSICAL_FILLCOLOR "$label" <<physical-material>> as $alias
 !endprocedure
 
 'Motivation Elements
-!unquoted procedure Motivation_Stakeholder($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-stakeholder>> as $alias
-  !else
-    rectangle "$label" <<$archimate/motivation-stakeholder>> as $alias $MOTIVATION_FILLCOLOR
-  !endif
+!unquoted procedure Motivation_Stakeholder($alias, $label)
+  archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-stakeholder>> as $alias
 !endprocedure
-!unquoted procedure Motivation_Driver($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-driver>> as $alias
-  !else
-    rectangle "$label" <<$archimate/motivation-driver>> as $alias $MOTIVATION_FILLCOLOR
-  !endif
+!unquoted procedure Motivation_Driver($alias, $label)
+  archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-driver>> as $alias
 !endprocedure
-!unquoted procedure Motivation_Assessment($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-assessment>> as $alias
-  !else
-    rectangle "$label" <<$archimate/motivation-assessment>> as $alias $MOTIVATION_FILLCOLOR
-  !endif
+!unquoted procedure Motivation_Assessment($alias, $label)
+  archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-assessment>> as $alias
 !endprocedure
-!unquoted procedure Motivation_Goal($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-goal>> as $alias
-  !else
-    rectangle "$label" <<$archimate/motivation-goal>> as $alias $MOTIVATION_FILLCOLOR
-  !endif
+!unquoted procedure Motivation_Goal($alias, $label)
+  archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-goal>> as $alias
 !endprocedure
-!unquoted procedure Motivation_Outcome($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-outcome>> as $alias
-  !else
-    rectangle "$label" <<$archimate/motivation-outcome>> as $alias $MOTIVATION_FILLCOLOR
-  !endif
+!unquoted procedure Motivation_Outcome($alias, $label)
+  archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-outcome>> as $alias
 !endprocedure
-!unquoted procedure Motivation_Principle($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-principle>> as $alias
-  !else
-    rectangle "$label" <<$archimate/motivation-principle>> as $alias $MOTIVATION_FILLCOLOR
-  !endif
+!unquoted procedure Motivation_Principle($alias, $label)
+  archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-principle>> as $alias
 !endprocedure
-!unquoted procedure Motivation_Requirement($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-requirement>> as $alias
-  !else
-    rectangle "$label" <<$archimate/motivation-requirement>> as $alias $MOTIVATION_FILLCOLOR
-  !endif
+!unquoted procedure Motivation_Requirement($alias, $label)
+  archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-requirement>> as $alias
 !endprocedure
-!unquoted procedure Motivation_Constraint($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-constraint>> as $alias
-  !else
-    rectangle "$label" <<$archimate/motivation-constraint>> as $alias $MOTIVATION_FILLCOLOR
-  !endif
+!unquoted procedure Motivation_Constraint($alias, $label)
+  archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-constraint>> as $alias
 !endprocedure
-!unquoted procedure Motivation_Meaning($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-meaning>> as $alias
-  !else
-    rectangle "$label" <<$archimate/motivation-meaning>> as $alias $MOTIVATION_FILLCOLOR
-  !endif
+!unquoted procedure Motivation_Meaning($alias, $label)
+  archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-meaning>> as $alias
 !endprocedure
-!unquoted procedure Motivation_Value($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-value>> as $alias
-  !else
-    rectangle "$label" <<$archimate/motivation-value>> as $alias $MOTIVATION_FILLCOLOR
-  !endif
+!unquoted procedure Motivation_Value($alias, $label)
+  archimate $MOTIVATION_FILLCOLOR "$label" <<motivation-value>> as $alias
 !endprocedure
 
 'Implementation Elements
-!unquoted procedure Implementation_WorkPackage($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $IMPLEMENTATION_FILLCOLOR "$label" <<implementation-workpackage>> as $alias
-  !else
-    rectangle "$label" <<$archimate/implementation-workpackage>> as $alias $IMPLEMENTATION_FILLCOLOR
-  !endif
+!unquoted procedure Implementation_WorkPackage($alias, $label)
+  archimate $IMPLEMENTATION_FILLCOLOR "$label" <<implementation-workpackage>> as $alias
 !endprocedure
-!unquoted procedure Implementation_Deliverable($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $IMPLEMENTATION_FILLCOLOR "$label" <<implementation-deliverable>> as $alias
-  !else
-    rectangle "$label" <<$archimate/implementation-deliverable>> as $alias $IMPLEMENTATION_FILLCOLOR
-  !endif
+!unquoted procedure Implementation_Deliverable($alias, $label)
+  archimate $IMPLEMENTATION_FILLCOLOR "$label" <<implementation-deliverable>> as $alias
 !endprocedure
-!unquoted procedure Implementation_Event($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $IMPLEMENTATION_FILLCOLOR "$label" <<implementation-event>> as $alias
-  !else
-    rectangle "$label" <<$archimate/implementation-event>> as $alias $IMPLEMENTATION_FILLCOLOR
-  !endif
+!unquoted procedure Implementation_Event($alias, $label)
+  archimate $IMPLEMENTATION_FILLCOLOR "$label" <<implementation-event>> as $alias
 !endprocedure
-!unquoted procedure Implementation_Plateau($alias, $label, $nest=0)
-  !if ($nest == %false())
-    node $IMPLEMENTATION_FILLCOLOR "$label" <<$archimate/implementation-plateau>> as $alias
-  !else
-    rectangle "$label" <<$archimate/implementation-plateau>> as $alias $IMPLEMENTATION_FILLCOLOR
-  !endif
+!unquoted procedure Implementation_Plateau($alias, $label)
+  node $IMPLEMENTATION_FILLCOLOR "$label" <<$archimate/implementation-plateau>> as $alias
 !endprocedure
-!unquoted procedure Implementation_Gap($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $IMPLEMENTATION_FILLCOLOR "$label" <<implementation-gap>> as $alias
-  !else
-    rectangle "$label" <<$archimate/implementation-gap>> as $alias $IMPLEMENTATION_FILLCOLOR
-  !endif
+!unquoted procedure Implementation_Gap($alias, $label)
+  archimate $IMPLEMENTATION_FILLCOLOR "$label" <<implementation-gap>> as $alias
 !endprocedure
 
 'Other Elements
-!unquoted procedure Other_Location($alias, $label, $nest=0)
-  !if ($nest == %false())
-    archimate $OTHER_FILLCOLOR "$label" <<location>> as $alias
-  !else
-    rectangle "$label" <<$archimate/location>> as $alias $OTHER_FILLCOLOR
-  !endif
+!unquoted procedure Other_Location($alias, $label)
+  archimate $OTHER_FILLCOLOR "$label" <<location>> as $alias
 !endprocedure
 !unquoted procedure Junction_Or($alias, $label)
   circle $JUNCTIONOR_FILLCOLOR "$label" as $alias

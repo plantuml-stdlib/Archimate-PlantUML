@@ -99,8 +99,8 @@ Grouping(P_Group, "Physical"){
 }
 
 Grouping(N_Group, "Nesting Samples"){
-    Application_Component(AppComp01, "Application Component 01", true) {
-        Application_Component("AppComp02", "Application Comp 02", true) {
+    Application_Component(AppComp01, "Application Component 01") {
+        Application_Component("AppComp02", "Application Comp 02") {
             Application_Service("AppService01", "App Service 01")
             Application_Service("AppService02", "App Service 02")
             Application_Service("AppService03", "App Service 03")
@@ -108,7 +108,7 @@ Grouping(N_Group, "Nesting Samples"){
         Application_Component("AppComp03", "Application Comp 03")
     }
 
-    Technology_Process(HandleClaim, "Handle Claim", true) {
+    Technology_Process(HandleClaim, "Handle Claim") {
         Business_Process(BP_Register, "Register")
         Business_Process(BP_Accept, "Accpet")
         Business_Process(BP_Valuate, "Valuate")
