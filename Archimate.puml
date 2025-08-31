@@ -24,7 +24,7 @@
 !$PHYSICAL_FILLCOLOR = "#PHYSICAL"
 !$MOTIVATION_FILLCOLOR = "#MOTIVATION"
 !$IMPLEMENTATION_FILLCOLOR = "#IMPLEMENTATION"
-!$OTHER_FILLCOLOR = "#ffb973"
+!$OTHER_FILLCOLOR = "#efd1e4"
 !$JUNCTIONOR_FILLCOLOR = "#WhiteSmoke"
 !$JUNCTIONAND_FILLCOLOR = "#Black"
 !$GROUP_FILLCOLOR = "#LightGrey"
@@ -269,10 +269,10 @@ skinparam usecase {
 
 'Physical Elements
 !unquoted procedure Physical_Equipment($alias, $label)
-  node $PHYSICAL_FILLCOLOR "$label" <<$archimate/physical-equipment>> as $alias
+  rectangle $PHYSICAL_FILLCOLOR "$label" <<$archimate/physical-equipment>> as $alias
 !endprocedure
 !unquoted procedure Physical_Facility($alias, $label)
-  node $PHYSICAL_FILLCOLOR "$label" <<$archimate/physical-facility>> as $alias
+  rectangle $PHYSICAL_FILLCOLOR "$label" <<$archimate/physical-facility>> as $alias
 !endprocedure
 !unquoted procedure Physical_DistributionNetwork($alias, $label)
   archimate $PHYSICAL_FILLCOLOR "$label" <<physical-distribution-network>> as $alias
@@ -324,7 +324,7 @@ skinparam usecase {
   archimate $IMPLEMENTATION_FILLCOLOR "$label" <<implementation-event>> as $alias
 !endprocedure
 !unquoted procedure Implementation_Plateau($alias, $label)
-  node $IMPLEMENTATION_FILLCOLOR "$label" <<$archimate/implementation-plateau>> as $alias
+  rectangle $IMPLEMENTATION_FILLCOLOR "$label" <<$archimate/implementation-plateau>> as $alias
 !endprocedure
 !unquoted procedure Implementation_Gap($alias, $label)
   archimate $IMPLEMENTATION_FILLCOLOR "$label" <<implementation-gap>> as $alias
