@@ -1,5 +1,6 @@
 @startuml
 !include ../Archimate.puml
+!include ../ArchimateSprites.puml
 '!theme archimate-saturated from ../themes
 
 title Archimate Example - Elements
@@ -26,6 +27,7 @@ Business_Object(BO_01, "Business Object")
 Business_Contract(BCt_01, "Contract")
 Business_Representation(BRep_01, "Representation")
 Business_Product(BPr_01, "Product")
+Business_Location(BLoc_01, "Location")
 
 Application_Component(AC_01, "Application Component")
 Application_Collaboration(ACol_01, "Application Collaboration")
