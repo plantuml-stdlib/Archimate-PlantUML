@@ -3,6 +3,7 @@ TODO: elaborate on the process to generate sprite-svg's
 In brief
 * `MastersheetArchimateSprites.svg` contains all icons, in 2 versions: 1 version using strokes and fills, and 1 version where all strokes/fills have been converted and union-ed
 * The stroke-version is the top one, the unioned-path version is the bottom one
+* I am using Inkscape to work on the icons
 * Make modifications to the top ones, and then re-generate the unioned-path version
   * To create a new unioned-path version of an icon: 
     * clear the area where the current unioned-path version is (make sure to keep the invisible rectangle that determines the export size) 
