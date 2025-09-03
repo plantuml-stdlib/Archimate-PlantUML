@@ -1,5 +1,6 @@
 @startuml
 !include ../Archimate.puml
+!include ../ArchimateSprites.puml
 '!theme archimate-handwriting from ../themes
 
 title Archimate Example - Relationships

@@ -1,5 +1,6 @@
 @startuml Archimate Overview
 !include ../Archimate.puml
+!include ../ArchimateSprites.puml
 !theme archimate-saturated from ../themes
 
 title Archimate Overview

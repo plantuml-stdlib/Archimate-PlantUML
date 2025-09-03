@@ -1,5 +1,6 @@
 @startuml
 !include ../Archimate.puml
+!include ../ArchimateSprites.puml
 !theme archimate-saturated from ../themes
 
 title Archimate Sample - Requirement & Application Services

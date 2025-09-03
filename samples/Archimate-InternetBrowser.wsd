@@ -1,5 +1,6 @@
 @startuml Internet Browser Sample
 !include ../Archimate.puml
+!include ../ArchimateSprites.puml
 !theme archimate-standard from ../themes
 
 title Archimate Sample - Internet Browser
