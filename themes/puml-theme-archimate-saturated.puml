@@ -53,17 +53,7 @@ skinparam rectangle<<boundary>> {
     BorderColor $FOLDER_LINECOLOR
     BorderStyle dashed
 }
-skinparam node {
-  StereotypeAlignment right
-}
-skinparam cloud {
-  StereotypeAlignment right
-}
-skinparam frame {
-  StereotypeAlignment right
-}
 skinparam archimate {
-  StereotypeAlignment right
   RoundCorner<<strategy-capability>> 25
   RoundCorner<<strategy-course-of-action>> 25
   RoundCorner<<strategy-value-stream>> 25

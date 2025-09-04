@@ -33,19 +33,26 @@
 !$RELATIONSHIP_FONTCOLOR = "#Black"
 !$RELATIONSHIP_FONTSIZE = 10
 
+<style>
+    element {
+        FontName "Verdana"
+        FontSize 12
+    }
+</style>
 
-skinparam defaultFontName       "Verdana"
-skinparam defaultFontSize       12
 skinparam defaultTextAlignment  center
 skinparam wrapWidth             600
 skinparam maxMessageSize        150
 skinparam StereotypeAlignment   right
 
-skinparam Arrow {
-    Color     $RELATIONSHIP_LINECOLOR
-    FontColor $RELATIONSHIP_FONTCOLOR
-    FontSize  $RELATIONSHIP_FONTSIZE
-}
+<style>
+    Arrow {
+        LineColor $RELATIONSHIP_LINECOLOR
+        FontColor $RELATIONSHIP_FONTCOLOR
+        FontSize $RELATIONSHIP_FONTSIZE
+    }
+</style>
+
 skinparam Folder<<grouping>> {
     Shadowing true
     StereotypeFontSize 1
@@ -66,17 +73,8 @@ skinparam rectangle<<boundary>> {
     BorderColor $FOLDER_LINECOLOR
     BorderStyle dashed
 }
-skinparam node {
-  StereotypeAlignment right
-}
-skinparam cloud {
-  StereotypeAlignment right
-}
-skinparam frame {
-  StereotypeAlignment right
-}
+
 skinparam archimate {
-  StereotypeAlignment right
   RoundCorner<<strategy-capability>> 25
   RoundCorner<<strategy-course-of-action>> 25
   RoundCorner<<strategy-value-stream>> 25
