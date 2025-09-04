@@ -2,10 +2,11 @@
 !include ../Archimate.puml
 !include ../ArchimateSprites.puml
 '!theme archimate-saturated from ../themes
+'!theme archimate-handwriting from ../themes
 
 title Archimate Example - Elements
 
-'LAYOUT_AS_SKETCH
+'LAYOUT_AS_SKETCH()
 'LAYOUT_LEFT_RIGHT
 'LAYOUT_TOP_DOWN
 
@@ -40,6 +41,7 @@ Application_Service(AS_01, "Application Service")
 Application_DataObject(AD_01, "Data Object")
 
 Technology_Node(TN_01, "Node")
+Technology_Node(TN_02, "Node with long name")
 Technology_Device(TD_01, "Device")
 Technology_SystemSoftware(TSS_01, "System Software")
 Technology_Collaboration(TC_01, "Technology Collaboration")

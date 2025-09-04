@@ -5,7 +5,7 @@
 
 title Archimate Sample - Internet Browser
 
-'LAYOUT_AS_SKETCH
+'LAYOUT_AS_SKETCH()
 'LAYOUT_LEFT_RIGHT
 'LAYOUT_TOP_DOWN
 
