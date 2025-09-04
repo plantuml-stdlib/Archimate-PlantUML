@@ -11,7 +11,7 @@
 !$OTHER_FILLCOLOR = "#efd1e4"
 !$JUNCTIONOR_FILLCOLOR = "#WhiteSmoke"
 !$JUNCTIONAND_FILLCOLOR = "#Black"
-!$GROUP_FILLCOLOR = "#ffc73f"
+!$GROUP_FILLCOLOR = "#LightGrey"
 !$FOLDER_LINECOLOR = "#5c5c5c"
 !$RELATIONSHIP_LINECOLOR = "#Black"
 !$RELATIONSHIP_FONTCOLOR = "#Black"
@@ -31,28 +31,46 @@ skinparam StereotypeAlignment   right
 skinparam title {
   FontSize  $TITLE_FONTSIZE
 }
-skinparam Arrow {
-    Color     $RELATIONSHIP_LINECOLOR
-    FontColor $RELATIONSHIP_FONTCOLOR
-    FontSize  $RELATIONSHIP_FONTSIZE
-}
-skinparam Folder<<grouping>> {
-    Shadowing true
-    StereotypeFontSize 1
-    BorderColor $FOLDER_LINECOLOR
-    BorderStyle dashed
-}
-skinparam Folder<<group>> {
-    Shadowing true
-    StereotypeFontSize 1
-    BackgroundColor $GROUP_FILLCOLOR
-}
-skinparam rectangle<<boundary>> {
-    Shadowing false
-    StereotypeFontSize 1
-    BorderColor $FOLDER_LINECOLOR
-    BorderStyle dashed
-}
+
+<style>
+    Arrow {
+        LineColor $RELATIONSHIP_LINECOLOR
+        FontColor $RELATIONSHIP_FONTCOLOR
+        FontSize $RELATIONSHIP_FONTSIZE
+    }
+    folder {
+        .group {
+            BackgroundColor $GROUP_FILLCOLOR
+            Shadowing 2
+            stereotype {
+                FontSize 1
+                FontColor transparent
+            }
+
+        }
+        .grouping {
+            LineColor $FOLDER_LINECOLOR
+            LineStyle 8-5
+            Shadowing 2
+            stereotype {
+                FontSize 1
+                FontColor transparent
+            }
+        }
+    }
+    rectangle {
+        .boundary {
+            LineColor $FOLDER_LINECOLOR
+            LineStyle 8-5
+            Shadowing 0
+            stereotype {
+                FontSize 1
+                FontColor transparent
+            }
+        }
+    }
+</style>
+
 skinparam archimate {
   RoundCorner<<strategy-capability>> 25
   RoundCorner<<strategy-course-of-action>> 25

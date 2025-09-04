@@ -71,15 +71,19 @@ skinparam StereotypeAlignment   right
             }
         }
     }
+    rectangle {
+        .boundary {
+            LineColor $FOLDER_LINECOLOR
+            LineStyle 8-5
+            Shadowing 0
+            stereotype {
+                FontSize 1
+                FontColor transparent
+            }
+        }
+    }
 </style>
 
-skinparam rectangle<<boundary>> {
-    Shadowing false
-    StereotypeFontSize 1
-    FontColor #444444
-    BorderColor $FOLDER_LINECOLOR
-    BorderStyle dashed
-}
 
 skinparam archimate {
   RoundCorner<<strategy-capability>> 25
