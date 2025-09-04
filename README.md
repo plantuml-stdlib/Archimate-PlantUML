@@ -88,10 +88,10 @@ and to define the direction / orientation of the two elements:
 Rel_RelationType_Direction(fromElement, toElement, "description")
 ```
 The `RelationTypes` supported are:
- - Access
+ - Access, Access_r, Access_rw, Access_w
  - Aggregation
  - Assignment
- - Association
+ - Association, Association_dir
  - Composition
  - Flow
  - Influence
