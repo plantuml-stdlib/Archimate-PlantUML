@@ -48,20 +48,20 @@ skinparam Arrow {
 }
 skinparam Folder<<grouping>> {
     Shadowing true
-    StereotypeFontSize 0
+    StereotypeFontSize 1
     FontColor #444444
     BorderColor $FOLDER_LINECOLOR
     BorderStyle dashed
 }
 skinparam Folder<<group>> {
     Shadowing true
-    StereotypeFontSize 0
+    StereotypeFontSize 1
     FontColor #444444
     BackgroundColor $GROUP_FILLCOLOR
 }
 skinparam rectangle<<boundary>> {
     Shadowing false
-    StereotypeFontSize 0
+    StereotypeFontSize 1
     FontColor #444444
     BorderColor $FOLDER_LINECOLOR
     BorderStyle dashed
@@ -375,10 +375,10 @@ skinparam usecase {
   circle $JUNCTIONAND_FILLCOLOR "$label" as $alias
 !endprocedure
 !unquoted procedure Grouping($alias, $label)
-  Folder "$label" <<grouping>> as $alias
+  folder "$label" <<grouping>> as $alias
 !endprocedure
 !unquoted procedure Group($alias, $label)
-  Folder "$label" <<group>> as $alias
+  folder "$label" <<group>> as $alias
 !endprocedure
 
 ' Relationships
