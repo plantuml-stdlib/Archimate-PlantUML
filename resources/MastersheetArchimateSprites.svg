@@ -7,9 +7,9 @@
    viewBox="0 0 250 250"
    version="1.1"
    id="svg1"
-   inkscape:version="1.4.2 (1:1.4.2+202505120738+ebf0e940d0)"
+   inkscape:version="1.4.2 (ebf0e940, 2025-05-08)"
    sodipodi:docname="MastersheetArchimateSprites.svg"
-   inkscape:export-batch-path="output"
+   inkscape:export-batch-path="../svg_sprites"
    inkscape:export-batch-name=""
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -27,15 +27,15 @@
      inkscape:document-units="mm"
      inkscape:clip-to-page="true"
      showgrid="false"
-     inkscape:zoom="8"
-     inkscape:cx="710.5625"
-     inkscape:cy="556.375"
+     inkscape:zoom="4"
+     inkscape:cx="675.25"
+     inkscape:cy="639.25"
      inkscape:window-width="3415"
      inkscape:window-height="2129"
      inkscape:window-x="54"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
-     inkscape:current-layer="layer103"
+     inkscape:current-layer="layer104"
      showguides="false">
     <inkscape:grid
        id="grid1"
@@ -508,6 +508,10 @@
            y="160.04889"
            ry="0"
            inkscape:label="IconRectangle" />
+        <path
+           id="path27"
+           style="baseline-shift:baseline;display:inline;overflow:visible;vector-effect:none;stroke-linecap:round;stroke-linejoin:round;enable-background:accumulate;stop-color:#000000;stop-opacity:1;opacity:1"
+           d="M 209.93757 163.1642 C 207.4122 163.12588 205.11838 164.62313 204.13173 166.93451 C 202.75738 168.09093 201.89127 169.83032 201.91429 171.76161 C 201.95509 175.18093 204.7679 177.93315 208.18729 177.89819 C 210.71971 177.87226 212.88755 176.32475 213.82984 174.13459 A 0.5 0.5 0 0 0 213.84173 174.12529 C 215.82361 172.45771 216.56232 169.72898 215.69329 167.28901 C 214.82426 164.84904 212.52738 163.20351 209.93757 163.1642 z M 209.92207 164.16414 C 212.09789 164.19714 214.02009 165.57498 214.7502 167.62491 C 215.28052 169.11388 215.09958 170.72623 214.32284 172.03394 C 214.33011 171.90194 214.33328 171.76901 214.33214 171.635 C 214.30294 168.21556 211.4998 165.45488 208.08032 165.47827 A 0.5 0.5 0 0 0 208.06069 165.48654 A 0.5 0.5 0 0 0 208.03898 165.47827 C 207.32437 165.48799 206.63947 165.61888 206.00293 165.85086 C 206.98865 164.77611 208.40372 164.1411 209.92207 164.16414 z M 208.0705 166.47046 A 0.5 0.5 0 0 0 208.08807 166.47873 C 210.96773 166.45903 213.30763 168.7652 213.3322 171.64482 C 213.3568 174.52444 211.05549 176.86931 208.17592 176.89876 C 205.29635 176.92816 202.94855 174.62976 202.91423 171.75024 C 202.89532 170.16314 203.58349 168.73593 204.68725 167.76805 A 0.5 0.5 0 0 0 204.95597 167.54791 C 205.81463 166.89064 206.88563 166.49461 208.05293 166.47873 A 0.5 0.5 0 0 0 208.0705 166.47046 z " />
       </g>
     </g>
     <g

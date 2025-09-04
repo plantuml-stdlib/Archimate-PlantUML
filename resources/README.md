@@ -15,6 +15,7 @@ In brief
     * Assign the result to the correct layer for future exports (layer name: `Aspect_Type`, for example `Technology_Equipment`)
 * These icons each live in their own layer
 * To export sprite versions, perform batch-export of all layers that have an underscore in their name
-  * For instance `Technology_Equipment`
+    * For instance `Technology_Equipment`
+    * Make sure the folder `svg_sprites` exists (it's in the `.gitignore` so you need to create it manually), and use it as the target folder
 * Not all icons are defined (for instance the Application Service is identical to Business Service), but the `generate_spriteinclude.sh` script will duplicate the SVGs that are used multiple times
 * Run the `generate_spriteinclude.sh` to generate a new version of `ArchimateSprites.puml`
