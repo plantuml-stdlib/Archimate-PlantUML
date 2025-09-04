@@ -41,18 +41,18 @@ skinparam Arrow {
 }
 skinparam Folder<<grouping>> {
     Shadowing true
-    StereotypeFontSize 0
+    StereotypeFontSize 1
     BorderColor $FOLDER_LINECOLOR
     BorderStyle dashed
 }
 skinparam Folder<<group>> {
     Shadowing true
-    StereotypeFontSize 0
+    StereotypeFontSize 1
     BackgroundColor $GROUP_FILLCOLOR
 }
 skinparam rectangle<<boundary>> {
     Shadowing false
-    StereotypeFontSize 0
+    StereotypeFontSize 1
     BorderColor $FOLDER_LINECOLOR
     BorderStyle dashed
 }
