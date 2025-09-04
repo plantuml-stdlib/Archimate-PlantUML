@@ -148,8 +148,8 @@ skinparam usecase {
 ' Layout
 ' ##################################
 !definelong LAYOUT_AS_SKETCH
+    !option handwritten true
     skinparam backgroundColor #EEEBDC
-    skinparam handwritten true
     skinparam defaultFontName "Comic Sans MS"
     center footer <font color=red>Warning:</font> Created for discussion, needs to be validated
 !enddefinelong
