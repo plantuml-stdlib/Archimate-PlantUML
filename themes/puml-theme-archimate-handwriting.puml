@@ -21,8 +21,9 @@
 !$DEFAULT_FONT = "Comic Sans MS"
 !$DEFAULT_FONTSIZE = 12
 
+!option handwritten true
+
 skinparam backgroundColor       #EEEBDC
-skinparam Handwritten           true
 skinparam defaultFontName       $DEFAULT_FONT
 skinparam defaultFontSize       $DEFAULT_FONTSIZE
 skinparam defaultTextAlignment  center
