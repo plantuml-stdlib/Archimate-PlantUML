@@ -303,7 +303,7 @@ skinparam usecase {
 
 'Physical Elements
 !unquoted procedure Physical_Equipment($alias, $label)
-  rectangle "$label" <<$Technology_Equipment_c-svg>> as $alias $PHYSICAL_FILLCOLOR
+  rectangle "$label" <<$Technology_Equipment-svg>> as $alias $PHYSICAL_FILLCOLOR
 !endprocedure
 !unquoted procedure Physical_Facility($alias, $label)
   rectangle "$label" <<$Technology_Facility-svg>> as $alias $PHYSICAL_FILLCOLOR
