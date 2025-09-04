@@ -37,11 +37,11 @@
     element {
         FontName "Verdana"
         FontSize 12
+        MaximumWidth 600
     }
 </style>
 
 skinparam defaultTextAlignment  center
-skinparam wrapWidth             600
 skinparam maxMessageSize        150
 skinparam StereotypeAlignment   right
 
