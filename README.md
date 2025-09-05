@@ -2,7 +2,7 @@
 
 PlantUML macros and includes for creating Archimate Diagrams easily.
 
-![Archimate-PlantUML Sample image - Internet Browser](https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/images/Archimate%20Sample%20-%20Internet%20Browser.png) 
+![Archimate-PlantUML Sample image - Internet Browser](./images/Archimate%20Sample%20-%20Internet%20Browser.png) 
 
 ## Table of Contents
 1. [Background](#background)
@@ -39,17 +39,26 @@ Include the built-in Archimate support in your `.puml` or `.wsd` file:
 ```
 
 ### Using custom version of the Archimate support
-If the built-in version does not suit you, it is possible to refer to a more up to date version of the `Archimate.puml` file. In that case, instead of including `<archimate/Archimate>`, point to the file location of the updated version:
+If the built-in version does not suit you, it is possible to refer to a more up to date version of the `Archimate.puml` file. In that case, instead of including `<archimate/Archimate>`, download the files from https://github.com/plantuml-stdlib/Archimate-PlantUML and reference them locally.
 
+You will need:
 ```plantuml
-' use the latest version (usually a beta version) from the official PlantUML Stdlib Archimate repo 
-!include https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/Archimate.puml
-
+Archimate.puml
+ArchimateSprites.puml
+themes/*
 ```
-
-For offline use, download the files and reference them locally:
+Then include the main file:
 ```plantuml
 !include path/to/Archimate.puml
+```
+And optionally select a theme:
+```plantuml
+'!theme archimate-alternate from path/to/themes
+'!theme archimate-handwriting from path/to/themes
+'!theme archimate-lowsaturation from path/to/themes
+'!theme archimate-saturated from path/to/themes
+'!theme archimate-standard from path/to/themes
+
 ```
 
 ## Usage
@@ -84,7 +93,7 @@ The ArchiMate relationships are defined with the following pattern:
 Rel_RelationType(fromElement, toElement, "description")
 ```
 and to define the direction / orientation of the two elements:
-```plantuml
+```plantumlUpdate 
 Rel_RelationType_Direction(fromElement, toElement, "description")
 ```
 The `RelationTypes` supported are:
