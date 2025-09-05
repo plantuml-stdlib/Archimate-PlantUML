@@ -14,6 +14,14 @@ duplicate_svg() {
   done
 }
 
+to_kebab_case() {
+    local input="$1"
+    # Convert to lowercase and replace underscores with dashes
+    local output="${input,,}"          # lowercase
+    output="${output//_/-}"            # replace underscores with dashes
+    echo "$output"
+}
+
 # Motivation_Stakeholder serves as template for Business_Role
 targets=("Business_Role")
 duplicate_svg "Motivation_Stakeholder" "${targets[@]}"
@@ -67,9 +75,10 @@ for file in "$DIR"/*; do
     if [ -f "$file" ]; then
         # Get filename without extension
         filename_without_ext="$(basename "$file" | sed 's/\.[^.]*$//')"
+        sprite_name=$(to_kebab_case "$filename_without_ext")
 
         # Define the sprite based on the filename
-        echo -n "sprite \$${filename_without_ext}-svg " >> "$OUTPUT"
+        echo -n "sprite \$${sprite_name}-svg " >> "$OUTPUT"
 
         # Append the file content skipping the first 2 lines
         tail -n +3 "$file" >> "$OUTPUT"

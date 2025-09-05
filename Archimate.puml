@@ -184,198 +184,198 @@ skinparam usecase {
 
 'Strategy Elements
 !unquoted procedure Strategy_Resource($alias, $label)
-  rectangle "$label" <<$Strategy_Resource-svg>><<strategy-resource>> as $alias $STRATEGY_FILLCOLOR
+  rectangle "$label" <<$strategy-resource-svg>><<strategy-resource>> as $alias $STRATEGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Strategy_Capability($alias, $label)
-  rectangle "$label" <<$Strategy_Capability-svg>><<strategy-capability>> as $alias $STRATEGY_FILLCOLOR
+  rectangle "$label" <<$strategy-capability-svg>><<strategy-capability>> as $alias $STRATEGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Strategy_CourseOfAction($alias, $label)
-  rectangle "$label" <<$Strategy_CourseOfAction-svg>><<strategy-course-of-action>> as $alias $STRATEGY_FILLCOLOR
+  rectangle "$label" <<$strategy-courseofaction-svg>><<strategy-course-of-action>> as $alias $STRATEGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Strategy_ValueStream($alias, $label)
-  rectangle "$label" <<$Strategy_ValueStream-svg>><<strategy-value-stream>> as $alias $STRATEGY_FILLCOLOR
+  rectangle "$label" <<$strategy-valuestream-svg>><<strategy-value-stream>> as $alias $STRATEGY_FILLCOLOR
 !endprocedure
 
 'Business Elements
 !unquoted procedure Business_Actor($alias, $label)
-  rectangle "$label" <<$Business_Actor-svg>><<business-actor>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-actor-svg>><<business-actor>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Role($alias, $label)
-  rectangle "$label" <<$Business_Role-svg>><<business-role>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-role-svg>><<business-role>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Collaboration($alias, $label)
-  rectangle "$label" <<$Business_Collaboration-svg>><<business-collaboration>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-collaboration-svg>><<business-collaboration>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Interface($alias, $label)
-  rectangle "$label" <<$Business_Interface-svg>><<business-interface>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-interface-svg>><<business-interface>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Process($alias, $label)
-  rectangle "$label" <<$Business_Process-svg>><<business-process>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-process-svg>><<business-process>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Function($alias, $label)
-  rectangle "$label" <<$Business_Function-svg>><<business-function>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-function-svg>><<business-function>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Interaction($alias, $label)
-  rectangle "$label" <<$Business_Interaction-svg>><<business-interaction>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-interaction-svg>><<business-interaction>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Event($alias, $label)
-  rectangle "$label" <<$Business_Event-svg>><<business-event>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-event-svg>><<business-event>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Service($alias, $label)
-  rectangle "$label" <<$Business_Service-svg>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-service-svg>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Object($alias, $label)
-  rectangle "$label" <<$Business_Object-svg>><<business-object>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-object-svg>><<business-object>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Contract($alias, $label)
-  rectangle "$label" <<$Business_Contract-svg>><<business-contract>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-contract-svg>><<business-contract>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Representation($alias, $label)
-  rectangle "$label" <<$Business_Representation-svg>><<business-representation>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-representation-svg>><<business-representation>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Product($alias, $label)
-  rectangle "$label" <<$Business_Product-svg>><<business-product>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-product-svg>><<business-product>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 !unquoted procedure Business_Location($alias, $label)
-  rectangle "$label" <<$Business_Location-svg>><<business-location>> as $alias $BUSINESS_FILLCOLOR
+  rectangle "$label" <<$business-location-svg>><<business-location>> as $alias $BUSINESS_FILLCOLOR
 !endprocedure
 
 'Application Elements
 !unquoted procedure Application_Component($alias, $label)
-  rectangle "$label" <<$Application_Component-svg>><<application-component>> as $alias $APPLICATION_FILLCOLOR
+  rectangle "$label" <<$application-component-svg>><<application-component>> as $alias $APPLICATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Application_Collaboration($alias, $label)
-  rectangle "$label" <<$Application_Collaboration-svg>><<application-collaboration>> as $alias $APPLICATION_FILLCOLOR
+  rectangle "$label" <<$application-collaboration-svg>><<application-collaboration>> as $alias $APPLICATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Application_Interface($alias, $label)
-  rectangle "$label" <<$Application_Interface-svg>><<application-interface>> as $alias $APPLICATION_FILLCOLOR
+  rectangle "$label" <<$application-interface-svg>><<application-interface>> as $alias $APPLICATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Application_Function($alias, $label)
-  rectangle "$label" <<$Application_Function-svg>><<application-function>> as $alias $APPLICATION_FILLCOLOR
+  rectangle "$label" <<$application-function-svg>><<application-function>> as $alias $APPLICATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Application_Interaction($alias, $label)
-  rectangle "$label" <<$Application_Interaction-svg>><<application-interaction>> as $alias $APPLICATION_FILLCOLOR
+  rectangle "$label" <<$application-interaction-svg>><<application-interaction>> as $alias $APPLICATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Application_Process($alias, $label)
-  rectangle "$label" <<$Application_Process-svg>><<application-process>> as $alias $APPLICATION_FILLCOLOR
+  rectangle "$label" <<$application-process-svg>><<application-process>> as $alias $APPLICATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Application_Event($alias, $label)
-  rectangle "$label" <<$Application_Event-svg>><<application-event>> as $alias $APPLICATION_FILLCOLOR
+  rectangle "$label" <<$application-event-svg>><<application-event>> as $alias $APPLICATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Application_Service($alias, $label)
-  rectangle "$label" <<$Application_Service-svg>><<application-service>> as $alias $APPLICATION_FILLCOLOR
+  rectangle "$label" <<$application-service-svg>><<application-service>> as $alias $APPLICATION_FILLCOLOR
 !endprocedure
 !procedure Application_DataObject($alias, $label)
-  rectangle "$label" <<$Application_DataObject-svg>><<application-data-object>> as $alias $APPLICATION_FILLCOLOR
+  rectangle "$label" <<$application-dataobject-svg>><<application-data-object>> as $alias $APPLICATION_FILLCOLOR
 !endprocedure
 
 'Technology Elements
 !unquoted procedure Technology_Node($alias, $label)
-  node  "$label" <<$Technology_Node-svg>> as $alias $TECHNOLOGY_FILLCOLOR
+  node  "$label" <<$technology-node-svg>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Technology_Device($alias, $label)
-  rectangle "$label" <<$Technology_Device-svg>><<technology-device>> as $alias $TECHNOLOGY_FILLCOLOR
+  rectangle "$label" <<$technology-device-svg>><<technology-device>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Technology_SystemSoftware($alias, $label)
-  rectangle "$label" <<$Technology_SystemSoftware-svg>><<technology-system-software>> as $alias $TECHNOLOGY_FILLCOLOR
+  rectangle "$label" <<$technology-systemsoftware-svg>><<technology-system-software>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Technology_Collaboration($alias, $label)
-  rectangle "$label" <<$Technology_Collaboration-svg>><<technology-collaboration>> as $alias $TECHNOLOGY_FILLCOLOR
+  rectangle "$label" <<$technology-collaboration-svg>><<technology-collaboration>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Technology_Interface($alias, $label)
-  rectangle "$label" <<$Technology_Interface-svg>><<technology-infra-interface>> as $alias $TECHNOLOGY_FILLCOLOR
+  rectangle "$label" <<$technology-interface-svg>><<technology-infra-interface>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Technology_Path($alias, $label)
-  rectangle "$label" <<$Technology_Path-svg>><<technology-communication-path>> as $alias $TECHNOLOGY_FILLCOLOR
+  rectangle "$label" <<$technology-path-svg>><<technology-communication-path>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Technology_CommunicationNetwork($alias, $label)
-  rectangle "$label" <<$Technology_CommunicationNetwork-svg>><<technology-network>> as $alias $TECHNOLOGY_FILLCOLOR
+  rectangle "$label" <<$technology-communicationnetwork-svg>><<technology-network>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Technology_Function($alias, $label)
-  rectangle "$label" <<$Technology_Function-svg>><<technology-function>> as $alias $TECHNOLOGY_FILLCOLOR
+  rectangle "$label" <<$technology-function-svg>><<technology-function>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Technology_Process($alias, $label)
-  rectangle "$label" <<$Technology_Process-svg>><<technology-process>> as $alias $TECHNOLOGY_FILLCOLOR
+  rectangle "$label" <<$technology-process-svg>><<technology-process>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Technology_Interaction($alias, $label)
-  rectangle "$label" <<$Technology_Interaction-svg>><<technology-interaction>> as $alias $TECHNOLOGY_FILLCOLOR
+  rectangle "$label" <<$technology-interaction-svg>><<technology-interaction>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Technology_Event($alias, $label)
-  rectangle "$label" <<$Technology_Event-svg>><<technology-event>> as $alias $TECHNOLOGY_FILLCOLOR
+  rectangle "$label" <<$technology-event-svg>><<technology-event>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Technology_Service($alias, $label)
-  rectangle "$label" <<$Technology_Service-svg>><<technology-infra-service>> as $alias $TECHNOLOGY_FILLCOLOR
+  rectangle "$label" <<$technology-service-svg>><<technology-infra-service>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 !unquoted procedure Technology_Artifact($alias, $label)
-  rectangle "$label" <<$Technology_Artifact-svg>><<technology-artifact>> as $alias $TECHNOLOGY_FILLCOLOR
+  rectangle "$label" <<$technology-artifact-svg>><<technology-artifact>> as $alias $TECHNOLOGY_FILLCOLOR
 !endprocedure
 
 'Physical Elements
 !unquoted procedure Physical_Equipment($alias, $label)
-  rectangle "$label" <<$Technology_Equipment-svg>> as $alias $PHYSICAL_FILLCOLOR
+  rectangle "$label" <<$technology-equipment-svg>> as $alias $PHYSICAL_FILLCOLOR
 !endprocedure
 !unquoted procedure Physical_Facility($alias, $label)
-  rectangle "$label" <<$Technology_Facility-svg>> as $alias $PHYSICAL_FILLCOLOR
+  rectangle "$label" <<$technology-facility-svg>> as $alias $PHYSICAL_FILLCOLOR
 !endprocedure
 !unquoted procedure Physical_DistributionNetwork($alias, $label)
-  rectangle "$label" <<$Technology_DistributionNetwork-svg>><<physical-distribution-network>> as $alias $PHYSICAL_FILLCOLOR
+  rectangle "$label" <<$technology-distributionnetwork-svg>><<physical-distribution-network>> as $alias $PHYSICAL_FILLCOLOR
 !endprocedure
 !unquoted procedure Physical_Material($alias, $label)
-  rectangle "$label" <<$Technology_Material-svg>><<physical-material>> as $alias $PHYSICAL_FILLCOLOR
+  rectangle "$label" <<$technology-material-svg>><<physical-material>> as $alias $PHYSICAL_FILLCOLOR
 !endprocedure
 
 'Motivation Elements
 !unquoted procedure Motivation_Stakeholder($alias, $label)
-  rectangle "$label" <<$Motivation_Stakeholder-svg>><<motivation-stakeholder>> as $alias $MOTIVATION_FILLCOLOR
+  rectangle "$label" <<$motivation-stakeholder-svg>><<motivation-stakeholder>> as $alias $MOTIVATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Motivation_Driver($alias, $label)
-  rectangle "$label" <<$Motivation_Driver-svg>><<motivation-driver>> as $alias $MOTIVATION_FILLCOLOR
+  rectangle "$label" <<$motivation-driver-svg>><<motivation-driver>> as $alias $MOTIVATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Motivation_Assessment($alias, $label)
-  rectangle "$label" <<$Motivation_Assessment-svg>><<motivation-assessment>> as $alias $MOTIVATION_FILLCOLOR
+  rectangle "$label" <<$motivation-assessment-svg>><<motivation-assessment>> as $alias $MOTIVATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Motivation_Goal($alias, $label)
-  rectangle "$label" <<$Motivation_Goal-svg>><<motivation-goal>> as $alias $MOTIVATION_FILLCOLOR
+  rectangle "$label" <<$motivation-goal-svg>><<motivation-goal>> as $alias $MOTIVATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Motivation_Outcome($alias, $label)
-  rectangle "$label" <<$Motivation_Outcome-svg>><<motivation-outcome>> as $alias $MOTIVATION_FILLCOLOR
+  rectangle "$label" <<$motivation-outcome-svg>><<motivation-outcome>> as $alias $MOTIVATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Motivation_Principle($alias, $label)
-  rectangle "$label" <<$Motivation_Principle-svg>><<motivation-principle>> as $alias $MOTIVATION_FILLCOLOR
+  rectangle "$label" <<$motivation-principle-svg>><<motivation-principle>> as $alias $MOTIVATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Motivation_Requirement($alias, $label)
-  rectangle "$label" <<$Motivation_Requirement-svg>><<motivation-requirement>> as $alias $MOTIVATION_FILLCOLOR
+  rectangle "$label" <<$motivation-requirement-svg>><<motivation-requirement>> as $alias $MOTIVATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Motivation_Constraint($alias, $label)
-  rectangle "$label" <<$Motivation_Constraint-svg>><<motivation-constraint>> as $alias $MOTIVATION_FILLCOLOR
+  rectangle "$label" <<$motivation-constraint-svg>><<motivation-constraint>> as $alias $MOTIVATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Motivation_Meaning($alias, $label)
-  rectangle "$label" <<$Motivation_Meaning-svg>><<motivation-meaning>> as $alias $MOTIVATION_FILLCOLOR
+  rectangle "$label" <<$motivation-meaning-svg>><<motivation-meaning>> as $alias $MOTIVATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Motivation_Value($alias, $label)
-  rectangle "$label" <<$Motivation_Value-svg>><<motivation-value>> as $alias $MOTIVATION_FILLCOLOR
+  rectangle "$label" <<$motivation-value-svg>><<motivation-value>> as $alias $MOTIVATION_FILLCOLOR
 !endprocedure
 
 'Implementation Elements
 !unquoted procedure Implementation_WorkPackage($alias, $label)
-  rectangle "$label" <<$Implementation_WorkPackage-svg>> as $alias $IMPLEMENTATION_FILLCOLOR
+  rectangle "$label" <<$implementation-workpackage-svg>> as $alias $IMPLEMENTATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Implementation_Deliverable($alias, $label)
-  rectangle "$label" <<$Implementation_Deliverable-svg>><<implementation-deliverable>> as $alias $IMPLEMENTATION_FILLCOLOR
+  rectangle "$label" <<$implementation-deliverable-svg>><<implementation-deliverable>> as $alias $IMPLEMENTATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Implementation_Event($alias, $label)
-  rectangle "$label" <<$Implementation_Event-svg>><<implementation-event>> as $alias $IMPLEMENTATION_FILLCOLOR
+  rectangle "$label" <<$implementation-event-svg>><<implementation-event>> as $alias $IMPLEMENTATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Implementation_Plateau($alias, $label)
-  rectangle "$label" <<$Implementation_Plateau-svg>><<implementation-plateau>> as $alias $IMPLEMENTATION_FILLCOLOR
+  rectangle "$label" <<$implementation-plateau-svg>><<implementation-plateau>> as $alias $IMPLEMENTATION_FILLCOLOR
 !endprocedure
 !unquoted procedure Implementation_Gap($alias, $label)
-  rectangle "$label" <<$Implementation_Gap-svg>><<implementation-gap>> as $alias $IMPLEMENTATION_FILLCOLOR
+  rectangle "$label" <<$implementation-gap-svg>><<implementation-gap>> as $alias $IMPLEMENTATION_FILLCOLOR
 !endprocedure
 
 'Other Elements
 !unquoted procedure Other_Location($alias, $label)
-  rectangle "$label" <<$Other_Location-svg>><<location>> as $alias $OTHER_FILLCOLOR
+  rectangle "$label" <<$other-location-svg>><<location>> as $alias $OTHER_FILLCOLOR
 !endprocedure
 !unquoted procedure Junction_Or($alias, $label)
   circle $JUNCTIONOR_FILLCOLOR "$label" as $alias
