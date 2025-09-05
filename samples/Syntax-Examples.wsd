@@ -1,6 +1,10 @@
 @startuml Example-Stakeholder
 !include ../Archimate.puml
-!include ../ArchimateSprites.puml
+'!theme archimate-alternate from ../themes
+'!theme archimate-handwriting from ../themes
+'!theme archimate-lowsaturation from ../themes
+'!theme archimate-saturated from ../themes
+'!theme archimate-standard from ../themes
 
 Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
 
@@ -8,12 +12,35 @@ Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
 
 @startuml Example-BusinessService
 !include ../Archimate.puml
-!include ../ArchimateSprites.puml
+'!theme archimate-alternate from ../themes
+'!theme archimate-handwriting from ../themes
+'!theme archimate-lowsaturation from ../themes
+'!theme archimate-saturated from ../themes
+'!theme archimate-standard from ../themes
+
+Business_Service(BS, "Business Service") {
+    Application_Service(AS1, "Application Service 1")
+    Application_Service(AS2, "Application Service 2")
+    Application_Service(AS3, "Application Service 3")
+}
+
+
+@enduml
+
+@startuml Example-Nesting
+!include ../Archimate.puml
+'!theme archimate-alternate from ../themes
+'!theme archimate-handwriting from ../themes
+'!theme archimate-lowsaturation from ../themes
+'!theme archimate-saturated from ../themes
+'!theme archimate-standard from ../themes
 
 Business_Product("BusProduct01", "Business Product 01") {
     Business_Service("BusService01", "Business Service 01")
     Business_Service("BusService02", "Business Service 02")
-    Business_Service("BusService03", "Business Service 03")
+    Business_Service("BusService03", "Business Service 03"){
+        Application_Service(AS1, "Application Service")
+    }
 }
 
 Technology_Device("TechDevice01", "Technology Device 01") {
@@ -28,16 +55,26 @@ Technology_Device("TechDevice01", "Technology Device 01") {
 
 @startuml Example-Composition
 !include ../Archimate.puml
-!include ../ArchimateSprites.puml
+'!theme archimate-alternate from ../themes
+'!theme archimate-handwriting from ../themes
+'!theme archimate-lowsaturation from ../themes
+'!theme archimate-saturated from ../themes
+'!theme archimate-standard from ../themes
+
 Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
 Business_Service(BService, "Business Service")
 
-Rel_Composition(StakeholderElement, BService, "Description for the relationship")
+Rel_Composition_Right(StakeholderElement, BService, "Description for the relationship")
 @enduml
 
 @startuml Example-CompositionDown
 !include ../Archimate.puml
-!include ../ArchimateSprites.puml
+'!theme archimate-alternate from ../themes
+'!theme archimate-handwriting from ../themes
+'!theme archimate-lowsaturation from ../themes
+'!theme archimate-saturated from ../themes
+'!theme archimate-standard from ../themes
+
 Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
 Business_Service(BService, "Business Service")
 
@@ -46,7 +83,12 @@ Rel_Composition_Down(StakeholderElement, BService, "Description for the relation
 
 @startuml Example-Grouping
 !include ../Archimate.puml
-!include ../ArchimateSprites.puml
+'!theme archimate-alternate from ../themes
+'!theme archimate-handwriting from ../themes
+'!theme archimate-lowsaturation from ../themes
+'!theme archimate-saturated from ../themes
+'!theme archimate-standard from ../themes
+
 Grouping(Example01, "Group Type 01"){
     Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
     Business_Service(BService, "Business Service")
@@ -56,7 +98,11 @@ Grouping(Example01, "Group Type 01"){
 
 @startuml Example-Group
 !include ../Archimate.puml
-!include ../ArchimateSprites.puml
+'!theme archimate-alternate from ../themes
+'!theme archimate-handwriting from ../themes
+'!theme archimate-lowsaturation from ../themes
+'!theme archimate-saturated from ../themes
+'!theme archimate-standard from ../themes
 
 Group(Example02, "Group Type 02"){
     Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")

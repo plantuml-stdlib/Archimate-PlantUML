@@ -1,13 +1,16 @@
 @startuml
 !include ../Archimate.puml
-!include ../ArchimateSprites.puml
+'!theme archimate-alternate from ../themes
 '!theme archimate-handwriting from ../themes
+'!theme archimate-lowsaturation from ../themes
+'!theme archimate-saturated from ../themes
+'!theme archimate-standard from ../themes
 
 title Archimate Example - Relationships
 
 'LAYOUT_AS_SKETCH()
-'LAYOUT_LEFT_RIGHT
-'LAYOUT_TOP_DOWN
+LAYOUT_LEFT_RIGHT()
+'LAYOUT_TOP_DOWN()
 
 Business_Service(Service01, "Service 01")
 Application_Service(Service02, "Service 02")

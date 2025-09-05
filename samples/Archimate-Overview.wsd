@@ -1,15 +1,18 @@
 @startuml Archimate Overview
 !include ../Archimate.puml
-!include ../ArchimateSprites.puml
-!theme archimate-saturated from ../themes
+'!theme archimate-alternate from ../themes
+'!theme archimate-handwriting from ../themes
+'!theme archimate-lowsaturation from ../themes
+'!theme archimate-saturated from ../themes
+'!theme archimate-standard from ../themes
 
 title Archimate Overview
 
 'LAYOUT_AS_SKETCH()
-'LAYOUT_LEFT_RIGHT
-'LAYOUT_TOP_DOWN
+'LAYOUT_LEFT_RIGHT()
+'LAYOUT_TOP_DOWN()
 
-Grouping(M_Group,"Motivation"){
+Boundary(M_Group,"Motivation"){
     Motivation_Stakeholder(MStakeholder, "Stakeholder")
     Motivation_Assessment(MAssessment, "Assessment")
     Motivation_Driver(MDriver, "Driver")
@@ -22,7 +25,7 @@ Grouping(M_Group,"Motivation"){
     Motivation_Value(MValue,"Value")
 }
 
-Grouping(B_Group,"Business"){
+Boundary(B_Group,"Business"){
         Business_Object(BObject, "Business Object")
         Business_Representation(BRepresentation, "Representation")
         Business_Contract(BContract, "Contract")
@@ -40,7 +43,7 @@ Grouping(B_Group,"Business"){
         Business_Interface(BInterface, "Business Interface")
 }
 
-Grouping(A_Group, "Application"){
+Boundary(A_Group, "Application"){
     Application_DataObject(ADataObject, "Data Object")
 
     Application_Service(AService,"Application Service")
@@ -54,7 +57,7 @@ Grouping(A_Group, "Application"){
     Application_Interface(AInterface, "Application Interface")
 }
 
-Grouping(T_Group, "Technology"){
+Boundary(T_Group, "Technology"){
     Technology_Artifact(TArtifact, "Artifact")
 
     Technology_Service(TService, "Technology Service")
@@ -70,9 +73,18 @@ Grouping(T_Group, "Technology"){
     Technology_Collaboration(TCollaboration, "Technology Collaboration")
     Technology_CommunicationNetwork(TCommunicationNetwork, "Communication Network")
     Technology_Path(TPath, "Technology Path")
+    
+    Boundary(P_Group, "Physical"){
+        Physical_Material(PMaterial, "Material")
+    
+        Physical_Facility(PFacility, "Facility")
+        Physical_Equipment(PEquipment, "Equipment")
+        Physical_DistributionNetwork(PDistributionNetwork, "Distribution Network")
+    }
+    TProcess -[hidden]- P_Group
 }
 
-Grouping(I_Group, "Implementation"){
+Boundary(I_Group, "Implementation"){
     Implementation_Deliverable(IDeliverable, "Deliverable")
     Implementation_Gap(IGap, "Gap")
 
@@ -81,43 +93,16 @@ Grouping(I_Group, "Implementation"){
     Implementation_Plateau(IPlateau,"Plateau")
 }
 
-Grouping(S_Group,"Strategy"){
+Boundary(S_Group,"Strategy"){
     Strategy_Resource(SResource,"Resource")
 
     Strategy_Capability(SCapability,"Capability")
 }
 
-Grouping(C_Group, "Composite"){
+Boundary(C_Group, "Composite"){
     Other_Location(CLocation,"Location")
 }
 
-Grouping(P_Group, "Physical"){
-    Physical_Material(PMaterial, "Material")
-
-    Physical_Facility(PFacility, "Facility")
-    Physical_Equipment(PEquipment, "Equipment")
-    Physical_DistributionNetwork(PDistributionNetwork, "Distribution Network")
-}
-
-Grouping(N_Group, "Nesting Samples"){
-    Application_Component(AppComp01, "Application Component 01") {
-        Application_Component("AppComp02", "Application Comp 02") {
-            Application_Service("AppService01", "App Service 01")
-            Application_Service("AppService02", "App Service 02")
-            Application_Service("AppService03", "App Service 03")
-        }
-        Application_Component("AppComp03", "Application Comp 03")
-    }
-
-    Technology_Process(HandleClaim, "Handle Claim") {
-        Business_Process(BP_Register, "Register")
-        Business_Process(BP_Accept, "Accpet")
-        Business_Process(BP_Valuate, "Valuate")
-        Business_Process(BP_Pay, "Pay")
-
-        Rel_Triggering_Right(BP_Register, BP_Accept)
-        Rel_Triggering_Right(BP_Accept, BP_Valuate)
-        Rel_Triggering_Right(BP_Valuate, BP_Pay)
-    }
-}
+A_Group -[hidden]D---- I_Group
+B_Group -[hidden]D---- A_Group
 @enduml

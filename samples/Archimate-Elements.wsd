@@ -1,6 +1,5 @@
 @startuml
 !include ../Archimate.puml
-!include ../ArchimateSprites.puml
 '!theme archimate-alternate from ../themes
 '!theme archimate-handwriting from ../themes
 '!theme archimate-lowsaturation from ../themes
@@ -10,8 +9,19 @@
 title Archimate Example - Elements
 
 'LAYOUT_AS_SKETCH()
-'LAYOUT_LEFT_RIGHT
-'LAYOUT_TOP_DOWN
+'LAYOUT_LEFT_RIGHT()
+'LAYOUT_TOP_DOWN()
+
+Motivation_Stakeholder(MS_01, "Stakeholder")
+Motivation_Driver(MD_01, "Driver")
+Motivation_Assessment(MA_01, "Assessment")
+Motivation_Goal(MG_01, "Goal")
+Motivation_Outcome(MO_01, "Outcome")
+Motivation_Principle(MP_01, "Principle")
+Motivation_Requirement(MR_01, "Requirement")
+Motivation_Constraint(MC_01, "Constraint")
+Motivation_Meaning(MM_01, "Meaning")
+Motivation_Value(MV_01, "Value")
 
 Strategy_Resource(SR_01, "Resource")
 Strategy_Capability(SC_01, "Capability")
@@ -44,7 +54,6 @@ Application_Service(AS_01, "Application Service")
 Application_DataObject(AD_01, "Data Object")
 
 Technology_Node(TN_01, "Node")
-Technology_Node(TN_02, "Node with long name")
 Technology_Device(TD_01, "Device")
 Technology_SystemSoftware(TSS_01, "System Software")
 Technology_Collaboration(TC_01, "Technology Collaboration")
@@ -64,17 +73,6 @@ Physical_Facility(PF_01, "Facility")
 Physical_DistributionNetwork(PDN_01, "Distribution Network")
 Physical_Material(PM_01, "Material")
 
-Motivation_Stakeholder(MS_01, "Stakeholder")
-Motivation_Driver(MD_01, "Driver")
-Motivation_Assessment(MA_01, "Assessment")
-Motivation_Goal(MG_01, "Goal")
-Motivation_Outcome(MO_01, "Outcome")
-Motivation_Principle(MP_01, "Principle")
-Motivation_Requirement(MR_01, "Requirement")
-Motivation_Constraint(MC_01, "Constraint")
-Motivation_Meaning(MM_01, "Meaning")
-Motivation_Value(MV_01, "Value")
-
 'Implementation Elements
 Implementation_WorkPackage(IWP_01, "Work Package")
 Implementation_Deliverable(ID_01, "Deliverable")
@@ -90,5 +88,6 @@ Grouping(G_01, "Grouping") {
 Group(G_02, "Group") {
     Other_Location(OL_01, "Location")
 }
+
 
 @enduml

@@ -1,35 +1,5 @@
-!$PUML_THEME = "archimate-standard"
-!$THEME      = "archimate-standard"
-
-!$DEFAULT_BACKGROUND = "#white"
-
-!$STRATEGY_FILLCOLOR = "#STRATEGY"
-!$BUSINESS_FILLCOLOR = "#BUSINESS"
-!$APPLICATION_FILLCOLOR = "#APPLICATION"
-!$TECHNOLOGY_FILLCOLOR = "#TECHNOLOGY"
-!$PHYSICAL_FILLCOLOR = "#PHYSICAL"
-!$MOTIVATION_FILLCOLOR = "#MOTIVATION"
-!$IMPLEMENTATION_FILLCOLOR = "#IMPLEMENTATION"
-!$OTHER_FILLCOLOR = "#efd1e4"
-!$JUNCTIONOR_FILLCOLOR = "#WhiteSmoke"
-!$JUNCTIONAND_FILLCOLOR = "#Black"
-!$GROUP_FILLCOLOR = "#LightGrey"
-!$FOLDER_LINECOLOR = "#444444"
-!$RELATIONSHIP_LINECOLOR = "#Black"
-!$RELATIONSHIP_FONTCOLOR = "#Black"
-
-' I'd like to include the common part here, but theme files do not have a fixed path (they are processed as if in the
-' location of the file that does the `!theme ...`)
-' So, instead of doing
-'
-' !include shared_style.puml
-'
-' We include the contents of that file here. Make sure to keep this section identical in all of the theme files.
-
-
-' No <style> alternatives found yet for skinparam maxMessageSize and StereotypeAlignment
-skinparam maxMessageSize 150
-skinparam stereotypeAlignment right
+' No <style> alternative found yet for skinparam maxMessageSize
+skinparam maxMessageSize        150
 
 <style>
     arrow {
@@ -75,11 +45,7 @@ skinparam stereotypeAlignment right
             stereotype {
                 FontSize 1
                 FontColor transparent
-                HorizontalAlignment right
             }
-        }
-        stereotype {
-            HorizontalAlignment right
         }
         RoundCorner $SHARP_CORNER
     }
