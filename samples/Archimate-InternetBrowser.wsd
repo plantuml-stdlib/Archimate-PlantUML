@@ -23,9 +23,9 @@
 
 title Archimate Sample - Internet Browser
 
-'LAYOUT_AS_SKETCH
-'LAYOUT_LEFT_RIGHT
-'LAYOUT_TOP_DOWN
+'LAYOUT_AS_SKETCH()
+'LAYOUT_LEFT_RIGHT()
+'LAYOUT_TOP_DOWN()
 
 Business_Object(businessObject, "A Business Object")
 Business_Process(someBusinessProcess,"Some Business Process")
