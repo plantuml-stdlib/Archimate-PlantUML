@@ -15,10 +15,10 @@ PlantUML macros and includes for creating Archimate Diagrams easily.
    - [ArchiMate Groups](#archimate-groups)
    - [Nesting of Components](#nesting-of-components)
    - [Theme Support](#theme-support)
-6. [Example](#example)
-7. [Contributing](#contributing)
-8. [License](#license)
-9. [Acknowledgments](#acknowledgments)
+4. [Example](#example)
+5. [Contributing](#contributing)
+6. [License](#license)
+7. [Acknowledgments](#acknowledgments)
 
 ## Background
 
@@ -150,7 +150,7 @@ For example
 
 ### Nesting of Components
 Nesting allows grouping components hierarchically, improving diagram clarity. There are no limitations on the number of levels of nesting.
-The implementation allows nesting of any components inside any other components. When nesting, the element will be displayed as a rectangle with the archimate architype on the top right corner.
+The implementation allows nesting of any components inside any other components. When nesting, the element will be displayed as a rectangle with the archimate archetype on the top right corner.
 
 
 Nesting can be enabled in the following pattern
@@ -191,14 +191,14 @@ Theme can be enabled by adding the following line.
 !theme archimate-saturated from https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/themes
 ```
 
-|Theme Name              | Preview                                            |
-|------------------------|----------------------------------------------------|
-|Default (No line added) | ![default](./images/theme-default.png)             |
-|archimate-standard      | ![standard](./images/theme-standard.png)           |
-|archimate-alternate     | ![alternate](./images/theme-alternate.png)         |
-|archimate-saturated     | ![saturated](./images/theme-saturated.png)         |
-|archimate-lowsaturation | ![low saturated](./images/theme-lowsaturation.png) |
-|archimate-handwriting   | ![handwriting](./images/theme-handwriting.png)     |
+| Theme Name               | Preview                                            |
+|--------------------------|----------------------------------------------------|
+| Default (No line added)  | ![default](./images/theme-default.png)             |
+| archimate-standard       | ![standard](./images/theme-standard.png)           |
+| archimate-alternate      | ![alternate](./images/theme-alternate.png)         |
+| archimate-saturated      | ![saturated](./images/theme-saturated.png)         |
+| archimate-lowsaturation  | ![low saturated](./images/theme-lowsaturation.png) |
+| archimate-handwriting    | ![handwriting](./images/theme-handwriting.png)     |
 
 ## Example
 ```plantuml
