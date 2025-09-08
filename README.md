@@ -88,11 +88,7 @@ For example:
     ![Stakeholder](./images/Example-Stakeholder.png)
 * To define a `Business Service` element,
     ```plantuml
-    Business_Service(BService, "Business Service", true) {
-        Application_Service("AppService01", "App Service 01")
-        Application_Service("AppService02", "App Service 02")
-        Application_Service("AppService03", "App Service 03")
-    }
+    Business_Service(BService, "Business Service")
     ```
     Output:  
     ![Business Service](./images/Example-BusinessService.png) 
@@ -142,15 +138,15 @@ For example:
 ### ArchiMate Groups
 Groups in ArchiMate are denoted using one of the following 3 possible ways:
 ```plantuml
-Group(nameOfTheGroup, "Group Description"){
+Group(nameOfTheGroup, "Group"){
     //Define the ArchiMate Elements
 }
 
-Grouping(nameOfTheGroup, "Group Description"){
+Grouping(nameOfTheGroup, "Grouping"){
     //Define the ArchiMate Elements
 }
 
-Other_Grouping(nameOfTheGroup, "Group Description"){
+Other_Grouping(nameOfTheGroup, "Other_Grouping Type"){
     //Define the ArchiMate Elements
 }
 ```
