@@ -56,7 +56,7 @@ some place locally. Then reference them like this:
 
 ```plantuml
 
-!global $ARCH_LOCAL = false
+!global $ARCH_LOCAL = true
 !$LOCAL_FOLDER = "[path to the folder that holds Archimate.puml]"
 !include $LOCAL_FOLDER/Archimate.puml
 
