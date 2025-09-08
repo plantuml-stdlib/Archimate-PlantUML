@@ -2,7 +2,7 @@
 
 PlantUML macros and includes for creating Archimate Diagrams easily.
 
-![Archimate-PlantUML Sample image - Internet Browser](https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/images/Archimate%20Sample%20-%20Internet%20Browser.png) 
+![Archimate-PlantUML Sample image - Internet Browser](./images/Archimate%20Sample%20-%20Internet%20Browser.png) 
 
 ## Table of Contents
 1. [Background](#background)
@@ -33,16 +33,43 @@ ArchiMate offers a common language for describing the construction and operation
 [Archimate-PlantUML](https://github.com/plantuml-stdlib/Archimate-PlantUML) combines the benefits of PlantUML and ArchiMate for providing a simple way of creating and managing ArchiMate diagrams. The Archimate-PlantUML is a set of macros and other includes written on top of [PlantUML Archimate specification](http://plantuml.com/archimate-diagram), with an aim to simplify the syntax for creating elements and defining relationships.
 
 ## Getting Started
-Include the `Archimate.puml` file in your `.puml` or `.wsd` file:
+Include the `Archimate.puml` file in your `.puml` or `.wsd` file. There are multiple options, depending on how current you want to be
 
+### Using built-in support
 ```plantuml
-!includeurl https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/Archimate.puml
+' to use the built-in support
+!include <archimate/Archimate>
+
+' optionally choose one of the available themes
+'!theme archimate-alternate from <archimate/themes>
+'!theme archimate-handwriting from <archimate/themes>
+'!theme archimate-lowsaturation from <archimate/themes>
+'!theme archimate-saturated from <archimate/themes>
+'!theme archimate-standard from <archimate/themes>
+
 ```
 
-For offline use, download the files and reference them locally:
+### Using a version available on the internet
+
+You will need to download the version (`Archimate.puml` file plus the `./themes/` folder that goes with it) and store them
+some place locally. Then reference them like this:
+
 ```plantuml
-!include path/to/Archimate.puml
+
+!global $ARCH_LOCAL = false
+!$LOCAL_FOLDER = "[path to the folder that holds Archimate.puml]"
+!include $LOCAL_FOLDER/Archimate.puml
+
+' optionally choose one of the available themes
+'!theme archimate-alternate from $LOCAL_FOLDER/themes
+'!theme archimate-handwriting from $LOCAL_FOLDER/themes
+'!theme archimate-lowsaturation from $LOCAL_FOLDER/themes
+'!theme archimate-saturated from $LOCAL_FOLDER/themes
+'!theme archimate-standard from $LOCAL_FOLDER/themes
+!endif
 ```
+
+_Note: using `!includeurl` on a `https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/Archimate.puml` **may** not work, because that file by default relies on the built-in themes, and the latest version on `master` can expect different theme settings._
 
 ## Usage
 After you have included `Archimate.puml` you can use the defined macros for ArchiMate elements. 
@@ -51,16 +78,14 @@ After you have included `Archimate.puml` you can use the defined macros for Arch
 The ArchiMate elements are defined in the following pattern:
 ```plantuml
 Category_ElementName(nameOfTheElement, "description")
-or
-Category_ElementName(nameOfTheElement, "description", true) //To Enable nesting of elements
 ```
 For example:  
-* To define a `Stakeholder` element, which is part of `Motivation` category, the synax will be
+* To define a `Stakeholder` element, which is part of `Motivation` category, the syntax will be
     ```plantuml
     Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
     ```
     Output:  
-    ![Stakeholder](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Stakeholder.png)
+    ![Stakeholder](./images/Example-Stakeholder.png)
 * To define a `Business Service` element,
     ```plantuml
     Business_Service(BService, "Business Service", true) {
@@ -70,7 +95,7 @@ For example:
     }
     ```
     Output:  
-    ![Business Service](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-BusinessService.png) 
+    ![Business Service](./images/Example-BusinessService.png) 
 
 ### ArchiMate Relationships
 The ArchiMate relationships are defined with the following pattern:
@@ -82,10 +107,10 @@ and to define the direction / orientation of the two elements:
 Rel_RelationType_Direction(fromElement, toElement, "description")
 ```
 The `RelationTypes` supported are:
- - Access
+ - Access, Access_r, Access_rw, Access_w
  - Aggregation
  - Assignment
- - Association
+ - Association, Association_dir
  - Composition
  - Flow
  - Influence
@@ -106,105 +131,98 @@ For example:
     Rel_Composition(StakeholderElement, BService, "Description for the relationship")
     ```
     Output:  
-    ![Composition Relationship](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Composition.png)
-* To orient the two elements in top - down position, the syntax will be
+    ![Composition Relationship](./images/Example-Composition.png)
+* To orient the two elements in left-right position, the syntax will be
     ```plantuml
-    Rel_Composition_Down(StakeholderElement, BService, "Description for the relationship")
+    Rel_Composition_Right(StakeholderElement, BService, "Description for the relationship")
     ```
     Output:  
-    ![Composition Relationship Down](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-CompositionDown.png)
+    ![Composition Relationship Right](./images/Example-CompositionRight.png)
 
 ### ArchiMate Groups
-Groups in ArchiMate are denoted using the following syntax:
-```plantuml
-Grouping(nameOfTheGroup, "Group Description"){
-    //Define the ArchiMate Elements
-}
-```
-and to define the direction / orientation of the two elements:
+Groups in ArchiMate are denoted using one of the following 3 possible ways:
 ```plantuml
 Group(nameOfTheGroup, "Group Description"){
     //Define the ArchiMate Elements
 }
-```
-For example
-* Group Type 1:
-    ```plantuml
-    Grouping(Example01, "Group Type 01"){
-        Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
-        Business_Service(BService, "Business Service")
-    }
-    ```
-    Output:  
-    ![Group Type 1](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Grouping.png)
 
-* Group Type 2:
-    ```plantuml
-    Group(Example01, "Group Type 01"){
-        Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
-        Business_Service(BService, "Business Service")
-    }
-    ```
-    Output:  
-    ![Group Type 2](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Group.png)
+Grouping(nameOfTheGroup, "Group Description"){
+    //Define the ArchiMate Elements
+}
+
+Other_Grouping(nameOfTheGroup, "Group Description"){
+    //Define the ArchiMate Elements
+}
+```
+
+For example
+
+| Group Type     | Result                                                |
+|----------------|-------------------------------------------------------|
+| Group          | ![Group](./images/Example-Group.png)                  |
+| Grouping       | ![Grouping](./images/Example-Grouping.png)            |
+| Other_Grouping | ![Other_Grouping](./images/Example-OtherGrouping.png) |
+
 
 ### Nesting of Components
 Nesting allows grouping components hierarchically, improving diagram clarity. There are no limitations on the number of levels of nesting.
-The implementation allows nesting of any components inside any other components. When nesting, the element will be displayed as a rectangle with the archimate archetype on the top right corner.
+The implementation allows nesting of any components inside any other components. When nesting, the element will be displayed in its normal shape, with the archimate archetype on the top right corner.
 
-
-Nesting can be enabled in the following pattern
+Nesting is automatic, just add the nested elements between curly braces `{ ... }`:
 ```plantuml
-Category_ElementName(nameOfTheElement, "description", true) {
+Category_ElementName(nameOfTheElement, "description") {
     Category_ElementName(uniqueName, "description)
 }
 ```
 
 For example:
 ```plantuml
-Business_Product("BusProduct01", "Business Product 01", true) {
+Business_Product("BusProduct01", "Business Product 01") {
     Business_Service("BusService01", "Business Service 01")
     Business_Service("BusService02", "Business Service 02")
-    Business_Service("BusService03", "Business Service 03")
-}
-
-Technology_Device("TechDevice01", "Technology Device 01", true) {
-    Technology_Device("TechDevice02", "Technology Device 02")
-    Technology_Device("TechnDevice03", "Technology Device 03", true) {
-        Technology_Device("TechnDevice04", "Technology Device 04", false)
-        Technology_Device("TechnDevice05", "Technology Device 05")
+    Business_Service("BusService03", "Business Service 03"){
+        Business_Function("BusFunction", "Business Function")
     }
 }
+
+Technology_Node("TechDevice01", "Technology Device 01") {
+    Technology_Node("TechDevice02", "Technology Device 02")
+    Technology_Node("TechnDevice03", "Technology Device 03") {
+        Technology_Node("TechnDevice04", "Technology Device 04")
+        Technology_Node("TechnDevice05", "Technology Device 05")
+    }
+}
+
 ```
 Output:
+
 ![Nesting Example](./images/Example-Nesting.png)
-Note that the representation of Technology-Device element changed from a node to rectangle when nesting was enabled.
 
 ### Theme Support
 Theme support is enabled and 5 variations are available. All the themes are based on Archimate specifications.
 
 Theme can be enabled by adding the following line.
 ```plantuml
-!theme <theme-name> from <theme-folder>
+!theme [theme-name] from <archimate/themes>
 
 // Example
-!theme archimate-saturated from https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/themes
+!theme archimate-saturated from <archimate/themes>
 ```
 
-| Theme Name               | Preview                                            |
-|--------------------------|----------------------------------------------------|
-| Default (No line added)  | ![default](./images/theme-default.png)             |
-| archimate-standard       | ![standard](./images/theme-standard.png)           |
-| archimate-alternate      | ![alternate](./images/theme-alternate.png)         |
-| archimate-saturated      | ![saturated](./images/theme-saturated.png)         |
-| archimate-lowsaturation  | ![low saturated](./images/theme-lowsaturation.png) |
-| archimate-handwriting    | ![handwriting](./images/theme-handwriting.png)     |
+| Theme Name               | Preview                                               |
+|--------------------------|-------------------------------------------------------|
+| Default (No line added)  | ![default](./images/theme-default.png)                |
+| archimate-standard       | ![standard](./images/theme-standard.png)              |
+| archimate-alternate      | ![alternate](./images/theme-alternate.png)            |
+| archimate-saturated      | ![saturated](./images/theme-saturated.png)            |
+| archimate-lowsaturation  | ![low saturation](./images/theme-lowsaturation.png)   |
+| archimate-handwriting    | ![handwriting](./images/theme-handwriting.png)        |
 
 ## Example
 ```plantuml
 @startuml
-!includeurl https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/Archimate.puml
-!theme archimate-standard from https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/themes
+!include <archimate/Archimate>
+!theme archimate-standard from <archimate/themes>
 
 title Archimate Sample - Requirement & Application Services
 
@@ -232,7 +250,7 @@ Rel_Composition_Up(ACSAP, ACSAPFin)
 ```
 
 Output:  
-![Archimate-PlantUML Sample image - Internet Browser](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Archimate%20Sample%20-%20Requirement%20%26%20Application%20Services.png) 
+![Archimate-PlantUML Sample image - Requirement & Application Services](./images/Archimate%20Sample%20-%20Requirement%20%26%20Application%20Services.png) 
 
 ## Contributing
 If you have any ideas, [open an issue](https://github.com/plantuml-stdlib/Archimate-PlantUML/issues/new) or fork the repository and submit a pull request.

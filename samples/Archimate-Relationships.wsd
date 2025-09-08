@@ -1,16 +1,36 @@
 @startuml
-!include ../Archimate.puml
-!theme archimate-handwriting from ../themes
+
+!global $ARCH_LOCAL = false
+!global $ARCH_DEBUG = false
+
+!if ($ARCH_LOCAL == false)
+    !include <archimate/Archimate>
+    '!theme archimate-alternate from <archimate/themes>
+    '!theme archimate-handwriting from <archimate/themes>
+    '!theme archimate-lowsaturation from <archimate/themes>
+    '!theme archimate-saturated from <archimate/themes>
+    '!theme archimate-standard from <archimate/themes>
+!else
+    ' use these includes for local testing
+    !$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+    !include $LOCAL_FOLDER/Archimate.puml
+    '!theme archimate-alternate from $LOCAL_FOLDER/themes
+    '!theme archimate-handwriting from $LOCAL_FOLDER/themes
+    '!theme archimate-lowsaturation from $LOCAL_FOLDER/themes
+    '!theme archimate-saturated from $LOCAL_FOLDER/themes
+    '!theme archimate-standard from $LOCAL_FOLDER/themes
+!endif
 
 title Archimate Example - Relationships
 
-'LAYOUT_AS_SKETCH
-'LAYOUT_LEFT_RIGHT
-'LAYOUT_TOP_DOWN
+'LAYOUT_AS_SKETCH()
+LAYOUT_LEFT_RIGHT()
+'LAYOUT_TOP_DOWN()
 
 Business_Service(Service01, "Service 01")
 Application_Service(Service02, "Service 02")
 Technology_Service(Service03, "Service03")
+Technology_Artifact(Art1, "Artifact")
    
 Rel_Composition_Right(Service01, Service02, "Composition")
 Rel_Aggregation(Service01, Service02, "Aggregation")
@@ -18,11 +38,16 @@ Rel_Assignment(Service01, Service02, "Assignment")
 Rel_Specialization(Service01, Service02, "Specialization")
 Rel_Serving(Service01, Service02, "Serving")
 Rel_Association(Service02, Service03, "Association")
+Rel_Association_dir(Service02, Service03, "Association_dir")
 Rel_Flow(Service02, Service03, "Flow")
 Rel_Realization(Service02, Service03, "Realization")
 Rel_Triggering(Service02, Service03, "Triggering")
-Rel_Access(Service02, Service03, "Access")
+'Rel_Access(Service02, Service03, "Access")
 Rel_Influence(Service02, Service03, " + Influence")
+Rel_Access(Service03, Art1, "access")
+Rel_Access_r(Service03, Art1, "access r")
+Rel_Access_w(Service03, Art1, "access w")
+Rel_Access_rw(Service03, Art1, "access rw")
 
 Grouping(Example01, "Example 01"){
     Strategy_Capability(TestCapability01, "Test Capability")

@@ -1,6 +1,25 @@
 @startuml Sprite List
-!include ../Archimate.puml
-!theme archimate-saturated from ../themes
+
+!global $ARCH_LOCAL = false
+!global $ARCH_DEBUG = false
+
+!if ($ARCH_LOCAL == false)
+    !include <archimate/Archimate>
+    '!theme archimate-alternate from <archimate/themes>
+    '!theme archimate-handwriting from <archimate/themes>
+    '!theme archimate-lowsaturation from <archimate/themes>
+    '!theme archimate-saturated from <archimate/themes>
+    '!theme archimate-standard from <archimate/themes>
+!else
+    ' use these includes for local testing
+    !$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+    !include $LOCAL_FOLDER/Archimate.puml
+    '!theme archimate-alternate from $LOCAL_FOLDER/themes
+    '!theme archimate-handwriting from $LOCAL_FOLDER/themes
+    '!theme archimate-lowsaturation from $LOCAL_FOLDER/themes
+    '!theme archimate-saturated from $LOCAL_FOLDER/themes
+    '!theme archimate-standard from $LOCAL_FOLDER/themes
+!endif
 
 title Archimate Example - Elements
 
@@ -11,6 +30,7 @@ title Archimate Example - Elements
 Strategy_Resource(SR_01, "Resource")
 Strategy_Capability(SC_01, "Capability")
 Strategy_CourseOfAction("SA_01", "Course of Action")
+Strategy_ValueStream("SV_01", "ValueStream")
 
 Business_Actor(BA_01, "Business Actor")
 Business_Role(BR_01, "Business Role")
@@ -74,6 +94,9 @@ Implementation_Plateau(IP_01, "Plateau")
 Implementation_Gap(IG_01, "Gap")
 
 'Other Elements
+Other_Grouping(a, "Other_Grouping"){
+    Other_Location(OL_02, "Location")
+}
 Grouping(G_01, "Grouping") {
     Junction_Or(JO_01, "or")
     Junction_And(JA_01, "and")
