@@ -163,6 +163,43 @@ For example
 | Grouping       | ![Grouping](./images/Example-Grouping.png)            |
 | Other_Grouping | ![Other_Grouping](./images/Example-OtherGrouping.png) |
 
+### Special shapes
+By default, all shapes are rectangular (either with sharp, rounded, or beveled corners) and show a stereotype icon in the
+top right. Some elements can be shown in a different shape, without the stereotype. This is controlled by setting
+`$ARCH_SPECIAL_SHAPES` to `true` (default is `false`). The supported elements have an optional third parameter that allows
+you to override the setting for an individual shape:
+
+```plantuml
+@startuml
+
+!global $ARCH_SPECIAL_SHAPES = true
+
+!include <archimate/Archimate>
+
+Business_Service(BS, "Business Service") {
+    Business_Service(BSI, "Inner Service", true)
+    Business_Service(BSI2, "Another Inner Service", false)
+}
+Motivation_Meaning(MM, "Motivation Meaning") {
+    Motivation_Meaning(MMI, "Inner Meaning", true)
+    Motivation_Meaning(MMI2, "Another Inner Meaning", false)
+}
+Technology_Node(TN, "Technology Node"){
+    Technology_Node(TNI, "Inner Node", true)
+    Technology_Node(TNI2, "Another Inner Node", false)
+}
+
+Technology_Artifact(TA, "Technology Artifact") {
+    Technology_Artifact(TAI, "Inner Artifact", true)
+    Technology_Artifact(TAI2, "Another Inner Artifact", false)
+}
+
+@enduml
+```
+
+Result:
+
+![Special Shapes for some types](./images/SpecialShapes.png)
 
 ### Nesting of Components
 Nesting allows grouping components hierarchically, improving diagram clarity. There are no limitations on the number of levels of nesting.
