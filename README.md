@@ -35,12 +35,12 @@ ArchiMate offers a common language for describing the construction and operation
 ## Getting Started
 Include the `Archimate.puml` file in your `.puml` or `.wsd` file:
 
-```javascript
+```plantuml
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/Archimate.puml
 ```
 
 For offline use, download the files and reference them locally:
-```javascript
+```plantuml
 !include path/to/Archimate.puml
 ```
 
@@ -49,20 +49,20 @@ After you have included `Archimate.puml` you can use the defined macros for Arch
 
 ### ArchiMate Elements
 The ArchiMate elements are defined in the following pattern:
-```javascript
+```plantuml
 Category_ElementName(nameOfTheElement, "description")
 or
 Category_ElementName(nameOfTheElement, "description", true) //To Enable nesting of elements
 ```
 For example:  
 * To define a `Stakeholder` element, which is part of `Motivation` category, the synax will be
-    ```javascript
+    ```plantuml
     Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
     ```
     Output:  
     ![Stakeholder](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Stakeholder.png)
 * To define a `Business Service` element,
-    ```javascript
+    ```plantuml
     Business_Service(BService, "Business Service", true) {
         Application_Service("AppService01", "App Service 01")
         Application_Service("AppService02", "App Service 02")
@@ -74,11 +74,11 @@ For example:
 
 ### ArchiMate Relationships
 The ArchiMate relationships are defined with the following pattern:
-```javascript
+```plantuml
 Rel_RelationType(fromElement, toElement, "description")
 ```
 and to define the direction / orientation of the two elements:
-```javascript
+```plantuml
 Rel_RelationType_Direction(fromElement, toElement, "description")
 ```
 The `RelationTypes` supported are:
@@ -102,13 +102,13 @@ The `Directions` supported are:
 
 For example:
 * To denote a `composition` relationship between the Stakeholder and Business Service defined above, the syntax will be
-    ```javascript
+    ```plantuml
     Rel_Composition(StakeholderElement, BService, "Description for the relationship")
     ```
     Output:  
     ![Composition Relationship](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Composition.png)
 * To orient the two elements in top - down position, the syntax will be
-    ```javascript
+    ```plantuml
     Rel_Composition_Down(StakeholderElement, BService, "Description for the relationship")
     ```
     Output:  
@@ -116,20 +116,20 @@ For example:
 
 ### ArchiMate Groups
 Groups in ArchiMate are denoted using the following syntax:
-```javascript
+```plantuml
 Grouping(nameOfTheGroup, "Group Description"){
     //Define the ArchiMate Elements
 }
 ```
 and to define the direction / orientation of the two elements:
-```javascript
+```plantuml
 Group(nameOfTheGroup, "Group Description"){
     //Define the ArchiMate Elements
 }
 ```
 For example
 * Group Type 1:
-    ```javascript
+    ```plantuml
     Grouping(Example01, "Group Type 01"){
         Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
         Business_Service(BService, "Business Service")
@@ -139,7 +139,7 @@ For example
     ![Group Type 1](https://raw.githubusercontent.com/ebbypeter/Archimate-PlantUML/master/images/Example-Grouping.png)
 
 * Group Type 2:
-    ```javascript
+    ```plantuml
     Group(Example01, "Group Type 01"){
         Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
         Business_Service(BService, "Business Service")
@@ -154,14 +154,14 @@ The implementation allows nesting of any components inside any other components.
 
 
 Nesting can be enabled in the following pattern
-```javascript
+```plantuml
 Category_ElementName(nameOfTheElement, "description", true) {
     Category_ElementName(uniqueName, "description)
 }
 ```
 
 For example:
-```javascript
+```plantuml
 Business_Product("BusProduct01", "Business Product 01", true) {
     Business_Service("BusService01", "Business Service 01")
     Business_Service("BusService02", "Business Service 02")
@@ -184,7 +184,7 @@ Note that the representation of Technology-Device element changed from a node to
 Theme support is enabled and 5 variations are available. All the themes are based on Archimate specifications.
 
 Theme can be enabled by adding the following line.
-```javascript
+```plantuml
 !theme <theme-name> from <theme-folder>
 
 // Example
@@ -201,7 +201,7 @@ Theme can be enabled by adding the following line.
 |archimate-handwriting   | ![handwriting](./images/theme-handwriting.png)     |
 
 ## Example
-```javascript
+```plantuml
 @startuml
 !includeurl https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/Archimate.puml
 !theme archimate-standard from https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/themes
