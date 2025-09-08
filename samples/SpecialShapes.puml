@@ -1,0 +1,44 @@
+@startuml
+
+!global $ARCH_DEBUG = false
+!global $ARCH_LOCAL = false
+!global $ARCH_SPECIAL_SHAPES = true
+
+!if ($ARCH_LOCAL == false)
+    !include <archimate/Archimate>
+    '!theme archimate-alternate from <archimate/themes>
+    '!theme archimate-handwriting from <archimate/themes>
+    '!theme archimate-lowsaturation from <archimate/themes>
+    '!theme archimate-saturated from <archimate/themes>
+    '!theme archimate-saturated from ../themes
+    '!theme archimate-standard from <archimate/themes>
+!else
+    ' use these includes for local testing
+    !$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+    !include $LOCAL_FOLDER/Archimate.puml
+    '!theme archimate-alternate from $LOCAL_FOLDER/themes
+    '!theme archimate-handwriting from $LOCAL_FOLDER/themes
+    '!theme archimate-lowsaturation from $LOCAL_FOLDER/themes
+    '!theme archimate-saturated from $LOCAL_FOLDER/themes
+    '!theme archimate-standard from $LOCAL_FOLDER/themes
+!endif
+
+Business_Service(BS, "Business Service") {
+    Business_Service(BSI, "Inner Service", true)
+    Business_Service(BSI2, "Another Inner Service", false)
+}
+Motivation_Meaning(MM, "Motivation Meaning") {
+    Motivation_Meaning(MMI, "Inner Meaning", true)
+    Motivation_Meaning(MMI2, "Another Inner Meaning", false)
+}
+Technology_Node(TN, "Technology Node"){
+    Technology_Node(TNI, "Inner Node", true)
+    Technology_Node(TNI2, "Another Inner Node", false)
+}
+
+Technology_Artifact(TA, "Technology Artifact") {
+    Technology_Artifact(TAI, "Inner Artifact", true)
+    Technology_Artifact(TAI2, "Another Inner Artifact", false)
+}
+
+@enduml
