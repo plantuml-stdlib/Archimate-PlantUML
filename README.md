@@ -51,8 +51,11 @@ Include the `Archimate.puml` file in your `.puml` or `.wsd` file. There are mult
 
 ### Using a version available on the internet
 
-You will need to download the version (`Archimate.puml` file plus the `./themes/` folder that goes with it) and store them
-some place locally. Then reference them like this:
+You will need to:
+1. download the version, including the themes folder and store them some place locally
+   * `./dist/plantuml/plantuml-stdlib/stdlib/archimate/Archimate.puml`
+   * `./dist/plantuml/plantuml-stdlib/stdlib/archimate/themes/` folder plus files
+2. Add a `!global $ARCH_LOCAL = true` to your PlantUML file prior to the include statement 
 
 ```plantuml
 
@@ -69,7 +72,7 @@ some place locally. Then reference them like this:
 !endif
 ```
 
-_Note: using `!includeurl` on a `https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/Archimate.puml` **may** not work, because that file by default relies on the built-in themes, and the latest version on `master` can expect different theme settings._
+_Note: using `!include` on `https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/dist/plantuml-stdlib/stdlib/archimate/Archimate.puml` **may** not work, because that file by default relies on the built-in themes, which may not be compatible with the latest version of `Archimate.puml` on `master`._
 
 ## Usage
 After you have included `Archimate.puml` you can use the defined macros for ArchiMate elements. 

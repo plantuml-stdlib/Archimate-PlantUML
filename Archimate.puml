@@ -1,0 +1,4 @@
+' NOTE: This file location is deprecated, please reference the file from its new location.
+' New location, relative to this file: ./dist/plantuml-stdlib/stdlib/archimate/Archimate.puml
+
+!include https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/dist/plantuml-stdlib/stdlib/archimate/Archimate.puml
