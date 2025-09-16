@@ -72,7 +72,10 @@ You will need to:
 !endif
 ```
 
-_Note: using `!include` on `https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/dist/plantuml-stdlib/stdlib/archimate/Archimate.puml` **may** not work, because that file by default relies on the built-in themes, which may not be compatible with the latest version of `Archimate.puml` on `master`._
+> [!IMPORTANT]
+> Using `!include` on `https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/dist/plantuml-stdlib/stdlib/archimate/Archimate.puml`
+> **may** not work, because that file by default relies on the built-in themes, which may not be compatible with the latest version of `Archimate.puml`
+> on `master`._
 
 ## Usage
 After you have included `Archimate.puml` you can use the defined macros for ArchiMate elements. 
