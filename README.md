@@ -52,7 +52,7 @@ Include the `Archimate.puml` file in your `.puml` or `.wsd` file. There are mult
 ### Using a version available on the internet
 
 You will need to:
-1. download the version, including the themes folder and store them some place locally
+1. download the latest version of `Archimate.puml`, including the themes folder and store them some place locally
    * `./dist/plantuml/plantuml-stdlib/stdlib/archimate/Archimate.puml`
    * `./dist/plantuml/plantuml-stdlib/stdlib/archimate/themes/` folder plus files
 2. Add a `!global $ARCH_LOCAL = true` to your PlantUML file prior to the include statement 
@@ -69,7 +69,6 @@ You will need to:
 '!theme archimate-lowsaturation from $LOCAL_FOLDER/themes
 '!theme archimate-saturated from $LOCAL_FOLDER/themes
 '!theme archimate-standard from $LOCAL_FOLDER/themes
-!endif
 ```
 
 > [!IMPORTANT]
