@@ -3,7 +3,7 @@
 ' Version
 '######################################
 !function ArchimateVersion()
-  !$archimateVersion  =  "3.2.0"
+  !$archimateVersion  =  "3.2.1"
   !return $archimateVersion
 !endfunction
 
