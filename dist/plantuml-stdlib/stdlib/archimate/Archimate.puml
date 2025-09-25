@@ -119,9 +119,9 @@
 !endprocedure
 !unquoted procedure Business_Service($alias, $label, $special = $ARCH_SPECIAL_SHAPES)
   !if ($special == true)
-    storage "$label" as $alias $ARCH_BUSINESS_FILLCOLOR
+      rectangle "$label" <<service-special>> as $alias $ARCH_BUSINESS_FILLCOLOR
   !else
-    archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-service>> as $alias
+      archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-service>> as $alias
   !endif
 !endprocedure
 !unquoted procedure Business_Object($alias, $label)
@@ -162,8 +162,12 @@
 !unquoted procedure Application_Event($alias, $label)
   archimate $ARCH_APPLICATION_FILLCOLOR "$label" <<application-event>> as $alias
 !endprocedure
-!unquoted procedure Application_Service($alias, $label)
-  archimate $ARCH_APPLICATION_FILLCOLOR "$label" <<application-service>> as $alias
+!unquoted procedure Application_Service($alias, $label, $special = $ARCH_SPECIAL_SHAPES)
+  !if ($special == true)
+      rectangle "$label" <<service-special>> as $alias $ARCH_APPLICATION_FILLCOLOR
+  !else
+      archimate $ARCH_APPLICATION_FILLCOLOR "$label" <<application-service>> as $alias
+  !endif
 !endprocedure
 !unquoted procedure Application_DataObject($alias, $label)
   archimate $ARCH_APPLICATION_FILLCOLOR "$label" <<application-dataobject>> as $alias
@@ -207,8 +211,12 @@
 !unquoted procedure Technology_Event($alias, $label)
   archimate $ARCH_TECHNOLOGY_FILLCOLOR "$label" <<technology-event>> as $alias
 !endprocedure
-!unquoted procedure Technology_Service($alias, $label)
-  archimate $ARCH_TECHNOLOGY_FILLCOLOR "$label" <<technology-service>> as $alias
+!unquoted procedure Technology_Service($alias, $label, $special = $ARCH_SPECIAL_SHAPES)
+  !if ($special == true)
+      rectangle "$label" <<service-special>> as $alias $ARCH_TECHNOLOGY_FILLCOLOR
+  !else
+      archimate $ARCH_TECHNOLOGY_FILLCOLOR "$label" <<technology-service>> as $alias
+  !endif
 !endprocedure
 !unquoted procedure Technology_Artifact($alias, $label, $special = $ARCH_SPECIAL_SHAPES)
   !if ($special == true)
@@ -264,8 +272,12 @@
     archimate $ARCH_MOTIVATION_FILLCOLOR "$label" <<motivation-meaning>> as $alias
   !endif
 !endprocedure
-!unquoted procedure Motivation_Value($alias, $label)
-  archimate $ARCH_MOTIVATION_FILLCOLOR "$label" <<motivation-value>> as $alias
+!unquoted procedure Motivation_Value($alias, $label, $special = $ARCH_SPECIAL_SHAPES)
+  !if ($special == true)
+    usecase "%n()$label%n()" as $alias $ARCH_MOTIVATION_FILLCOLOR
+  !else
+    archimate $ARCH_MOTIVATION_FILLCOLOR "$label" <<motivation-value>> as $alias
+  !endif
 !endprocedure
 
 'Implementation Elements
