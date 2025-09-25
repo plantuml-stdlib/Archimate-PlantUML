@@ -96,8 +96,12 @@
 !unquoted procedure Business_Actor($alias, $label)
   archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-actor>> as $alias
 !endprocedure
-!unquoted procedure Business_Role($alias, $label)
-  archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-role>> as $alias
+!unquoted procedure Business_Role($alias, $label, $special = $ARCH_SPECIAL_SHAPES)
+  !if ($special == true)
+    queue "%n()$label%n()" as $alias $ARCH_BUSINESS_FILLCOLOR
+  !else
+    archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-role>> as $alias
+  !endif
 !endprocedure
 !unquoted procedure Business_Collaboration($alias, $label)
   archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-collaboration>> as $alias
@@ -241,8 +245,12 @@
 !endprocedure
 
 'Motivation Elements
-!unquoted procedure Motivation_Stakeholder($alias, $label)
-  archimate $ARCH_MOTIVATION_FILLCOLOR "$label" <<motivation-stakeholder>> as $alias
+!unquoted procedure Motivation_Stakeholder($alias, $label, $special = $ARCH_SPECIAL_SHAPES)
+  !if ($special == true)
+    queue "%n()$label%n()" as $alias $ARCH_MOTIVATION_FILLCOLOR
+  !else
+    archimate $ARCH_MOTIVATION_FILLCOLOR "$label" <<motivation-stakeholder>> as $alias
+  !endif
 !endprocedure
 !unquoted procedure Motivation_Driver($alias, $label)
   archimate $ARCH_MOTIVATION_FILLCOLOR "$label" <<motivation-driver>> as $alias

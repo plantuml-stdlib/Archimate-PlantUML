@@ -1,9 +1,8 @@
-@startuml Sprite List
+@startuml
 
-!global $ARCH_LOCAL = false
+!global $ARCH_LOCAL = true
 !global $ARCH_DEBUG = false
 !global $ARCH_SPECIAL_SHAPES = true
-
 !if ($ARCH_LOCAL == false)
     !include <archimate/Archimate>
     '!theme archimate-alternate from <archimate/themes>
