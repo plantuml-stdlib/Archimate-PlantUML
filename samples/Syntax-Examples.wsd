@@ -1,48 +1,66 @@
 @startuml Example-Stakeholder
-!include ../Archimate.puml
+!$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+!include $LOCAL_FOLDER/Archimate.puml
 
 Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
 
 @enduml
 
 @startuml Example-BusinessService
-!include ../Archimate.puml
+!$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+!include $LOCAL_FOLDER/Archimate.puml
 
-Business_Product("BusProduct01", "Business Product 01", true) {
+Business_Service("BusService01", "Business Service")
+@enduml
+
+@startuml Example-Nesting
+!$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+!include $LOCAL_FOLDER/Archimate.puml
+
+Business_Product("BusProduct01", "Business Product 01") {
     Business_Service("BusService01", "Business Service 01")
     Business_Service("BusService02", "Business Service 02")
-    Business_Service("BusService03", "Business Service 03")
-}
-
-Technology_Device("TechDevice01", "Technology Device 01", true) {
-    Technology_Device("TechDevice02", "Technology Device 02")
-    Technology_Device("TechnDevice03", "Technology Device 03", true) {
-        Technology_Device("TechnDevice04", "Technology Device 04", false)
-        Technology_Device("TechnDevice05", "Technology Device 05")
+    Business_Service("BusService03", "Business Service 03"){
+        Business_Function("BusFunction", "Business Function")
     }
 }
 
+Technology_Node("TechDevice01", "Technology Device 01") {
+    Technology_Node("TechDevice02", "Technology Device 02")
+    Technology_Node("TechnDevice03", "Technology Device 03") {
+        Technology_Node("TechnDevice04", "Technology Device 04")
+        Technology_Node("TechnDevice05", "Technology Device 05")
+    }
+}
+
+BusProduct01 -[hidden]-- TechDevice01
 @enduml
 
 @startuml Example-Composition
-!include ../Archimate.puml
+!$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+!include $LOCAL_FOLDER/Archimate.puml
+
 Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
 Business_Service(BService, "Business Service")
 
 Rel_Composition(StakeholderElement, BService, "Description for the relationship")
 @enduml
 
-@startuml Example-CompositionDown
-!include ../Archimate.puml
+@startuml Example-CompositionRight
+!$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+!include $LOCAL_FOLDER/Archimate.puml
+
 Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
 Business_Service(BService, "Business Service")
 
-Rel_Composition_Down(StakeholderElement, BService, "Description for the relationship")
+Rel_Composition_Right(StakeholderElement, BService, "Description for the relationship")
 @enduml
 
 @startuml Example-Grouping
-!include ../Archimate.puml
-Grouping(Example01, "Group Type 01"){
+!$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+!include $LOCAL_FOLDER/Archimate.puml
+
+Grouping(Example01, "Grouping"){
     Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
     Business_Service(BService, "Business Service")
 }
@@ -50,10 +68,49 @@ Grouping(Example01, "Group Type 01"){
 @enduml
 
 @startuml Example-Group
-!include ../Archimate.puml
+!$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+!include $LOCAL_FOLDER/Archimate.puml
 
-Group(Example02, "Group Type 02"){
+Group(Example02, "Group"){
     Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
     Business_Service(BService, "Business Service")
 }
+@enduml
+
+@startuml Example-OtherGrouping
+!$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+!include $LOCAL_FOLDER/Archimate.puml
+
+Other_Grouping(Example02, "Other_Grouping Type"){
+    Motivation_Stakeholder(StakeholderElement, "Stakeholder Description")
+    Business_Service(BService, "Business Service")
+}
+@enduml
+
+@startuml
+!include <archimate/Archimate>
+!theme archimate-standard from <archimate/themes>
+
+title Archimate Sample - Requirement & Application Services
+
+'Elements'
+Motivation_Requirement(ReqPayrollStandard, "Do Payroll with a standard system")
+Motivation_Requirement(ReqBudgetPlanning, "Do budget planning within the ERP system")
+
+Application_Service(ASPayroll,"Payroll Service")
+Application_Service(ASBudgetPlanning,"Budget Planning Service")
+Application_Component(ACSAPFinanceAccRec, "SAP Finance - Accounts Recievables")
+Application_Component(ACSAPHR, "SAP Human Resources")
+Application_Component(ACSAPFin, "SAP Finance")
+Application_Component(ACSAP,"SAP")
+
+'Relationships'
+Rel_Realization_Up(ASPayroll, ReqPayrollStandard)
+Rel_Realization_Up(ASBudgetPlanning, ReqBudgetPlanning)
+Rel_Realization_Up(ACSAPFinanceAccRec, ASBudgetPlanning)
+Rel_Realization_Up(ACSAPHR, ASPayroll)
+
+Rel_Composition_Up(ACSAPFin, ACSAPFinanceAccRec)
+Rel_Composition_Up(ACSAP, ACSAPHR)
+Rel_Composition_Up(ACSAP, ACSAPFin)
 @enduml

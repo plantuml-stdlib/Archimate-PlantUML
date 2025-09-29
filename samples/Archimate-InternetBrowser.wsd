@@ -1,12 +1,31 @@
 @startuml Internet Browser Sample
-!include ../Archimate.puml
-!theme archimate-standard from ../themes
+
+!global $ARCH_LOCAL = true
+!global $ARCH_DEBUG = false
+
+!if ($ARCH_LOCAL == false)
+    !include <archimate/Archimate>
+    '!theme archimate-alternate from <archimate/themes>
+    '!theme archimate-handwriting from <archimate/themes>
+    '!theme archimate-lowsaturation from <archimate/themes>
+    '!theme archimate-saturated from <archimate/themes>
+    '!theme archimate-standard from <archimate/themes>
+!else
+    ' use these includes for local testing
+    !$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+    !include $LOCAL_FOLDER/Archimate.puml
+    '!theme archimate-alternate from $LOCAL_FOLDER/themes
+    '!theme archimate-handwriting from $LOCAL_FOLDER/themes
+    '!theme archimate-lowsaturation from $LOCAL_FOLDER/themes
+    '!theme archimate-saturated from $LOCAL_FOLDER/themes
+    '!theme archimate-standard from $LOCAL_FOLDER/themes
+!endif
 
 title Archimate Sample - Internet Browser
 
-'LAYOUT_AS_SKETCH
-'LAYOUT_LEFT_RIGHT
-'LAYOUT_TOP_DOWN
+'LAYOUT_AS_SKETCH()
+'LAYOUT_LEFT_RIGHT()
+'LAYOUT_TOP_DOWN()
 
 Business_Object(businessObject, "A Business Object")
 Business_Process(someBusinessProcess,"Some Business Process")
