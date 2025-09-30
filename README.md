@@ -174,6 +174,7 @@ top right. Some elements can be shown in a different shape, without the stereoty
 you to override the setting for an individual shape.
 
 Shapes that support special shapes are:
+* Business Actor(*)
 * Business Role
 * Business Service(*)
 * Application Service(*)
@@ -206,6 +207,10 @@ Motivation_Meaning(MM, "Motivation Meaning") {
 Motivation_Value(MV, "Motivation Value", $nest=%true()) {
     Motivation_Value(MVI, "Inner Value", $special=%true())
     Motivation_Value(MVI2, "Another Inner Value", $special=%false())
+}
+Business_Actor(BA, "Business Actor", $nest=%true()) {
+    Business_Actor(BAI, "Inner Actor", $special=%true())
+    Business_Actor(BAI2, "Another Inner Actor", $special=%false())
 }
 Business_Service(BS, "Business Service", $nest=%true()) {
     Business_Service(BSI, "Inner Service", $special=%true())

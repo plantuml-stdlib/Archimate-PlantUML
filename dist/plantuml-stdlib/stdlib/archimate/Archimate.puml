@@ -93,8 +93,12 @@
 !endprocedure
 
 'Business Elements
-!unquoted procedure Business_Actor($alias, $label, $nest=0)
-  archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-actor>> as $alias
+!unquoted procedure Business_Actor($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
+  !if ($special == %true() && $nest == %false())
+      actor "$label" as $alias $ARCH_BUSINESS_FILLCOLOR
+  !else
+      archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-actor>> as $alias
+  !endif
 !endprocedure
 !unquoted procedure Business_Role($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
   !if ($special == %true())
