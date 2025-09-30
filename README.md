@@ -271,8 +271,8 @@ Output:
 
 > [!IMPORTANT]
 > As mentioned above, some elements support special shapes. However, when using special shapes, nesting is not always possible using the 
-> special shape. This applies to all `Service` elements, and the `Motivation_Value` element. If you have special shapes active, you have
-> to add a `$nest=%true()` parameter to these elements to avoid errors or unexpected results.
+> special shape. This applies to all `Service` elements, the `Motivation_Value` element, and the `Business_Actor` element. If you have
+> special shapes active, you have to add a `$nest=%true()` parameter to these elements to avoid errors or unexpected results.
 
 ### Theme Support
 Theme support is enabled and 5 variations are available. All the themes are based on Archimate specifications.
