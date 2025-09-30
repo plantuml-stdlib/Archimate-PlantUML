@@ -177,6 +177,7 @@ Shapes that support special shapes are:
 * Business Actor(*)
 * Business Role
 * Business Service(*)
+* Business Product
 * Application Service(*)
 * Technology Node
 * Technology Artifact
@@ -196,7 +197,6 @@ Shapes that support special shapes are:
 !global $ARCH_SPECIAL_SHAPES = %true()
 
 !include <archimate/Archimate>
-
 
 Motivation_Stakeholder(MS, "Motivation Stakeholder") {
     Motivation_Stakeholder(MSI, "Inner Stakeholder", $special=%true())
@@ -223,6 +223,11 @@ Business_Service(BS, "Business Service", $nest=%true()) {
     Business_Service(BSI, "Inner Service", $special=%true())
     Business_Service(BSI2, "Another Inner Service", $special=%false())
 }
+Business_Product(BP, "Business Product", $nest=%true()) {
+    Business_Product(BPI, "Inner Product", $special=%true())
+    Business_Product(BPI2, "Another Inner Product", $special=%false())
+}
+
 Technology_Node(TN, "Technology Node"){
     Technology_Node(TNI, "Inner Node", $special=%true())
     Technology_Node(TNI2, "Another Inner Node", $special=%false())

@@ -145,8 +145,12 @@
 !unquoted procedure Business_Representation($alias, $label, $nest=0)
   archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-representation>> as $alias
 !endprocedure
-!unquoted procedure Business_Product($alias, $label, $nest=0)
-  archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-product>> as $alias
+!unquoted procedure Business_Product($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
+  !if ($special == %true())
+    frame "%n()$label%n()" as $alias $ARCH_BUSINESS_FILLCOLOR
+  !else
+    archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-product>> as $alias
+  !endif
 !endprocedure
 !unquoted procedure Business_Location($alias, $label, $nest=0)
   archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-location>> as $alias

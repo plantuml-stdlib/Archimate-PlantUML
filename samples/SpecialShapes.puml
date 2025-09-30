@@ -1,7 +1,7 @@
 @startuml
 
 !global $ARCH_DEBUG = %false()
-!global $ARCH_LOCAL = %true()
+!global $ARCH_LOCAL = %false()
 !global $ARCH_SPECIAL_SHAPES = %true()
 
 !if ($ARCH_LOCAL == %false())
@@ -49,6 +49,11 @@ Business_Service(BS, "Business Service", $nest=%true()) {
     Business_Service(BSI, "Inner Service", $special=%true())
     Business_Service(BSI2, "Another Inner Service", $special=%false())
 }
+Business_Product(BP, "Business Product", $nest=%true()) {
+    Business_Product(BPI, "Inner Product", $special=%true())
+    Business_Product(BPI2, "Another Inner Product", $special=%false())
+}
+
 Technology_Node(TN, "Technology Node"){
     Technology_Node(TNI, "Inner Node", $special=%true())
     Technology_Node(TNI2, "Another Inner Node", $special=%false())
@@ -61,6 +66,7 @@ Technology_Artifact(TA, "Technology Artifact") {
 
 MS -[hidden]- BA
 MM -[hidden]- BS
-MV -[hidden]- TN
-SV -[hidden]- TA
+MV -[hidden]- BP
+BA -[hidden]- TA
+BS -[hidden]- TN
 @enduml
