@@ -184,6 +184,7 @@ Shapes that support special shapes are:
 * Motivation Stakeholder
 * Motivation Meaning
 * Motivation Value(*)
+* Strategy Value Stream
     
 > [!IMPORTANT]
 > Note: the special shapes marked with (*) do not support nesting other elements within them, so you need to add a 
@@ -195,6 +196,7 @@ Shapes that support special shapes are:
 !global $ARCH_SPECIAL_SHAPES = %true()
 
 !include <archimate/Archimate>
+
 
 Motivation_Stakeholder(MS, "Motivation Stakeholder") {
     Motivation_Stakeholder(MSI, "Inner Stakeholder", $special=%true())
@@ -208,6 +210,11 @@ Motivation_Value(MV, "Motivation Value", $nest=%true()) {
     Motivation_Value(MVI, "Inner Value", $special=%true())
     Motivation_Value(MVI2, "Another Inner Value", $special=%false())
 }
+Strategy_ValueStream(SV, "Strategy Value Stream", $nest=%true()) {
+    Strategy_ValueStream(SVI, "Inner Value Stream", $special=%true())
+    Strategy_ValueStream(SVI2, "Another Inner Value Stream", $special=%false())
+}
+
 Business_Actor(BA, "Business Actor", $nest=%true()) {
     Business_Actor(BAI, "Inner Actor", $special=%true())
     Business_Actor(BAI2, "Another Inner Actor", $special=%false())

@@ -88,8 +88,12 @@
 !unquoted procedure Strategy_CourseOfAction($alias, $label, $nest=0)
   archimate $ARCH_STRATEGY_FILLCOLOR "$label" <<strategy-courseofaction>> as $alias
 !endprocedure
-!unquoted procedure Strategy_ValueStream($alias, $label, $nest=0)
-  archimate $ARCH_STRATEGY_FILLCOLOR "$label" <<strategy-valuestream>> as $alias
+!unquoted procedure Strategy_ValueStream($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
+  !if ($special == %true())
+      process "$label" as $alias $ARCH_STRATEGY_FILLCOLOR
+  !else
+      archimate $ARCH_STRATEGY_FILLCOLOR "$label" <<strategy-valuestream>> as $alias
+  !endif
 !endprocedure
 
 'Business Elements

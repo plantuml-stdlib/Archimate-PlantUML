@@ -36,6 +36,11 @@ Motivation_Value(MV, "Motivation Value", $nest=%true()) {
     Motivation_Value(MVI, "Inner Value", $special=%true())
     Motivation_Value(MVI2, "Another Inner Value", $special=%false())
 }
+Strategy_ValueStream(SV, "Strategy Value Stream", $nest=%true()) {
+    Strategy_ValueStream(SVI, "Inner Value Stream", $special=%true())
+    Strategy_ValueStream(SVI2, "Another Inner Value Stream", $special=%false())
+}
+
 Business_Actor(BA, "Business Actor", $nest=%true()) {
     Business_Actor(BAI, "Inner Actor", $special=%true())
     Business_Actor(BAI2, "Another Inner Actor", $special=%false())
@@ -56,6 +61,6 @@ Technology_Artifact(TA, "Technology Artifact") {
 
 MS -[hidden]- BA
 MM -[hidden]- BS
-MM -[hidden]- TN
-MV -[hidden]- TA
+MV -[hidden]- TN
+SV -[hidden]- TA
 @enduml
