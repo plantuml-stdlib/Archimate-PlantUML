@@ -340,6 +340,50 @@ Rel_Composition_Up(ACSAP, ACSAPFin)
 Output:  
 ![Archimate-PlantUML Sample image - Requirement & Application Services](./images/Archimate%20Sample%20-%20Requirement%20%26%20Application%20Services.png) 
 
+## Sequence Diagrams using Archimate elements
+Additional support for using Archimate elements in sequence diagrams is provided by setting a global variable:
+```puml
+!global $ARCH_SEQUENCE_SUPPORT = %true()
+```
+This defines additional procedures that can be used to create participants in sequence diagrams using Archimate elements.
+For example:
+```puml
+@startuml
+!global $ARCH_SEQUENCE_SUPPORT = %true()
+!include <archimate/Archimate>
+
+title Archi Print Usage
+
+' Define Elements
+$businessActor("Architect","architect")
+$applicationComponent("Archi","archi")
+$applicationFunction("Update\nModel","update")
+$applicationFunction("Print\nView","print")
+$systemSoftware("Windows\nPrint\nService","windowsPrint")
+$equipment("Printer", "printer")
+
+' Define Sequence
+architect->archi ++
+archi->update ++ : Make changes
+$document("Not exactly correct!\nBut you get the idea.","right","update")
+return Updated Model
+archi ->print ++ : Click print
+print -\windowsPrint ++
+print –> archi -–: Sent to printer
+windowsPrint -> printer ++
+return Complete
+archi –> architect --
+
+@enduml
+```
+
+Output:
+
+![Sequence Diagram using Archimate elements](./images/Archimate-Sequence-Diagram.png)
+
+The supported elements for sequence diagrams are:
+* 
+
 ## Contributing
 If you have any ideas, [open an issue](https://github.com/plantuml-stdlib/Archimate-PlantUML/issues/new) or fork the repository and submit a pull request.
 
