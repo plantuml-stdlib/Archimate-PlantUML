@@ -18,23 +18,23 @@
 ' Styling
 '######################################
 
-!global $ARCH_DEBUG ?= false
-!global $ARCH_LOCAL ?= false
+!global $ARCH_DEBUG ?= %false()
+!global $ARCH_LOCAL ?= %false()
 
-!if ($ARCH_LOCAL == true)
+!if ($ARCH_LOCAL == %true())
     !include themes/shared_style.puml
 !else
     !include <archimate/themes/shared_style>
 !endif
 
-!if ($ARCH_DEBUG == true)
+!if ($ARCH_DEBUG == %true())
     left header "Created using Archimate.puml version ArchimateVersion()"
 !endif
 
 ' Layout
 ' ##################################
 !procedure LAYOUT_AS_SKETCH()
-    !option handwritten true
+    !option handwritten %true()
     <style>
         root {
             BackgroundColor #EEEBDC
@@ -97,7 +97,7 @@
   archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-actor>> as $alias
 !endprocedure
 !unquoted procedure Business_Role($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
-  !if ($special == true)
+  !if ($special == %true())
     queue "%n()$label%n()" as $alias $ARCH_BUSINESS_FILLCOLOR
   !else
     archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-role>> as $alias
@@ -122,7 +122,7 @@
   archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-event>> as $alias
 !endprocedure
 !unquoted procedure Business_Service($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
-  !if ($special == true)
+  !if ($special == %true() && $nest == %false())
       rectangle "$label" <<service-special>> as $alias $ARCH_BUSINESS_FILLCOLOR
   !else
       archimate $ARCH_BUSINESS_FILLCOLOR "$label" <<business-service>> as $alias
@@ -167,7 +167,7 @@
   archimate $ARCH_APPLICATION_FILLCOLOR "$label" <<application-event>> as $alias
 !endprocedure
 !unquoted procedure Application_Service($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
-  !if ($special == true)
+  !if ($special == %true() && $nest == %false())
       rectangle "$label" <<service-special>> as $alias $ARCH_APPLICATION_FILLCOLOR
   !else
       archimate $ARCH_APPLICATION_FILLCOLOR "$label" <<application-service>> as $alias
@@ -179,7 +179,7 @@
 
 'Technology Elements
 !unquoted procedure Technology_Node($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
-  !if ($special == true)
+  !if ($special == %true())
     node "$label" as $alias $ARCH_TECHNOLOGY_FILLCOLOR
   !else
     archimate $ARCH_TECHNOLOGY_FILLCOLOR "$label" <<technology-node>> as $alias
@@ -216,14 +216,14 @@
   archimate $ARCH_TECHNOLOGY_FILLCOLOR "$label" <<technology-event>> as $alias
 !endprocedure
 !unquoted procedure Technology_Service($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
-  !if ($special == true)
+  !if ($special == %true() && $nest == %false())
       rectangle "$label" <<service-special>> as $alias $ARCH_TECHNOLOGY_FILLCOLOR
   !else
       archimate $ARCH_TECHNOLOGY_FILLCOLOR "$label" <<technology-service>> as $alias
   !endif
 !endprocedure
 !unquoted procedure Technology_Artifact($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
-  !if ($special == true)
+  !if ($special == %true())
     file "$label" as $alias $ARCH_TECHNOLOGY_FILLCOLOR
   !else
     archimate $ARCH_TECHNOLOGY_FILLCOLOR "$label" <<technology-artifact>> as $alias
@@ -246,7 +246,7 @@
 
 'Motivation Elements
 !unquoted procedure Motivation_Stakeholder($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
-  !if ($special == true)
+  !if ($special == %true())
     queue "%n()$label%n()" as $alias $ARCH_MOTIVATION_FILLCOLOR
   !else
     archimate $ARCH_MOTIVATION_FILLCOLOR "$label" <<motivation-stakeholder>> as $alias
@@ -274,14 +274,14 @@
   archimate $ARCH_MOTIVATION_FILLCOLOR "$label" <<motivation-constraint>> as $alias
 !endprocedure
 !unquoted procedure Motivation_Meaning($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
-  !if ($special == true)
+  !if ($special == %true())
     cloud "$label" as $alias $ARCH_MOTIVATION_FILLCOLOR
   !else
     archimate $ARCH_MOTIVATION_FILLCOLOR "$label" <<motivation-meaning>> as $alias
   !endif
 !endprocedure
 !unquoted procedure Motivation_Value($alias, $label, $nest=0, $special = $ARCH_SPECIAL_SHAPES)
-  !if ($special == true)
+  !if ($special == %true() && $nest == %false())
     usecase "%n()$label%n()" as $alias $ARCH_MOTIVATION_FILLCOLOR
   !else
     archimate $ARCH_MOTIVATION_FILLCOLOR "$label" <<motivation-value>> as $alias

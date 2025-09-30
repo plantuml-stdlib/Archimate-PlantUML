@@ -44,7 +44,7 @@ skinparam lineType $ARCH_LINETYPE
 ' $ARCH_SPECIAL_SHAPES drives the usage of special shapes for some elements.
 ' Note that we only use plantuml shapes that support nesting
 ' This means that we do not use actor, queue (for role and stakeholder), or usecase (for value)
-!global $ARCH_SPECIAL_SHAPES ?= false
+!global $ARCH_SPECIAL_SHAPES ?= %false()
 
 <style>
     archimate {

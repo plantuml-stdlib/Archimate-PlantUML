@@ -55,11 +55,11 @@ You will need to:
 1. download the latest version of `Archimate.puml`, including the themes folder and store them some place locally
    * `./dist/plantuml/plantuml-stdlib/stdlib/archimate/Archimate.puml`
    * `./dist/plantuml/plantuml-stdlib/stdlib/archimate/themes/` folder plus files
-2. Add a `!global $ARCH_LOCAL = true` to your PlantUML file prior to the include statement 
+2. Add a `!global $ARCH_LOCAL = %true()` to your PlantUML file prior to the include statement 
 
 ```plantuml
 
-!global $ARCH_LOCAL = true
+!global $ARCH_LOCAL = %true()
 !$LOCAL_FOLDER = "[path to the folder that holds Archimate.puml]"
 !include $LOCAL_FOLDER/Archimate.puml
 
@@ -74,16 +74,19 @@ You will need to:
 > [!IMPORTANT]
 > Using `!include` on `https://raw.githubusercontent.com/plantuml-stdlib/Archimate-PlantUML/master/dist/plantuml-stdlib/stdlib/archimate/Archimate.puml`
 > **may** not work, because that file by default relies on the built-in themes, which may not be compatible with the latest version of `Archimate.puml`
-> on `master`._
+> on `master`.
 
 ## Usage
 After you have included `Archimate.puml` you can use the defined macros for ArchiMate elements. 
 
 ### ArchiMate Elements
-The ArchiMate elements are defined in the following pattern:
+The ArchiMate elements are defined in the following pattern, with two mandatory parameters and two optional parameters:
 ```plantuml
-Category_ElementName(nameOfTheElement, "description")
+Category_ElementName(nameOfTheElement, "description", $nest=%false(), $special=$ARCH_SPECIAL_SHAPES)
 ```
+
+Nesting and special shapes are explained further down this page.
+
 For example:  
 * To define a `Stakeholder` element, which is part of `Motivation` category, the syntax will be
     ```plantuml
@@ -167,32 +170,55 @@ For example
 ### Special shapes
 By default, all shapes are rectangular (either with sharp, rounded, or beveled corners) and show a stereotype icon in the
 top right. Some elements can be shown in a different shape, without the stereotype. This is controlled by setting
-`$ARCH_SPECIAL_SHAPES` to `true` (default is `false`). The supported elements have an optional third parameter that allows
-you to override the setting for an individual shape:
+`$ARCH_SPECIAL_SHAPES` to `%true()` (default is `%false()`). The supported elements have an optional named parameter that allows
+you to override the setting for an individual shape.
+
+Shapes that support special shapes are:
+* Business Role
+* Business Service(*)
+* Application Service(*)
+* Technology Node
+* Technology Artifact
+* Technology Service(*)
+* Motivation Stakeholder
+* Motivation Meaning
+* Motivation Value(*)
+
+> [!IMPORTANT]
+> Note: the special shapes marked with (*) do not support nesting other elements within them, so you need to add a 
+> `$nest=%false()` parameter when using these elements with special shapes.
 
 ```plantuml
 @startuml
 
-!global $ARCH_SPECIAL_SHAPES = true
+!global $ARCH_SPECIAL_SHAPES = %true()
 
 !include <archimate/Archimate>
 
-Business_Service(BS, "Business Service") {
-    Business_Service(BSI, "Inner Service", true)
-    Business_Service(BSI2, "Another Inner Service", false)
+Motivation_Stakeholder(MS, "Motivation Stakeholder") {
+    Motivation_Stakeholder(MSI, "Inner Stakeholder", $special=%true())
+    Motivation_Stakeholder(MSI2, "Another Inner Stakeholder", $special=%false())
 }
 Motivation_Meaning(MM, "Motivation Meaning") {
-    Motivation_Meaning(MMI, "Inner Meaning", true)
-    Motivation_Meaning(MMI2, "Another Inner Meaning", false)
+    Motivation_Meaning(MMI, "Inner Meaning", $special=%true())
+    Motivation_Meaning(MMI2, "Another Inner Meaning", $special=%false())
+}
+Motivation_Value(MV, "Motivation Value", $nest=%true()) {
+    Motivation_Value(MVI, "Inner Value", $special=%true())
+    Motivation_Value(MVI2, "Another Inner Value", $special=%false())
+}
+Business_Service(BS, "Business Service", $nest=%true()) {
+    Business_Service(BSI, "Inner Service", $special=%true())
+    Business_Service(BSI2, "Another Inner Service", $special=%false())
 }
 Technology_Node(TN, "Technology Node"){
-    Technology_Node(TNI, "Inner Node", true)
-    Technology_Node(TNI2, "Another Inner Node", false)
+    Technology_Node(TNI, "Inner Node", $special=%true())
+    Technology_Node(TNI2, "Another Inner Node", $special=%false())
 }
 
 Technology_Artifact(TA, "Technology Artifact") {
-    Technology_Artifact(TAI, "Inner Artifact", true)
-    Technology_Artifact(TAI2, "Another Inner Artifact", false)
+    Technology_Artifact(TAI, "Inner Artifact", $special=%true())
+    Technology_Artifact(TAI2, "Another Inner Artifact", $special=%false())
 }
 
 @enduml
@@ -206,7 +232,7 @@ Result:
 Nesting allows grouping components hierarchically, improving diagram clarity. There are no limitations on the number of levels of nesting.
 The implementation allows nesting of any components inside any other components. When nesting, the element will be displayed in its normal shape, with the archimate archetype on the top right corner.
 
-Nesting is automatic, just add the nested elements between curly braces `{ ... }`:
+Nesting is automatic by default, just add the nested elements between curly braces `{ ... }`:
 ```plantuml
 Category_ElementName(nameOfTheElement, "description") {
     Category_ElementName(uniqueName, "description)
@@ -235,6 +261,13 @@ Technology_Node("TechDevice01", "Technology Device 01") {
 Output:
 
 ![Nesting Example](./images/Example-Nesting.png)
+
+#### Nesting with special shapes
+
+> [!IMPORTANT]
+> As mentioned above, some elements support special shapes. However, when using special shapes, nesting is not always possible using the 
+> special shape. This applies to all `Service` elements, and the `Motivation_Value` element. If you have special shapes active, you have
+> to add a `$nest=%false()` parameter to these elements to avoid errors or unexpected results.
 
 ### Theme Support
 Theme support is enabled and 5 variations are available. All the themes are based on Archimate specifications.
