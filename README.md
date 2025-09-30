@@ -187,7 +187,7 @@ Shapes that support special shapes are:
 
 > [!IMPORTANT]
 > Note: the special shapes marked with (*) do not support nesting other elements within them, so you need to add a 
-> `$nest=%false()` parameter when using these elements with special shapes.
+> `$nest=%true()` parameter when using these elements with special shapes.
 
 ```plantuml
 @startuml
