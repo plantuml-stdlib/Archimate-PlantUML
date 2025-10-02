@@ -35,7 +35,7 @@ $equipment("Printer", "printer")
 ' Define Sequence
 architect->archi ++
 archi->update ++ : Make changes
-$document("Not exactly correct!\nBut you get the idea.","right","update")
+note right update #FFFFA5: <&document> Not exactly correct!\nBut you get the idea.
 return Updated Model
 archi ->print ++ : Click print
 print -\windowsPrint ++

@@ -236,26 +236,3 @@ hide stereotype
 !procedure $distributionNetwork($label,$name="")
     $element("Physical","physical-distribution-network","active", $label, $name)
 !endprocedure
-
-' Notes
-!procedure $assume($text, $placement = "left", $component = "")
-    hnote $placement $component #FFAAAA: <&warning> $text
-!endprocedure
-!procedure $document($text, $placement = "left", $component = "")
-    note $placement $component #FFFFA5: <&document> $text
-!endprocedure
-!procedure $question($text, $placement = "left", $component = "")
-    rnote $placement $component #FFBF00: <&question-mark> $text
-!endprocedure
-!procedure $schedule($text, $placement = "left", $component = "")
-    rnote $placement $component #98FB98: <&timer> $text
-!endprocedure
-!procedure $change($text, $placement = "left", $component = "")
-    rnote $placement $component #FFBF00: <&circle-check> $text
-!endprocedure
-!procedure $reuse($text, $placement = "left", $component = "")
-    rnote $placement $component #98FB98: <&circle-check> $text
-!endprocedure
-!procedure $error($text, $placement = "left", $component = "")
-    rnote $placement $component #FFCCCB: <&bug> $text
-!endprocedure
