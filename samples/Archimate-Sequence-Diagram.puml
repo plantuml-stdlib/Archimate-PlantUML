@@ -25,7 +25,7 @@
 title Archi Print Usage
 
 ' Define Elements
-$businessActor("Architect","architect")
+$actor("Architect","architect")
 $applicationComponent("Archi","archi")
 $applicationFunction("Update\nModel","update")
 $applicationFunction("Print\nView","print")

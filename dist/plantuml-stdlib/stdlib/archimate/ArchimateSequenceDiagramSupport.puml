@@ -1,6 +1,6 @@
 ' Defines functions and procedures to support Archimate elements as participants in sequence diagrams
 ' Based on the work by Steven Mileham (see [1]), and included here with his permission.
-' [1] - ]https://smileham.co.uk/2019/04/23/archimate-plantuml-sequence-diagram-joy/
+' [1] - https://smileham.co.uk/2019/04/23/archimate-plantuml-sequence-diagram-joy/
 
 hide stereotype
 <style>
@@ -88,15 +88,15 @@ hide stereotype
 !procedure $capability($label,$name="")
     $element("Strategy", "strategy-capability","behavior", $label, $name)
 !endprocedure
-!procedure $valuestream($label,$name="")
+!procedure $valueStream($label,$name="")
     $element("Strategy", "strategy-valuestream","behavior", $label, $name)
 !endprocedure
-!procedure $courseofaction($label,$name="")
+!procedure $courseOfAction($label,$name="")
     $element("Strategy", "strategy-course-of-action","behavior", $label, $name)
 !endprocedure
 
 ' Implementation and Migration
-!procedure $workpackage($label,$name="")
+!procedure $workPackage($label,$name="")
     $element("Implementation", "implementation-workpackage","behavior", $label, $name)
 !endprocedure
 !procedure $implementationEvent($label,$name="")
@@ -113,10 +113,10 @@ hide stereotype
 !endprocedure
 
 ' Business
-!procedure $businessActor($label,$name="")
+!procedure $actor($label,$name="")
     $element("Business", "actor","active", $label, $name)
 !endprocedure
-!procedure $businessRole($label,$name="")
+!procedure $role($label,$name="")
     $element("Business","role","behavior", $label, $name)
 !endprocedure
 !procedure $businessCollaboration($label,$name="")
