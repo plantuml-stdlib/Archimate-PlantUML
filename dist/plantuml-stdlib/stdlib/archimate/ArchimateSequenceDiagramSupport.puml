@@ -14,8 +14,9 @@
 <style>
     sequenceDiagram {
         participant {
-            MinimumWidth 10
             HorizontalAlignment center
+            MinimumWidth 10
+            RoundCorner $ARCH_SHARP_CORNER
             stereoType {
                 FontColor transparent
                 FontSize 1
