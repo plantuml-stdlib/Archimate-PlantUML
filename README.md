@@ -178,21 +178,21 @@ top right. Some elements can be shown in a different shape, without the stereoty
 you to override the setting for an individual shape.
 
 Shapes that support special shapes are:
-* Business Actor(*)
+* Business Actor<sup>*</sup>
 * Business Role
-* Business Service(*)
+* Business Service<sup>*</sup>
 * Business Product
-* Application Service(*)
+* Application Service<sup>*</sup>
 * Technology Node
 * Technology Artifact
-* Technology Service(*)
+* Technology Service<sup>*</sup>
 * Motivation Stakeholder
 * Motivation Meaning
-* Motivation Value(*)
+* Motivation Value<sup>*</sup>
 * Strategy Value Stream
     
 > [!IMPORTANT]
-> Note: the special shapes marked with (*) do not support nesting other elements within them, so you need to add a 
+> The special shapes marked with <sup>*</sup> do not support nesting other elements within them, so you need to add a 
 > `$nest=%true()` parameter when nesting using these elements with special shapes.
 
 ```plantuml
