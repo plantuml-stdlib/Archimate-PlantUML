@@ -38,7 +38,13 @@ skinparam lineType $ARCH_LINETYPE
 
 !global $ARCH_DIAGONAL_CORNER ?= 12
 !global $ARCH_ROUND_CORNER ?= 25
+!global $ARCH_ROUND_CORNER_LARGE ?= 80
 !global $ARCH_SHARP_CORNER ?= 1
+
+' $ARCH_SPECIAL_SHAPES drives the usage of special shapes for some elements.
+' Note that there are some custom shapes that do not support nesting (actor and usecase).
+' This means that when using these elements as containers, one must add `$nest=%true()` to the call, so that the regular shape will be used.
+!global $ARCH_SPECIAL_SHAPES ?= %false()
 
 <style>
     archimate {
@@ -159,6 +165,13 @@ skinparam lineType $ARCH_LINETYPE
     }
     .motivation-value {
         DiagonalCorner $ARCH_DIAGONAL_CORNER
+    }
+    .service-special {
+        RoundCorner $ARCH_ROUND_CORNER_LARGE
+        stereotype {
+            FontSize 1
+            FontColor transparent
+        }
     }
     .strategy-capability {
         RoundCorner $ARCH_ROUND_CORNER

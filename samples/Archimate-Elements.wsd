@@ -1,9 +1,10 @@
-@startuml Sprite List
+@startuml
+'!pragma layout smetana
 
-!global $ARCH_LOCAL = false
-!global $ARCH_DEBUG = false
-
-!if ($ARCH_LOCAL == false)
+!global $ARCH_LOCAL = %false()
+!global $ARCH_DEBUG = %false()
+!global $ARCH_SPECIAL_SHAPES = %true()
+!if ($ARCH_LOCAL == %false())
     !include <archimate/Archimate>
     '!theme archimate-alternate from <archimate/themes>
     '!theme archimate-handwriting from <archimate/themes>
@@ -26,27 +27,27 @@ title Archimate Example - Elements
 'LAYOUT_AS_SKETCH()
 'LAYOUT_LEFT_RIGHT()
 'LAYOUT_TOP_DOWN()
+together {
+    Boundary(M, "Motivational elements"){
+        Motivation_Stakeholder(MS_01, "Stakeholder")
+        Motivation_Driver(MD_01, "Driver")
+        Motivation_Assessment(MA_01, "Assessment")
+        Motivation_Goal(MG_01, "Goal")
+        Motivation_Outcome(MO_01, "Outcome")
+        Motivation_Principle(MP_01, "Principle")
+        Motivation_Requirement(MR_01, "Requirement")
+        Motivation_Constraint(MC_01, "Constraint")
+        Motivation_Meaning(MM_01, "Meaning")
+        Motivation_Value(MV_01, "Value")
+    }
 
-Boundary(M, "Motivational elements"){
-    Motivation_Stakeholder(MS_01, "Stakeholder")
-    Motivation_Driver(MD_01, "Driver")
-    Motivation_Assessment(MA_01, "Assessment")
-    Motivation_Goal(MG_01, "Goal")
-    Motivation_Outcome(MO_01, "Outcome")
-    Motivation_Principle(MP_01, "Principle")
-    Motivation_Requirement(MR_01, "Requirement")
-    Motivation_Constraint(MC_01, "Constraint")
-    Motivation_Meaning(MM_01, "Meaning")
-    Motivation_Value(MV_01, "Value")
+    Boundary(S, "Strategy elements"){
+        Strategy_Resource(SR_01, "Resource")
+        Strategy_Capability(SC_01, "Capability")
+        Strategy_ValueStream(SV_01, "Value Stream")
+        Strategy_CourseOfAction(SA_01, "Course of Action")
+    }
 }
-
-Boundary(S, "Strategy elements"){
-Strategy_Resource(SR_01, "Resource")
-Strategy_Capability(SC_01, "Capability")
-Strategy_ValueStream(SV_01, "Value Stream")
-Strategy_CourseOfAction(SA_01, "Course of Action")
-}
-
 Boundary(C, "Core elements") {
     Boundary(B, "Business elements") {
         Business_Actor(BA_01, "Business Actor")
@@ -99,29 +100,31 @@ Boundary(C, "Core elements") {
     }
 }
 
-Boundary(I, "Implementation elements"){
-    Implementation_WorkPackage(IWP_01, "Work Package")
-    Implementation_Deliverable(ID_01, "Deliverable")
-    Implementation_Event(IE_01, "Event")
-    Implementation_Plateau(IP_01, "Plateau")
-    Implementation_Gap(IG_01, "Gap")
-}
+together {
+    Boundary(O, "Other elements"){
+        Other_Grouping(a, "Other_Grouping"){
+            Other_Location(OL_02, "Location")
+        }
+        Grouping(G_01, "Grouping") {
+            Junction_Or(JO_01, "or")
+            Junction_And(JA_01, "and")
+        }
+        Group(G_02, "Group") {
+            Other_Location(OL_01, "Location")
+        }
+    }
 
-Boundary(O, "Other elements"){
-    Other_Grouping(a, "Other_Grouping"){
-        Other_Location(OL_02, "Location")
-    }
-    Grouping(G_01, "Grouping") {
-        Junction_Or(JO_01, "or")
-        Junction_And(JA_01, "and")
-    }
-    Group(G_02, "Group") {
-        Other_Location(OL_01, "Location")
+    Boundary(I, "Implementation elements"){
+        Implementation_WorkPackage(IWP_01, "Work Package")
+        Implementation_Deliverable(ID_01, "Deliverable")
+        Implementation_Event(IE_01, "Event")
+        Implementation_Plateau(IP_01, "Plateau")
+        Implementation_Gap(IG_01, "Gap")
     }
 }
-
-M -[hidden]D------ C
-C -[hidden]D--------- O
-'S -U-- I
-M -[hidden]-- S
+'M -[hidden]D------ C
+C -[hidden]U--- O
+C -[hidden]U--- I
+''S -U-- I
+'M -[hidden]-- S
 @enduml

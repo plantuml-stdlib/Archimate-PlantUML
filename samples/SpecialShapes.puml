@@ -1,0 +1,72 @@
+@startuml
+
+!global $ARCH_DEBUG = %false()
+!global $ARCH_LOCAL = %false()
+!global $ARCH_SPECIAL_SHAPES = %true()
+
+!if ($ARCH_LOCAL == %false())
+    !include <archimate/Archimate>
+    '!theme archimate-alternate from <archimate/themes>
+    '!theme archimate-handwriting from <archimate/themes>
+    '!theme archimate-lowsaturation from <archimate/themes>
+    '!theme archimate-saturated from <archimate/themes>
+    '!theme archimate-saturated from ../themes
+    '!theme archimate-standard from <archimate/themes>
+!else
+    ' use these includes for local testing
+    !$LOCAL_FOLDER = "../dist/plantuml-stdlib/stdlib/archimate"
+    !include $LOCAL_FOLDER/Archimate.puml
+    '!theme archimate-alternate from $LOCAL_FOLDER/themes
+    '!theme archimate-handwriting from $LOCAL_FOLDER/themes
+    '!theme archimate-lowsaturation from $LOCAL_FOLDER/themes
+    '!theme archimate-saturated from $LOCAL_FOLDER/themes
+    '!theme archimate-standard from $LOCAL_FOLDER/themes
+!endif
+
+
+Motivation_Stakeholder(MS, "Motivation Stakeholder") {
+    Motivation_Stakeholder(MSI, "Inner Stakeholder", $special=%true())
+    Motivation_Stakeholder(MSI2, "Another Inner Stakeholder", $special=%false())
+}
+Motivation_Meaning(MM, "Motivation Meaning") {
+    Motivation_Meaning(MMI, "Inner Meaning", $special=%true())
+    Motivation_Meaning(MMI2, "Another Inner Meaning", $special=%false())
+}
+Motivation_Value(MV, "Motivation Value", $nest=%true()) {
+    Motivation_Value(MVI, "Inner Value", $special=%true())
+    Motivation_Value(MVI2, "Another Inner Value", $special=%false())
+}
+Strategy_ValueStream(SV, "Strategy Value Stream", $nest=%true()) {
+    Strategy_ValueStream(SVI, "Inner Value Stream", $special=%true())
+    Strategy_ValueStream(SVI2, "Another Inner Value Stream", $special=%false())
+}
+
+Business_Actor(BA, "Business Actor", $nest=%true()) {
+    Business_Actor(BAI, "Inner Actor", $special=%true())
+    Business_Actor(BAI2, "Another Inner Actor", $special=%false())
+}
+Business_Service(BS, "Business Service", $nest=%true()) {
+    Business_Service(BSI, "Inner Service", $special=%true())
+    Business_Service(BSI2, "Another Inner Service", $special=%false())
+}
+Business_Product(BP, "Business Product", $nest=%true()) {
+    Business_Product(BPI, "Inner Product", $special=%true())
+    Business_Product(BPI2, "Another Inner Product", $special=%false())
+}
+
+Technology_Node(TN, "Technology Node"){
+    Technology_Node(TNI, "Inner Node", $special=%true())
+    Technology_Node(TNI2, "Another Inner Node", $special=%false())
+}
+
+Technology_Artifact(TA, "Technology Artifact") {
+    Technology_Artifact(TAI, "Inner Artifact", $special=%true())
+    Technology_Artifact(TAI2, "Another Inner Artifact", $special=%false())
+}
+
+MS -[hidden]- BA
+MM -[hidden]- BS
+MV -[hidden]- BP
+BA -[hidden]- TA
+BS -[hidden]- TN
+@enduml
