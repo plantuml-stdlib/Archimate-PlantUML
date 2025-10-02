@@ -45,6 +45,3 @@ return Complete
 archi –> architect --
 
 @enduml
-@startuml
-listsprites
-@enduml
