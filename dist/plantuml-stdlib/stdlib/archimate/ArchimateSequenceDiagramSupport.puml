@@ -2,9 +2,18 @@
 ' Based on the work by Steven Mileham (see [1]), and included here with his permission.
 ' [1] - https://smileham.co.uk/2019/04/23/archimate-plantuml-sequence-diagram-joy/
 
+' Make sure these are defined even if this file is used standalone
+!global $ARCH_SHARP_CORNER ?= 1
+!global $ARCH_DIAGONAL_CORNER ?= 12
+!global $ARCH_ROUND_CORNER ?= 25
+
 hide stereotype
 <style>
     sequenceDiagram {
+        participant {
+            MinimumWidth 10
+            HorizontalAlignment center
+        }
         RoundCorner $ARCH_SHARP_CORNER
         .Motivation {
             LineColor %darken("#MOTIVATION",80)
@@ -43,10 +52,12 @@ hide stereotype
 
 !procedure $element($layer,$type,$structure,$label,$name="")
     !if ($name=="")
-        participant "<$archimate/$type>\r $label" as $label <<$layer>> <<$structure>>
+        !$id = $label
     !else
-        participant "<$archimate/$type>\r $label" as $name <<$layer>> <<$structure>>
+        !$id = $name
     !endif
+    ' using spaces to fake right-alignment of the icon
+    participant "          <$archimate/$type>%n()$label" as $id <<$layer>> <<$structure>>
 !endprocedure
 
 ' Motivation
