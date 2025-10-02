@@ -311,12 +311,20 @@ Theme can be enabled by adding the following line.
 | archimate-handwriting    | ![handwriting](./images/theme-handwriting.png)        |
 
 ### Sequence Diagrams using Archimate elements
-Additional support for using Archimate elements in sequence diagrams is provided by setting a global variable:
+Additional support for using ArchiMate elements in sequence diagrams is provided by setting a global variable prior to activating ArchiMate support:
+
 ```puml
 !global $ARCH_SEQUENCE_SUPPORT = %true()
+!include <archimate/Archimate>
 ```
-This defines additional procedures that can be used to create participants in sequence diagrams using Archimate elements.
+Alternatively, you can choose to only include the sequence support file directly:
+```puml
+!include <archimate/ArchimateSequenceDiagramSupport>
+```
+
+Both methods define additional procedures that can be used to create participants in sequence diagrams using Archimate elements.
 For example:
+
 ```puml
 @startuml
 !global $ARCH_SEQUENCE_SUPPORT = %true()
