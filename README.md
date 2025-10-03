@@ -364,7 +364,12 @@ Call the procedure with a label, and if the label is not unique within the diagr
 $elementType("Label")
 $elementType("Label", ID)
 ```
-The supported elements for sequence diagrams are:
+
+The supported elements for sequence diagrams are listed in the table below.
+
+<details>
+
+<summary>Click to show the table</summary>
 
 | Aspect                       | Type                  | Procedure                   |
 |------------------------------|-----------------------|-----------------------------|
@@ -426,6 +431,8 @@ The supported elements for sequence diagrams are:
 | Technology - Physical        | Equipment             | `$equipment`                |
 | Technology - Physical        | Facility              | `$facility`                 |
 | Technology - Physical        | Material              | `$material`                 |
+
+</details>
 
 ## Example
 ```plantuml

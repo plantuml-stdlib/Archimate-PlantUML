@@ -1,12 +1,7 @@
-## 3.2.2 (not yet released)
-
-### What's changed
-* Added support for ArchiMate shapes in sequence diagrams in [#59](https://github.com/plantuml-stdlib/Archimate-PlantUML/pull/59)
-
-
 ## 3.2.1 (not yet released)
 
 ### What's changed
+* Added support for ArchiMate shapes in sequence diagrams in [#59](https://github.com/plantuml-stdlib/Archimate-PlantUML/pull/59)
 * Special shapes can be used for some elements in [#58](https://github.com/plantuml-stdlib/Archimate-PlantUML/pull/58)
 * Bugfix: use `%true()` and `%false()` instead of `true` and `false` (included in #58)
 

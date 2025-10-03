@@ -30,11 +30,11 @@
         !$id = $label
     !endif
     !if ($type=="distributionnetwork")
-        !$bgcolor = PHYSICAL
+        !$bgcolor = "#PHYSICAL"
     !else
-        !$bgcolor = $layer
+        !$bgcolor = "#" + $layer
     !endif
-    participant "$label" as $id <<$archimate/$layer-$type>> #$bgcolor
+    participant "$label" as $id <<$archimate/$layer-$type>> $bgcolor
 !endprocedure
 
 ' motivation
