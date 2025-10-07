@@ -9,12 +9,16 @@ PlantUML macros and includes for creating Archimate Diagrams easily.
    - [PlantUML](#plantuml)
    - [ArchiMate](#archimate)
 2. [Getting Started](#getting-started)
+   - [Using built-in support](#using-built-in-support) 
+   - [Using a version available on the internet](#using-a-version-available-on-the-internet)
 3. [Usage](#usage)
    - [ArchiMate Elements](#archimate-elements)
    - [ArchiMate Relationships](#archimate-relationships)
    - [ArchiMate Groups](#archimate-groups)
+   - [Special shapes](#special-shapes)
    - [Nesting of Components](#nesting-of-components)
    - [Theme Support](#theme-support)
+   - [Sequence Diagrams using Archimate elements](#sequence-diagrams-using-archimate-elements)
 4. [Example](#example)
 5. [Contributing](#contributing)
 6. [License](#license)
@@ -306,6 +310,130 @@ Theme can be enabled by adding the following line.
 | archimate-lowsaturation  | ![low saturation](./images/theme-lowsaturation.png)   |
 | archimate-handwriting    | ![handwriting](./images/theme-handwriting.png)        |
 
+### Sequence Diagrams using Archimate elements
+Additional support for using ArchiMate elements in sequence diagrams is provided by setting a global variable prior to activating ArchiMate support:
+
+```puml
+!global $ARCH_SEQUENCE_SUPPORT = %true()
+!include <archimate/Archimate>
+```
+Alternatively, you can choose to only include the sequence support file directly:
+```puml
+!include <archimate/ArchimateSequenceDiagramSupport>
+```
+
+Both methods define additional procedures that can be used to create participants in sequence diagrams using Archimate elements.
+For example:
+
+```puml
+@startuml
+!global $ARCH_SEQUENCE_SUPPORT = %true()
+!include <archimate/Archimate>
+
+title Archi Print Usage
+
+' Define Elements
+$businessActor("Architect","architect")
+$applicationComponent("Archi","archi")
+$applicationFunction("Update\nModel","update")
+$applicationFunction("Print\nView","print")
+$systemSoftware("Windows\nPrint\nService","windowsPrint")
+$equipment("Printer", "printer")
+
+' Define Sequence
+architect->archi ++
+archi->update ++ : Make changes
+$document("Not exactly correct!\nBut you get the idea.","right","update")
+return Updated Model
+archi ->print ++ : Click print
+print -\windowsPrint ++
+print –> archi -–: Sent to printer
+windowsPrint -> printer ++
+return Complete
+archi –> architect --
+
+@enduml
+```
+
+Output:
+
+![Sequence Diagram using Archimate elements](./images/Archimate-Sequence-Diagram.png)
+
+Call the procedure with a label, and if the label is not unique within the diagram also provide an ID to refer to the participant.
+```puml
+$elementType("Label")
+$elementType("Label", ID)
+```
+
+The supported elements for sequence diagrams are listed in the table below.
+
+<details>
+
+<summary>Click to show the table</summary>
+
+| Aspect                       | Type                  | Procedure                   |
+|------------------------------|-----------------------|-----------------------------|
+| Application                  | Component             | `$applicationComponent`     |
+| Application                  | Collaboration         | `$applicationCollaboration` |
+| Application                  | Data Object           | `$dataObject`               |
+| Application                  | Event                 | `$applicationEvent`         |
+| Application                  | Function              | `$applicationFunction`      |
+| Application                  | Interaction           | `$applicationInteraction`   |
+| Application                  | Interface             | `$applicationInterface`     |
+| Application                  | Process               | `$applicationProcess`       |
+| Application                  | Service               | `$applicationService`       |
+| Business                     | Actor                 | `$actor`                    |
+| Business                     | Collaboration         | `$businessCollaboration`    |
+| Business                     | Contract              | `$contract`                 |
+| Business                     | Event                 | `$businessEvent`            |
+| Business                     | Function              | `$businessFunction`         |
+| Business                     | Interaction           | `$businessInteraction`      |
+| Business                     | Interface             | `$businessInterface`        |
+| Business                     | Object                | `$businessObject`           |
+| Business                     | Process               | `$businessProcess`          |
+| Business                     | Product               | `$product`                  |
+| Business                     | Role                  | `$role`                     |
+| Business                     | Service               | `$businessService`          |
+| Business                     | Representation        | `$representation`           |
+| Implementation and Migration | Deliverable           | `$deliverable`              |
+| Implementation and Migration | Gap                   | `$gap`                      |
+| Implementation and Migration | Implementation Event  | `$implementationEvent`      |
+| Implementation and Migration | Plateau               | `$plateau`                  |
+| Implementation and Migration | Work Package          | `$workPackage`              |
+| Motivation                   | Assessment            | `$assessment`               |
+| Motivation                   | Constraint            | `$constraint`               |
+| Motivation                   | Driver                | `$driver`                   |
+| Motivation                   | Goal                  | `$goal`                     |
+| Motivation                   | Meaning               | `$meaning`                  |
+| Motivation                   | Outcome               | `$outcome`                  |
+| Motivation                   | Principle             | `$principle`                |
+| Motivation                   | Requirement           | `$requirement`              |
+| Motivation                   | Stakeholder           | `$stakeholder`              |
+| Motivation                   | Value                 | `$value`                    |
+| Strategy                     | Capability            | `$capability`               |
+| Strategy                     | Course Of Action      | `$courseOfAction`           |
+| Strategy                     | Resource              | `$resource`                 |
+| Strategy                     | Value Stream          | `$valueStream`              |
+| Technology                   | Artifact              | `$artifact`                 |
+| Technology                   | Collaboration         | `$technologyCollaboration`  |
+| Technology                   | Communication Network | `$communicationNetwork`     |
+| Technology                   | Device                | `$device`                   |
+| Technology                   | Event                 | `$technologyEvent`          |
+| Technology                   | Function              | `$technologyFunction`       |
+| Technology                   | Interaction           | `$technologyInteraction`    |
+| Technology                   | Interface             | `$technologyInterface`      |
+| Technology                   | Node                  | `$node`                     |
+| Technology                   | Path                  | `$path`                     |
+| Technology                   | Process               | `$technologyProcess`        |
+| Technology                   | Service               | `$technologyService`        |
+| Technology                   | System Software       | `$systemSoftware`           |
+| Technology - Physical        | Distribution Network  | `$distributionNetwork`      |
+| Technology - Physical        | Equipment             | `$equipment`                |
+| Technology - Physical        | Facility              | `$facility`                 |
+| Technology - Physical        | Material              | `$material`                 |
+
+</details>
+
 ## Example
 ```plantuml
 @startuml
@@ -338,7 +466,7 @@ Rel_Composition_Up(ACSAP, ACSAPFin)
 ```
 
 Output:  
-![Archimate-PlantUML Sample image - Requirement & Application Services](./images/Archimate%20Sample%20-%20Requirement%20%26%20Application%20Services.png) 
+![Archimate-PlantUML Sample image - Requirement & Application Services](./images/Archimate%20Sample%20-%20Requirement%20%26%20Application%20Services.png)
 
 ## Contributing
 If you have any ideas, [open an issue](https://github.com/plantuml-stdlib/Archimate-PlantUML/issues/new) or fork the repository and submit a pull request.
@@ -351,3 +479,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 * [Archimate 3.1 Specification](http://pubs.opengroup.org/architecture/archimate3-doc/) - Archimate Specifications
 * [Plant UML Archimate Specifications](http://plantuml.com/archimate-diagram) - for archimate spec in PlantUML
 * [C4-PlantUML](https://github.com/plantuml-stdlib/C4-PlantUML) - for inspiration, base structure and scripts idea
+* Steven Mileham, for allowing inclusion of his [Sequence Diagram support for Archimate elements](https://smileham.co.uk/2019/04/23/archimate-plantuml-sequence-diagram-joy/)

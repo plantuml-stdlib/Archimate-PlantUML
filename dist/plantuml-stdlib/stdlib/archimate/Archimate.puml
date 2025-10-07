@@ -20,11 +20,18 @@
 
 !global $ARCH_DEBUG ?= %false()
 !global $ARCH_LOCAL ?= %false()
+!global $ARCH_SEQUENCE_SUPPORT ?= %false()
 
 !if ($ARCH_LOCAL == %true())
     !include themes/shared_style.puml
+    !if ($ARCH_SEQUENCE_SUPPORT == %true())
+        !include ArchimateSequenceDiagramSupport.puml
+    !endif
 !else
     !include <archimate/themes/shared_style>
+    !if ($ARCH_SEQUENCE_SUPPORT == %true())
+        !include <archimate/ArchimateSequenceDiagramSupport>
+    !endif
 !endif
 
 !if ($ARCH_DEBUG == %true())
