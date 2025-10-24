@@ -1,9 +1,9 @@
 @startuml Internet Browser Sample
 
-!global $ARCH_LOCAL = true
-!global $ARCH_DEBUG = false
+!global $ARCH_LOCAL = %true()
+!global $ARCH_DEBUG = %true()
 
-!if ($ARCH_LOCAL == false)
+!if ($ARCH_LOCAL == %false())
     !include <archimate/Archimate>
     '!theme archimate-alternate from <archimate/themes>
     '!theme archimate-handwriting from <archimate/themes>
@@ -27,7 +27,7 @@ title Archimate Sample - Internet Browser
 'LAYOUT_LEFT_RIGHT()
 'LAYOUT_TOP_DOWN()
 
-Business_Object(businessObject, "A Business Object")
+Business_Object(businessObject, "A Busines Object")
 Business_Process(someBusinessProcess,"Some Business Process")
 Business_Service(itSupportService, "IT Support for Business (Application Service)")
 
