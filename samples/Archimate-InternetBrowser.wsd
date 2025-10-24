@@ -27,7 +27,7 @@ title Archimate Sample - Internet Browser
 'LAYOUT_LEFT_RIGHT()
 'LAYOUT_TOP_DOWN()
 
-Business_Object(businessObject, "A Busines Object")
+Business_Object(businessObject, "A Business Object")
 Business_Process(someBusinessProcess,"Some Business Process")
 Business_Service(itSupportService, "IT Support for Business (Application Service)")
 
