@@ -333,7 +333,7 @@ For example:
 title Archi Print Usage
 
 ' Define Elements
-$businessActor("Architect","architect")
+$actor("Architect","architect")
 $applicationComponent("Archi","archi")
 $applicationFunction("Update\nModel","update")
 $applicationFunction("Print\nView","print")
@@ -343,7 +343,7 @@ $equipment("Printer", "printer")
 ' Define Sequence
 architect->archi ++
 archi->update ++ : Make changes
-$document("Not exactly correct!\nBut you get the idea.","right","update")
+note right update #FFFFA5: <&document> Not exactly correct!\nBut you get the idea.
 return Updated Model
 archi ->print ++ : Click print
 print -\windowsPrint ++
