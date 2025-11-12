@@ -1,15 +1,26 @@
-## 3.2.1 (not yet released)
+## Release v3.2.2
+
+[Full Changelog](https://github.com/plantuml-stdlib/Archimate-PlantUML/compare/v3.2.1...v3.2.2)
+
+### What's Changed
+* Revert default linetype from ortho to curve by @jeanmarc in https://github.com/plantuml-stdlib/Archimate-PlantUML/pull/61
+* Fix incorrect example in the project README file. by @Potherca in https://github.com/plantuml-stdlib/Archimate-PlantUML/pull/64
+
+## Release v3.2.1
+
+[Full Changelog](https://github.com/plantuml-stdlib/Archimate-PlantUML/compare/v3.2.0...v3.2.1)
 
 ### What's changed
 * Added support for ArchiMate shapes in sequence diagrams in [#59](https://github.com/plantuml-stdlib/Archimate-PlantUML/pull/59)
 * Special shapes can be used for some elements in [#58](https://github.com/plantuml-stdlib/Archimate-PlantUML/pull/58)
 * Bugfix: use `%true()` and `%false()` instead of `true` and `false` (included in #58)
 
-## Release v1.2.0 ➡️ v3.2.0
-### tag [v1.2.0](https://github.com/plantuml-stdlib/Archimate-PlantUML/tree/v1.2.0) (2025-10-01)
-### tag [v3.2.0](https://github.com/plantuml-stdlib/Archimate-PlantUML/tree/v3.2.0) (2025-10-01)
 
-[Full Changelog](https://github.com/plantuml-stdlib/Archimate-PlantUML/compare/v1.0.0...v3.2.0)
+## Release v1.2.0 ➡️ v3.2.0
+### tag [v3.2.0](https://github.com/plantuml-stdlib/Archimate-PlantUML/tree/v3.2.0) (2025-10-01)
+### tag [v1.2.0](https://github.com/plantuml-stdlib/Archimate-PlantUML/tree/v1.2.0) (2025-10-01)
+
+[Full Changelog](https://github.com/plantuml-stdlib/Archimate-PlantUML/compare/v1.1.0...v3.2.0)
 
 > [!IMPORTANT]
 > This release has been tagged with both `v1.2.0` (the next minor version in line for Archimate-PlantUML) and `v3.2.0` (aligned to the current version of Archimate).
