@@ -167,7 +167,7 @@
     $element("application", "event", $label, $name)
 !endprocedure
 !procedure $dataObject($label, $name="")
-    $element("application", "object", $label, $name)
+    $element("application", "data-object", $label, $name)
 !endprocedure
 
 ' technology
